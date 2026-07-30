@@ -1,669 +1,242 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Privacy Policy — Atmos Studio</title>
-
-    <style>
-        :root {
-            color-scheme: light dark;
-        }
-
-        body {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 24px;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.65;
-        }
-
-        h1 {
-            margin-bottom: 8px;
-        }
-
-        h2 {
-            margin-top: 32px;
-        }
-
-        h3 {
-            margin-top: 24px;
-        }
-
-        .language-switcher {
-            margin: 24px 0;
-        }
-
-        .language-switcher a {
-            margin-right: 16px;
-        }
-
-        .notice {
-            padding: 16px;
-            border: 1px solid currentColor;
-            border-radius: 8px;
-        }
-
-        hr {
-            margin: 60px 0;
-        }
-
-        a {
-            color: inherit;
-        }
-    </style>
-</head>
-
-<body>
-
-    <h1>Политика конфиденциальности Atmos Studio</h1>
-
-    <p><strong>Дата вступления в силу:</strong> 30 июля 2026 года</p>
-    <p><strong>Дата последнего обновления:</strong> 30 июля 2026 года</p>
-
-    <div class="language-switcher">
-        <a href="#russian">Русская версия</a>
-        <a href="#english">English version</a>
-    </div>
-
-    <section id="russian">
-
-        <h2>1. Общие положения</h2>
-
-        <p>
-            Настоящая Политика конфиденциальности объясняет, какие данные
-            обрабатываются Discord-приложением Atmos Studio (далее —
-            «Приложение»), для каких целей они используются, как долго
-            хранятся и какие права имеют пользователи.
-        </p>
-
-        <p>
-            Используя Приложение, пользователь подтверждает, что ознакомился
-            с настоящей Политикой конфиденциальности.
-        </p>
-
-        <h2>2. Ответственный за обработку данных</h2>
-
-        <p>
-            Ответственным за обработку данных является разработчик или команда
-            разработчиков Atmos Studio.
-        </p>
-
-        <p>
-            Контактный адрес:
-            <strong>[УКАЖИТЕ КОНТАКТНЫЙ EMAIL]</strong>
-        </p>
-
-        <h2>3. Какие данные может обрабатывать Приложение</h2>
-
-        <p>
-            В зависимости от используемых функций Приложение может получать
-            и обрабатывать следующие данные:
-        </p>
-
-        <ul>
-            <li>идентификатор пользователя Discord;</li>
-            <li>имя пользователя, отображаемое имя и изображение профиля;</li>
-            <li>идентификаторы Discord-серверов, каналов, ролей и сообщений;</li>
-            <li>команды, параметры и другой контент, который пользователь сознательно передаёт Приложению;</li>
-            <li>настройки Приложения, выбранные пользователем или администраторами сервера;</li>
-            <li>информацию, необходимую для проверки разрешений и ролей;</li>
-            <li>технические журналы, сведения об ошибках и времени выполнения команд;</li>
-            <li>данные, необходимые для предотвращения злоупотреблений и обеспечения безопасности.</li>
-        </ul>
-
-        <p>
-            Приложение не запрашивает пароль пользователя Discord и не получает
-            доступ к платёжным данным пользователя через Discord.
-        </p>
-
-        <h2>4. Содержимое сообщений</h2>
-
-        <p>
-            Приложение обрабатывает содержимое команд, форм и других данных,
-            которые пользователь непосредственно отправляет Приложению.
-        </p>
-
-        <p>
-            Обычные сообщения пользователей не сохраняются, если их обработка
-            не требуется для конкретной функции Приложения. Когда содержимое
-            сообщения необходимо для выполнения команды или функции, оно
-            используется только для выполнения соответствующего запроса,
-            обеспечения безопасности или устранения технической ошибки.
-        </p>
-
-        <h2>5. Цели обработки данных</h2>
-
-        <p>Данные могут использоваться для следующих целей:</p>
-
-        <ul>
-            <li>выполнение команд и предоставление функций Приложения;</li>
-            <li>сохранение пользовательских настроек и настроек Discord-серверов;</li>
-            <li>проверка прав доступа и разрешений;</li>
-            <li>диагностика ошибок и улучшение стабильности;</li>
-            <li>предотвращение спама, злоупотреблений и неправомерного использования;</li>
-            <li>обеспечение безопасности Приложения и его пользователей;</li>
-            <li>выполнение требований законодательства.</li>
-        </ul>
-
-        <h2>6. Правовые основания обработки</h2>
-
-        <p>
-            В зависимости от обстоятельств обработка данных осуществляется
-            на следующих основаниях:
-        </p>
-
-        <ul>
-            <li>
-                необходимость обработки для предоставления функций,
-                запрошенных пользователем;
-            </li>
-
-            <li>
-                законный интерес разработчика в обеспечении безопасности,
-                стабильности и предотвращении злоупотреблений;
-            </li>
-
-            <li>
-                согласие пользователя, когда оно требуется законодательством;
-            </li>
-
-            <li>
-                выполнение применимых юридических обязательств.
-            </li>
-        </ul>
-
-        <h2>7. Передача данных третьим лицам</h2>
-
-        <p>
-            Atmos Studio не продаёт и не сдаёт в аренду персональные данные
-            пользователей и не использует их для показа персонализированной
-            рекламы.
-        </p>
-
-        <p>
-            Данные могут обрабатываться следующими категориями получателей:
-        </p>
-
-        <ul>
-            <li>
-                Discord, поскольку Приложение работает через платформу
-                и программные интерфейсы Discord;
-            </li>
-
-            <li>
-                поставщики серверной инфраструктуры, хостинга, баз данных
-                и технического мониторинга;
-            </li>
-
-            <li>
-                GitHub, если страница настоящей Политики размещена
-                с использованием GitHub Pages;
-            </li>
-
-            <li>
-                государственные органы, когда передача данных требуется
-                применимым законодательством.
-            </li>
-        </ul>
-
-        <p>
-            Поставщикам услуг передаются только те данные, которые необходимы
-            для предоставления соответствующей услуги.
-        </p>
-
-        <h2>8. Хранение данных</h2>
-
-        <p>
-            Данные хранятся только в течение срока, необходимого для целей,
-            описанных в настоящей Политике.
-        </p>
-
-        <ul>
-            <li>
-                настройки серверов могут храниться, пока Приложение установлено
-                на соответствующем Discord-сервере;
-            </li>
-
-            <li>
-                технические журналы и сведения об ошибках могут храниться
-                до 30 дней;
-            </li>
-
-            <li>
-                данные, необходимые для предотвращения злоупотреблений,
-                могут храниться дольше, если это обоснованно необходимо
-                для безопасности;
-            </li>
-
-            <li>
-                данные могут храниться дольше, если этого требует закон
-                или необходимо для разрешения юридического спора.
-            </li>
-        </ul>
-
-        <p>
-            После удаления Приложения с сервера связанные с этим сервером
-            настройки удаляются или обезличиваются в разумный срок,
-            как правило, не позднее 30 дней.
-        </p>
-
-        <h2>9. Защита данных</h2>
-
-        <p>
-            Для защиты данных применяются разумные технические
-            и организационные меры, включая ограничение доступа,
-            контроль разрешений, защиту учётных данных и регулярное
-            обновление программного обеспечения.
-        </p>
-
-        <p>
-            Несмотря на принимаемые меры, ни один способ передачи
-            или хранения данных не может гарантировать абсолютную безопасность.
-        </p>
-
-        <h2>10. Международная обработка данных</h2>
-
-        <p>
-            Discord и некоторые поставщики инфраструктуры могут обрабатывать
-            данные за пределами страны проживания пользователя, включая страны
-            за пределами Европейской экономической зоны.
-        </p>
-
-        <p>
-            В таких случаях обработка должна осуществляться с применением
-            предусмотренных законодательством механизмов защиты данных.
-        </p>
-
-        <h2>11. Права пользователей</h2>
-
-        <p>
-            В зависимости от применимого законодательства пользователь может
-            иметь право:
-        </p>
-
-        <ul>
-            <li>получить информацию об обработке своих данных;</li>
-            <li>запросить копию своих данных;</li>
-            <li>исправить неточные или неполные данные;</li>
-            <li>запросить удаление данных;</li>
-            <li>ограничить обработку данных;</li>
-            <li>возразить против определённых видов обработки;</li>
-            <li>получить данные в переносимом формате, когда это применимо;</li>
-            <li>отозвать ранее предоставленное согласие;</li>
-            <li>подать жалобу в компетентный орган по защите данных.</li>
-        </ul>
-
-        <h2>12. Запрос доступа или удаления данных</h2>
-
-        <p>
-            Для запроса доступа, исправления или удаления данных необходимо
-            написать на:
-            <strong>[УКАЖИТЕ КОНТАКТНЫЙ EMAIL]</strong>
-        </p>
-
-        <p>
-            В обращении следует указать Discord User ID и описать свой запрос.
-            Не следует отправлять пароль, токен Discord или другие секретные
-            данные.
-        </p>
-
-        <p>
-            Перед выполнением запроса разработчик может запросить разумное
-            подтверждение того, что обратившийся человек является владельцем
-            соответствующей учётной записи.
-        </p>
-
-        <p>
-            Обоснованные запросы обрабатываются без неоправданной задержки
-            и в сроки, установленные применимым законодательством.
-        </p>
-
-        <h2>13. Данные несовершеннолетних</h2>
-
-        <p>
-            Приложение не предназначено для лиц, которые не достигли
-            минимального возраста, необходимого для законного использования
-            Discord в их стране.
-        </p>
-
-        <p>
-            Разработчик сознательно не собирает данные детей в нарушение
-            применимого законодательства. При обнаружении таких данных
-            они могут быть удалены.
-        </p>
-
-        <h2>14. Сторонние сервисы</h2>
-
-        <p>
-            Использование Discord регулируется собственными условиями
-            и политикой конфиденциальности Discord. Atmos Studio не отвечает
-            за самостоятельную обработку данных платформой Discord
-            или другими независимыми сторонними сервисами.
-        </p>
-
-        <h2>15. Изменения Политики конфиденциальности</h2>
-
-        <p>
-            Настоящая Политика может изменяться при обновлении Приложения,
-            изменении способов обработки данных или требований законодательства.
-        </p>
-
-        <p>
-            Актуальная версия публикуется на этой странице. Дата последнего
-            обновления указывается в начале документа.
-        </p>
-
-        <h2>16. Контактная информация</h2>
-
-        <p>
-            По вопросам, связанным с настоящей Политикой или обработкой данных,
-            обращайтесь по адресу:
-            <strong>[УКАЖИТЕ КОНТАКТНЫЙ EMAIL]</strong>
-        </p>
-
-    </section>
-
-    <hr>
-
-    <section id="english">
-
-        <h1>Atmos Studio Privacy Policy</h1>
-
-        <p><strong>Effective date:</strong> July 30, 2026</p>
-        <p><strong>Last updated:</strong> July 30, 2026</p>
-
-        <h2>1. Introduction</h2>
-
-        <p>
-            This Privacy Policy explains what information is processed by the
-            Atmos Studio Discord application (the “Application”), why the
-            information is processed, how long it is retained, and what rights
-            users may have regarding their information.
-        </p>
-
-        <p>
-            By using the Application, you acknowledge that you have read
-            this Privacy Policy.
-        </p>
-
-        <h2>2. Data Controller</h2>
-
-        <p>
-            The developer or development team operating Atmos Studio is
-            responsible for the processing of personal data described
-            in this Privacy Policy.
-        </p>
-
-        <p>
-            Contact address:
-            <strong>[ENTER CONTACT EMAIL]</strong>
-        </p>
-
-        <h2>3. Information We May Process</h2>
-
-        <p>
-            Depending on the features being used, the Application may receive
-            and process the following information:
-        </p>
-
-        <ul>
-            <li>your Discord user ID;</li>
-            <li>your username, display name, and profile image;</li>
-            <li>Discord server, channel, role, and message IDs;</li>
-            <li>commands, parameters, and other content you intentionally submit to the Application;</li>
-            <li>Application settings selected by users or server administrators;</li>
-            <li>information required to verify roles and permissions;</li>
-            <li>technical logs, error reports, and command execution information;</li>
-            <li>information required to prevent abuse and maintain security.</li>
-        </ul>
-
-        <p>
-            The Application does not request your Discord password and does not
-            obtain access to your Discord payment information.
-        </p>
-
-        <h2>4. Message Content</h2>
-
-        <p>
-            The Application processes commands, forms, and other information
-            that users directly submit to it.
-        </p>
-
-        <p>
-            Ordinary user messages are not retained unless processing them is
-            necessary for a specific feature of the Application. When message
-            content is required to perform a command or feature, it is used only
-            to perform the relevant request, maintain security, or investigate
-            a technical error.
-        </p>
-
-        <h2>5. How We Use Information</h2>
-
-        <p>Information may be used to:</p>
-
-        <ul>
-            <li>execute commands and provide Application features;</li>
-            <li>store user and Discord server settings;</li>
-            <li>verify permissions and access rights;</li>
-            <li>diagnose errors and improve reliability;</li>
-            <li>prevent spam, abuse, and unauthorized use;</li>
-            <li>protect the Application and its users;</li>
-            <li>comply with applicable legal obligations.</li>
-        </ul>
-
-        <h2>6. Legal Bases for Processing</h2>
-
-        <p>
-            Depending on the circumstances, information may be processed
-            on the following legal bases:
-        </p>
-
-        <ul>
-            <li>
-                processing necessary to provide features requested by the user;
-            </li>
-
-            <li>
-                our legitimate interests in maintaining security, reliability,
-                and preventing abuse;
-            </li>
-
-            <li>
-                the user's consent, where consent is required by law;
-            </li>
-
-            <li>
-                compliance with applicable legal obligations.
-            </li>
-        </ul>
-
-        <h2>7. Sharing of Information</h2>
-
-        <p>
-            Atmos Studio does not sell or rent users' personal information
-            and does not use it for personalized advertising.
-        </p>
-
-        <p>
-            Information may be processed by the following categories
-            of recipients:
-        </p>
-
-        <ul>
-            <li>
-                Discord, because the Application operates through the Discord
-                platform and Discord APIs;
-            </li>
-
-            <li>
-                server infrastructure, hosting, database, and technical
-                monitoring providers;
-            </li>
-
-            <li>
-                GitHub, where this Privacy Policy is hosted using GitHub Pages;
-            </li>
-
-            <li>
-                public authorities where disclosure is required by applicable law.
-            </li>
-        </ul>
-
-        <p>
-            Service providers receive only the information reasonably necessary
-            to provide their services.
-        </p>
-
-        <h2>8. Data Retention</h2>
-
-        <p>
-            Information is retained only for as long as reasonably necessary
-            for the purposes described in this Privacy Policy.
-        </p>
-
-        <ul>
-            <li>
-                server settings may be retained while the Application remains
-                installed on the relevant Discord server;
-            </li>
-
-            <li>
-                technical logs and error information may be retained
-                for up to 30 days;
-            </li>
-
-            <li>
-                information required to prevent abuse may be retained for longer
-                where reasonably necessary for security;
-            </li>
-
-            <li>
-                information may be retained for longer where required by law
-                or necessary to resolve a legal dispute.
-            </li>
-        </ul>
-
-        <p>
-            When the Application is removed from a server, settings associated
-            with that server will be deleted or anonymized within a reasonable
-            period, normally no later than 30 days.
-        </p>
-
-        <h2>9. Data Security</h2>
-
-        <p>
-            We use reasonable technical and organizational measures to protect
-            information, including access restrictions, permission controls,
-            credential protection, and software updates.
-        </p>
-
-        <p>
-            However, no method of electronic transmission or storage can
-            guarantee absolute security.
-        </p>
-
-        <h2>10. International Data Processing</h2>
-
-        <p>
-            Discord and some infrastructure providers may process information
-            outside the user's country, including outside the European
-            Economic Area.
-        </p>
-
-        <p>
-            Where required, such processing should be protected by appropriate
-            safeguards recognized under applicable data protection law.
-        </p>
-
-        <h2>11. User Rights</h2>
-
-        <p>
-            Depending on applicable law, users may have the right to:
-        </p>
-
-        <ul>
-            <li>receive information about the processing of their data;</li>
-            <li>request access to their data;</li>
-            <li>correct inaccurate or incomplete data;</li>
-            <li>request deletion of their data;</li>
-            <li>restrict the processing of their data;</li>
-            <li>object to certain processing activities;</li>
-            <li>receive their data in a portable format where applicable;</li>
-            <li>withdraw previously provided consent;</li>
-            <li>submit a complaint to a competent data protection authority.</li>
-        </ul>
-
-        <h2>12. Data Access and Deletion Requests</h2>
-
-        <p>
-            To request access, correction, or deletion of your information,
-            contact:
-            <strong>[ENTER CONTACT EMAIL]</strong>
-        </p>
-
-        <p>
-            Your request should include your Discord User ID and a description
-            of your request. Do not send your password, Discord token,
-            or any other secret credentials.
-        </p>
-
-        <p>
-            Before completing a request, we may require reasonable verification
-            that the person making the request controls the relevant
-            Discord account.
-        </p>
-
-        <p>
-            Valid requests will be handled without undue delay and within
-            the time limits required by applicable law.
-        </p>
-
-        <h2>13. Children's Privacy</h2>
-
-        <p>
-            The Application is not intended for individuals who are below
-            the minimum age required to lawfully use Discord in their country.
-        </p>
-
-        <p>
-            We do not knowingly collect children's personal information
-            in violation of applicable law. If such information is discovered,
-            it may be deleted.
-        </p>
-
-        <h2>14. Third-Party Services</h2>
-
-        <p>
-            Your use of Discord is also governed by Discord's own terms
-            and privacy policy. Atmos Studio is not responsible for independent
-            data processing performed by Discord or other independent
-            third-party services.
-        </p>
-
-        <h2>15. Changes to This Privacy Policy</h2>
-
-        <p>
-            This Privacy Policy may be updated when the Application, our data
-            practices, or legal requirements change.
-        </p>
-
-        <p>
-            The current version will always be published on this page.
-            The “Last updated” date will show when the most recent changes
-            were made.
-        </p>
-
-        <h2>16. Contact Information</h2>
-
-        <p>
-            For questions regarding this Privacy Policy or the processing
-            of your information, contact:
-            <strong>[ENTER CONTACT EMAIL]</strong>
-        </p>
-
-    </section>
-
-</body>
-</html>
+# Политика конфиденциальности Atmos Studio
+
+Дата вступления в силу: 30 июля 2026 года  
+Последнее обновление: 30 июля 2026 года
+
+## 1. Общие положения
+
+Настоящая Политика конфиденциальности описывает, какие данные обрабатывает Discord-приложение Atmos Studio, для каких целей они используются, как они хранятся и каким образом пользователь может запросить их удаление.
+
+Используя Atmos Studio, пользователь подтверждает, что ознакомился с настоящей Политикой конфиденциальности.
+
+## 2. Какие данные может обрабатывать приложение
+
+В зависимости от используемых функций Atmos Studio может обрабатывать следующие данные:
+
+- идентификатор пользователя Discord;
+- имя пользователя и отображаемое имя;
+- изображение профиля пользователя;
+- идентификаторы Discord-серверов, каналов, ролей и сообщений;
+- команды, параметры команд и другую информацию, которую пользователь самостоятельно отправляет приложению;
+- настройки приложения, выбранные пользователем или администрацией Discord-сервера;
+- техническую информацию, необходимую для диагностики ошибок, обеспечения безопасности и предотвращения злоупотреблений.
+
+Atmos Studio не запрашивает пароль пользователя, токен Discord или платёжные данные.
+
+## 3. Содержимое сообщений
+
+Atmos Studio может обрабатывать содержимое команд и других сообщений, которые пользователь непосредственно отправляет приложению.
+
+Обычные сообщения пользователей не сохраняются, если их обработка не требуется для работы конкретной функции приложения. Когда содержимое сообщения необходимо для выполнения команды, оно используется только для выполнения соответствующего запроса, обеспечения безопасности или устранения технической ошибки.
+
+## 4. Для чего используются данные
+
+Полученные данные могут использоваться для следующих целей:
+
+- выполнение команд и предоставление функций приложения;
+- сохранение пользовательских настроек и настроек Discord-серверов;
+- проверка ролей и разрешений;
+- обеспечение стабильной и безопасной работы приложения;
+- диагностика и исправление ошибок;
+- предотвращение спама, злоупотреблений и несанкционированного использования;
+- выполнение требований применимого законодательства.
+
+## 5. Передача данных третьим лицам
+
+Atmos Studio не продаёт и не сдаёт в аренду персональные данные пользователей, а также не использует их для показа персонализированной рекламы.
+
+Данные могут обрабатываться:
+
+- платформой Discord, поскольку приложение работает через Discord и его программные интерфейсы;
+- поставщиками хостинга, серверной инфраструктуры, баз данных и технического мониторинга;
+- государственными органами, если передача информации требуется законодательством.
+
+Сторонним поставщикам передаётся только та информация, которая необходима для предоставления соответствующих услуг.
+
+## 6. Хранение данных
+
+Данные хранятся только в течение срока, необходимого для работы приложения и достижения целей, указанных в настоящей Политике.
+
+Настройки Discord-сервера могут храниться, пока Atmos Studio установлено на соответствующем сервере.
+
+Технические журналы и сведения об ошибках могут храниться до 30 дней. Информация, необходимая для предотвращения злоупотреблений или выполнения требований законодательства, может храниться дольше, если для этого существует обоснованная необходимость.
+
+После удаления приложения с Discord-сервера связанные с этим сервером настройки удаляются или обезличиваются в разумный срок.
+
+## 7. Защита данных
+
+Для защиты данных применяются разумные технические и организационные меры, включая ограничение доступа, защиту учётных данных, контроль разрешений и регулярное обновление программного обеспечения.
+
+Несмотря на принимаемые меры, ни один способ электронной передачи или хранения информации не может гарантировать абсолютную безопасность.
+
+## 8. Права пользователей
+
+В зависимости от применимого законодательства пользователь может иметь право:
+
+- запросить информацию об обработке своих данных;
+- получить копию своих данных;
+- исправить неточные данные;
+- запросить удаление своих данных;
+- ограничить обработку своих данных;
+- возразить против определённых способов обработки;
+- отозвать ранее предоставленное согласие;
+- подать жалобу в компетентный орган по защите данных.
+
+## 9. Запрос удаления данных
+
+Для запроса доступа, исправления или удаления данных пользователь может написать на адрес:
+
+atmos.studio.team@gmail.com
+
+В обращении необходимо указать свой Discord User ID и описать запрос.
+
+Не отправляйте пароль, токен Discord или другие секретные данные.
+
+Перед выполнением запроса Atmos Studio может попросить подтвердить, что обратившийся пользователь является владельцем соответствующей учётной записи Discord.
+
+## 10. Данные несовершеннолетних
+
+Atmos Studio не предназначено для лиц, которые не достигли минимального возраста, необходимого для законного использования Discord в их стране.
+
+Приложение сознательно не собирает персональные данные детей в нарушение применимого законодательства. Если такие данные будут обнаружены, они могут быть удалены.
+
+## 11. Сторонние сервисы
+
+Использование Discord также регулируется собственными условиями использования и Политикой конфиденциальности Discord.
+
+Atmos Studio не несёт ответственности за самостоятельную обработку данных платформой Discord или другими независимыми сторонними сервисами.
+
+## 12. Изменения Политики конфиденциальности
+
+Настоящая Политика конфиденциальности может периодически обновляться в связи с изменением функций приложения, способов обработки данных или требований законодательства.
+
+Актуальная версия Политики всегда публикуется на этой странице. Дата последнего обновления указывается в начале документа.
+
+## 13. Контактная информация
+
+По вопросам, связанным с настоящей Политикой конфиденциальности или обработкой данных, обращайтесь по адресу:
+
+atmos.studio.team@gmail.com
+
+
+---
+
+# Atmos Studio Privacy Policy
+
+Effective date: July 30, 2026  
+Last updated: July 30, 2026
+
+## 1. Introduction
+
+This Privacy Policy explains what information is processed by the Atmos Studio Discord application, why it is processed, how it is stored, and how users may request its deletion.
+
+By using Atmos Studio, you acknowledge that you have read this Privacy Policy.
+
+## 2. Information We May Process
+
+Depending on the features being used, Atmos Studio may process the following information:
+
+- your Discord user ID;
+- your username and display name;
+- your profile image;
+- Discord server, channel, role, and message IDs;
+- commands, command parameters, and other information that you intentionally submit to the application;
+- application settings selected by users or Discord server administrators;
+- technical information required to diagnose errors, maintain security, and prevent abuse.
+
+Atmos Studio does not request your password, Discord token, or payment information.
+
+## 3. Message Content
+
+Atmos Studio may process commands and other messages that users directly submit to the application.
+
+Ordinary user messages are not retained unless processing them is necessary for a specific application feature. When message content is required to perform a command, it is used only to complete the relevant request, maintain security, or investigate a technical error.
+
+## 4. How We Use Information
+
+Information may be used to:
+
+- execute commands and provide application features;
+- store user and Discord server settings;
+- verify roles and permissions;
+- maintain the stability and security of the application;
+- diagnose and correct technical errors;
+- prevent spam, abuse, and unauthorized use;
+- comply with applicable legal obligations.
+
+## 5. Sharing of Information
+
+Atmos Studio does not sell or rent users’ personal information and does not use it for personalized advertising.
+
+Information may be processed by:
+
+- Discord, because the application operates through the Discord platform and Discord APIs;
+- hosting, server infrastructure, database, and technical monitoring providers;
+- public authorities where disclosure is required by applicable law.
+
+Third-party service providers receive only the information reasonably necessary to provide their services.
+
+## 6. Data Retention
+
+Information is retained only for as long as reasonably necessary to operate the application and fulfil the purposes described in this Privacy Policy.
+
+Discord server settings may be retained while Atmos Studio remains installed on the relevant server.
+
+Technical logs and error information may be retained for up to 30 days. Information required to prevent abuse or comply with legal obligations may be retained for longer where reasonably necessary.
+
+When the application is removed from a Discord server, settings associated with that server will be deleted or anonymized within a reasonable period.
+
+## 7. Data Security
+
+Reasonable technical and organizational measures are used to protect information, including access restrictions, credential protection, permission controls, and regular software updates.
+
+However, no method of electronic transmission or storage can guarantee absolute security.
+
+## 8. User Rights
+
+Depending on applicable law, users may have the right to:
+
+- request information about the processing of their data;
+- request access to a copy of their data;
+- correct inaccurate information;
+- request deletion of their data;
+- restrict the processing of their data;
+- object to certain processing activities;
+- withdraw previously provided consent;
+- submit a complaint to a competent data protection authority.
+
+## 9. Data Access and Deletion Requests
+
+To request access, correction, or deletion of your information, contact:
+
+atmos.studio.team@gmail.com
+
+Your request should include your Discord User ID and a description of your request.
+
+Do not send your password, Discord token, or any other secret credentials.
+
+Before completing a request, Atmos Studio may require reasonable verification that the person making the request controls the relevant Discord account.
+
+## 10. Children’s Privacy
+
+Atmos Studio is not intended for individuals who are below the minimum age required to lawfully use Discord in their country.
+
+The application does not knowingly collect children’s personal information in violation of applicable law. If such information is discovered, it may be deleted.
+
+## 11. Third-Party Services
+
+The use of Discord is also governed by Discord’s own Terms of Service and Privacy Policy.
+
+Atmos Studio is not responsible for independent data processing performed by Discord or other independent third-party services.
+
+## 12. Changes to This Privacy Policy
+
+This Privacy Policy may be updated when the application, our data practices, or applicable legal requirements change.
+
+The current version will always be published on this page. The date at the beginning of this document indicates when it was last updated.
+
+## 13. Contact Information
+
+For questions regarding this Privacy Policy or the processing of personal information, contact:
+
+atmos.studio.team@gmail.com
