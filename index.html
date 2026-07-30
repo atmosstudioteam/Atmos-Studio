@@ -9,13 +9,10 @@
 
     <meta
         name="description"
-        content="Atmos Studio creates ambitious Minecraft modpacks, Discord applications, development tools, and related digital products."
+        content="Atmos Studio creates Minecraft modpacks, Discord applications, development tools, and related digital products."
     >
 
-    <meta
-        name="theme-color"
-        content="#0d1117"
-    >
+    <meta name="theme-color" content="#0d1117">
 
     <title>Atmos Studio</title>
 
@@ -29,7 +26,6 @@
             --surface-highlight: #232b38;
 
             --border: #30363d;
-            --border-accent: rgba(139, 92, 246, 0.65);
 
             --text: #e6edf3;
             --muted: #9da7b3;
@@ -67,7 +63,7 @@
                     transparent 34rem
                 ),
                 radial-gradient(
-                    circle at 92% 20%,
+                    circle at 92% 18%,
                     rgba(91, 70, 180, 0.08),
                     transparent 30rem
                 ),
@@ -115,7 +111,7 @@
                 linear-gradient(
                     to bottom,
                     rgba(0, 0, 0, 0.75),
-                    transparent 70%
+                    transparent 72%
                 );
         }
 
@@ -126,11 +122,6 @@
 
         a:hover {
             text-decoration: none;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
         }
 
         .page {
@@ -151,7 +142,7 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
 
             margin-bottom: 22px;
             padding: 12px;
@@ -159,7 +150,7 @@
             border: 1px solid var(--border);
             border-radius: 18px;
 
-            background: rgba(22, 27, 34, 0.9);
+            background: rgba(22, 27, 34, 0.92);
 
             box-shadow:
                 0 14px 35px rgba(0, 0, 0, 0.25),
@@ -183,7 +174,6 @@
             font-weight: 800;
             letter-spacing: 0.035em;
             text-transform: uppercase;
-
             white-space: nowrap;
         }
 
@@ -228,14 +218,14 @@
             justify-content: center;
 
             min-height: 40px;
-            padding: 7px 15px;
+            padding: 7px 14px;
 
             border: 1px solid transparent;
             border-radius: 9px;
 
             color: var(--muted);
 
-            font-size: 0.91rem;
+            font-size: 0.9rem;
             font-weight: 750;
             white-space: nowrap;
 
@@ -253,7 +243,7 @@
         }
 
         .navigation-tab.active {
-            border-color: var(--border-accent);
+            border-color: rgba(139, 92, 246, 0.68);
 
             background:
                 linear-gradient(
@@ -269,34 +259,201 @@
                 0 6px 20px rgba(88, 55, 160, 0.18);
         }
 
-        .header-contact {
+        .social-navigation {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
 
             min-height: 44px;
-            padding: 8px 15px;
+            padding: 8px 13px;
 
             border: 1px solid var(--border);
             border-radius: 11px;
 
             background: var(--surface-secondary);
-            color: var(--accent-secondary);
+            color: var(--text);
 
-            font-size: 0.91rem;
+            font-size: 0.89rem;
             font-weight: 750;
             white-space: nowrap;
 
             transition:
+                transform 160ms ease,
                 border-color 160ms ease,
                 background 160ms ease,
-                transform 160ms ease;
+                box-shadow 160ms ease;
         }
 
-        .header-contact:hover {
+        .social-button svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            fill: currentColor;
+        }
+
+        .social-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .social-button.discord {
+            color: #b9bfff;
+        }
+
+        .social-button.discord:hover {
+            border-color: rgba(88, 101, 242, 0.75);
+            background: rgba(88, 101, 242, 0.14);
+
+            box-shadow:
+                0 8px 22px rgba(88, 101, 242, 0.15);
+        }
+
+        .social-button.telegram {
+            color: #83d8ff;
+        }
+
+        .social-button.telegram:hover {
+            border-color: rgba(34, 158, 217, 0.75);
+            background: rgba(34, 158, 217, 0.13);
+
+            box-shadow:
+                0 8px 22px rgba(34, 158, 217, 0.14);
+        }
+
+        /* ========================================================= */
+        /* LANGUAGE NAVIGATION                                       */
+        /* ========================================================= */
+
+        .language-panel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+
+            margin-bottom: 24px;
+            padding: 18px;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background: var(--surface);
+        }
+
+        .language-label {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .language-label strong {
+            font-size: 0.98rem;
+        }
+
+        .language-label span {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .language-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .language-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 140px;
+            min-height: 42px;
+            padding: 8px 18px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background: var(--surface-secondary);
+            color: var(--accent-secondary);
+
+            font-weight: 750;
+
+            transition:
+                transform 160ms ease,
+                border-color 160ms ease,
+                background 160ms ease;
+        }
+
+        .language-button:hover {
+            transform: translateY(-1px);
+
             border-color: rgba(139, 92, 246, 0.58);
             background: rgba(139, 92, 246, 0.12);
-            transform: translateY(-1px);
+        }
+
+        /* ========================================================= */
+        /* LANGUAGE DIVIDERS                                         */
+        /* ========================================================= */
+
+        .language-divider {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+
+            margin: 58px 0 36px;
+
+            color: #b8c2d1;
+
+            font-size: 0.93rem;
+            font-weight: 850;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+        }
+
+        .language-divider::before,
+        .language-divider::after {
+            content: "";
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--border)
+                );
+        }
+
+        .language-divider::after {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--border),
+                    transparent
+                );
+        }
+
+        .language-divider span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 34px;
+            padding: 5px 14px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: var(--surface);
+        }
+
+        .language-version {
+            scroll-margin-top: 110px;
         }
 
         /* ========================================================= */
@@ -307,7 +464,7 @@
             position: relative;
             overflow: hidden;
 
-            min-height: 510px;
+            min-height: 500px;
 
             display: flex;
             align-items: center;
@@ -332,8 +489,10 @@
             content: "";
 
             position: absolute;
+
             width: 430px;
             height: 430px;
+
             right: -135px;
             top: -165px;
 
@@ -346,7 +505,6 @@
                     transparent 68%
                 );
 
-            filter: blur(2px);
             pointer-events: none;
         }
 
@@ -354,8 +512,10 @@
             content: "";
 
             position: absolute;
+
             width: 230px;
             height: 230px;
+
             right: 80px;
             bottom: -130px;
 
@@ -364,8 +524,7 @@
 
             transform: rotate(28deg);
 
-            background:
-                rgba(139, 92, 246, 0.035);
+            background: rgba(139, 92, 246, 0.035);
 
             pointer-events: none;
         }
@@ -393,7 +552,6 @@
 
         h1 {
             max-width: 900px;
-
             margin: 0 0 22px;
 
             font-size: clamp(3rem, 8vw, 6.1rem);
@@ -445,6 +603,7 @@
             height: 7px;
 
             border-radius: 50%;
+
             background: var(--accent);
 
             box-shadow:
@@ -518,7 +677,7 @@
         }
 
         /* ========================================================= */
-        /* SECTIONS                                                  */
+        /* CONTENT SECTIONS                                          */
         /* ========================================================= */
 
         .section-divider {
@@ -579,8 +738,7 @@
             border: 1px solid var(--border);
             border-radius: 22px;
 
-            background:
-                rgba(22, 27, 34, 0.92);
+            background: rgba(22, 27, 34, 0.92);
 
             box-shadow: var(--shadow);
         }
@@ -622,6 +780,7 @@
 
         .section-description {
             margin: 0;
+
             color: var(--muted);
             font-size: 1.02rem;
         }
@@ -638,9 +797,6 @@
         }
 
         .product-card {
-            position: relative;
-            overflow: hidden;
-
             min-height: 245px;
             padding: 24px;
 
@@ -662,6 +818,7 @@
 
         .product-card:hover {
             transform: translateY(-4px);
+
             border-color: rgba(139, 92, 246, 0.52);
 
             background:
@@ -705,6 +862,7 @@
             margin-top: 18px;
 
             color: #b7c1ce;
+
             font-size: 0.87rem;
             font-weight: 700;
         }
@@ -714,6 +872,7 @@
             height: 8px;
 
             border-radius: 50%;
+
             background: var(--success);
 
             box-shadow:
@@ -787,7 +946,7 @@
         }
 
         /* ========================================================= */
-        /* FEATURE LINKS                                             */
+        /* EXPLORE LINKS                                             */
         /* ========================================================= */
 
         .link-grid {
@@ -831,12 +990,13 @@
 
         .feature-link-arrow {
             color: var(--accent-secondary);
+
             font-size: 1.3rem;
             font-weight: 800;
         }
 
         /* ========================================================= */
-        /* CTA                                                       */
+        /* CONTACT                                                   */
         /* ========================================================= */
 
         .cta-section {
@@ -862,6 +1022,7 @@
             content: "";
 
             position: absolute;
+
             width: 250px;
             height: 250px;
 
@@ -892,7 +1053,7 @@
         /* ========================================================= */
 
         footer {
-            margin-top: 38px;
+            margin-top: 42px;
             padding: 26px;
 
             border: 1px solid var(--border);
@@ -918,16 +1079,17 @@
             text-transform: uppercase;
         }
 
-        .footer-links {
+        .footer-navigation,
+        .footer-socials {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
 
-            margin-bottom: 17px;
+            margin-bottom: 14px;
         }
 
-        .footer-links a {
+        .footer-navigation a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -945,7 +1107,7 @@
             font-weight: 700;
         }
 
-        .footer-links a:hover {
+        .footer-navigation a:hover {
             border-color: rgba(139, 92, 246, 0.55);
             background: rgba(139, 92, 246, 0.1);
         }
@@ -959,7 +1121,7 @@
         /* RESPONSIVE                                                */
         /* ========================================================= */
 
-        @media (max-width: 980px) {
+        @media (max-width: 1080px) {
             .site-header {
                 position: static;
                 grid-template-columns: 1fr;
@@ -978,8 +1140,12 @@
                 flex: 1 1 150px;
             }
 
-            .header-contact {
+            .social-navigation {
                 width: 100%;
+            }
+
+            .social-button {
+                flex: 1;
             }
 
             .product-grid,
@@ -992,6 +1158,26 @@
             .page {
                 width: min(100% - 20px, 1120px);
                 padding-top: 10px;
+            }
+
+            .language-panel {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .language-actions {
+                flex-direction: column;
+            }
+
+            .language-button {
+                width: 100%;
+            }
+
+            .language-divider,
+            .section-divider {
+                gap: 10px;
+                margin: 44px 0 28px;
+                font-size: 0.79rem;
             }
 
             .hero {
@@ -1023,27 +1209,25 @@
                 width: 100%;
             }
 
-            .section-divider {
-                gap: 10px;
-                margin: 46px 0 28px;
-                font-size: 0.78rem;
-            }
-
-            .footer-links {
+            .footer-navigation,
+            .footer-socials {
                 flex-direction: column;
             }
 
-            .footer-links a {
+            .footer-navigation a,
+            .footer-socials a {
                 width: 100%;
             }
         }
 
         @media (max-width: 520px) {
-            .page-navigation {
+            .page-navigation,
+            .social-navigation {
                 flex-direction: column;
             }
 
-            .navigation-tab {
+            .navigation-tab,
+            .social-button {
                 width: 100%;
                 flex: none;
             }
@@ -1062,10 +1246,6 @@
 
 <body>
     <main class="page">
-
-        <!-- ===================================================== -->
-        <!-- TOP NAVIGATION                                      -->
-        <!-- ===================================================== -->
 
         <header class="site-header">
             <a
@@ -1111,380 +1291,778 @@
                 </a>
             </nav>
 
-            <a
-                class="header-contact"
-                href="mailto:atmos.studio.team@gmail.com"
+            <nav
+                class="social-navigation"
+                aria-label="Atmos Studio communities"
             >
-                Contact
-            </a>
+                <a
+                    class="social-button discord"
+                    href="https://discord.gg/YOUR_INVITE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.54 5.34A16.3 16.3 0 0 0 15.44 4a11.4 11.4 0 0 0-.52 1.07 15.25 15.25 0 0 0-4.84 0A11.4 11.4 0 0 0 9.56 4a16.4 16.4 0 0 0-4.11 1.35C2.85 9.2 2.15 12.95 2.5 16.65a16.7 16.7 0 0 0 5.03 2.55c.41-.55.77-1.14 1.08-1.76a10.7 10.7 0 0 1-1.7-.82c.14-.1.28-.21.41-.32a11.7 11.7 0 0 0 10.36 0l.42.32c-.55.33-1.12.6-1.71.82.31.62.67 1.21 1.08 1.76a16.6 16.6 0 0 0 5.03-2.55c.41-4.29-.7-8-2.96-11.31ZM9.22 14.38c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Zm5.56 0c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Z"/>
+                    </svg>
+
+                    Discord
+                </a>
+
+                <a
+                    class="social-button telegram"
+                    href="https://t.me/YOUR_CHANNEL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.7 3.2 18.6 20c-.23 1.19-.85 1.48-1.72.92l-4.72-3.48-2.28 2.19c-.25.25-.46.46-.95.46l.34-4.81 8.76-7.92c.38-.34-.08-.53-.59-.19L6.61 13.99l-4.67-1.46c-1.02-.32-1.04-1.02.21-1.51L20.42 3.98c.85-.31 1.59.19 1.28-.78Z"/>
+                    </svg>
+
+                    Telegram
+                </a>
+            </nav>
         </header>
 
+        <nav
+            class="language-panel"
+            aria-label="Language navigation"
+        >
+            <div class="language-label">
+                <strong>Language / Язык</strong>
+
+                <span>
+                    Jump to the required version of the page
+                </span>
+            </div>
+
+            <div class="language-actions">
+                <a class="language-button" href="#english">
+                    English
+                </a>
+
+                <a class="language-button" href="#russian">
+                    Русский
+                </a>
+            </div>
+        </nav>
+
         <!-- ===================================================== -->
-        <!-- HERO                                                -->
+        <!-- ENGLISH VERSION                                      -->
         <!-- ===================================================== -->
 
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-brand">
-                    <span class="brand-mark"></span>
-                    Independent Development Studio
+        <div class="language-divider">
+            <span>English version</span>
+        </div>
+
+        <section
+            class="language-version"
+            id="english"
+            lang="en"
+        >
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-brand">
+                        <span class="brand-mark"></span>
+                        Independent Development Studio
+                    </div>
+
+                    <h1>
+                        Atmos
+                        <span class="hero-title-accent">Studio</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        We create ambitious Minecraft experiences,
+                        carefully designed modpacks, Discord applications,
+                        development tools, and digital products built around
+                        strong ideas, detailed systems, and long-term support.
+                    </p>
+
+                    <div class="metadata">
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Minecraft Modpacks
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Discord Applications
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Development Tools
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Independent Projects
+                        </span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a
+                            class="primary-button"
+                            href="./builds.html"
+                        >
+                            Explore Builds
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            class="secondary-button"
+                            href="mailto:atmos.studio.team@gmail.com"
+                        >
+                            Contact Atmos Studio
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>About Atmos Studio</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Our direction
+                    </p>
+
+                    <h2>
+                        Digital projects built as complete experiences
+                    </h2>
+
+                    <p class="section-description">
+                        Atmos Studio develops products that combine technical
+                        depth, visual identity, structured progression, and
+                        carefully maintained content.
+                    </p>
                 </div>
 
-                <h1>
-                    Atmos
-                    <span class="hero-title-accent">Studio</span>
-                </h1>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-icon">
+                            M
+                        </div>
 
-                <p class="hero-description">
-                    We create ambitious Minecraft experiences,
-                    carefully designed modpacks, Discord applications,
-                    development tools, and digital products built around
-                    strong ideas, detailed systems, and long-term support.
-                </p>
+                        <h3>Minecraft Modpacks</h3>
 
-                <div class="metadata">
-                    <span class="badge">
-                        <span class="badge-dot"></span>
-                        Minecraft Modpacks
-                    </span>
+                        <p>
+                            Large, curated modpacks with custom progression,
+                            quests, scripts, configurations, visual design,
+                            balancing, and original gameplay systems.
+                        </p>
 
-                    <span class="badge">
-                        <span class="badge-dot"></span>
-                        Discord Applications
-                    </span>
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Active development
+                        </div>
+                    </article>
 
-                    <span class="badge">
-                        <span class="badge-dot"></span>
-                        Development Tools
-                    </span>
+                    <article class="product-card">
+                        <div class="product-icon">
+                            D
+                        </div>
 
-                    <span class="badge">
-                        <span class="badge-dot"></span>
-                        Independent Projects
-                    </span>
+                        <h3>Discord Applications</h3>
+
+                        <p>
+                            Community tools, integrations, automation systems,
+                            support utilities, and Discord applications built
+                            around Atmos Studio projects.
+                        </p>
+
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            In development
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-icon">
+                            T
+                        </div>
+
+                        <h3>Development Tools</h3>
+
+                        <p>
+                            Utilities for diagnostics, content creation,
+                            project management, modpack development,
+                            distribution, and technical support.
+                        </p>
+
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Expanding platform
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Release Model</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Access and distribution
+                    </p>
+
+                    <h2>
+                        Current builds first, public releases afterward
+                    </h2>
+
+                    <p class="section-description">
+                        Some Atmos Studio products use a rolling release
+                        model. Subscribers receive access to the newest
+                        available builds, while previous eligible versions
+                        later become publicly available.
+                    </p>
                 </div>
 
-                <div class="hero-actions">
+                <div class="release-grid">
+                    <article class="release-card">
+                        <div class="release-number">
+                            01
+                        </div>
+
+                        <h3>Current Builds</h3>
+
+                        <p>
+                            The newest active builds may be published through
+                            Boosty. Users with an active eligible subscription
+                            can access the updates published during their
+                            subscription period.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Boosty
+                            </span>
+
+                            <span class="platform-label">
+                                Current versions
+                            </span>
+
+                            <span class="platform-label">
+                                Subscriber access
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="release-card">
+                        <div class="release-number">
+                            02
+                        </div>
+
+                        <h3>Public Builds</h3>
+
+                        <p>
+                            When a newer current build is released, the
+                            previous eligible version may be prepared for
+                            free publication through public distribution
+                            platforms.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Modrinth
+                            </span>
+
+                            <span class="platform-label">
+                                CurseForge
+                            </span>
+
+                            <span class="platform-label">
+                                Public access
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Explore</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Atmos Studio website
+                    </p>
+
+                    <h2>
+                        Projects, releases, and legal information
+                    </h2>
+
+                    <p class="section-description">
+                        Explore available builds and review the documents
+                        governing Atmos Studio products and services.
+                    </p>
+                </div>
+
+                <div class="link-grid">
                     <a
-                        class="primary-button"
+                        class="feature-link"
                         href="./builds.html"
                     >
-                        Explore Builds
-                        <span aria-hidden="true">→</span>
+                        <div>
+                            <h3>Builds</h3>
+
+                            <p>
+                                Browse Atmos Studio projects, current releases,
+                                public versions, supported platforms, and
+                                download information.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
                     </a>
 
                     <a
-                        class="secondary-button"
-                        href="mailto:atmos.studio.team@gmail.com"
+                        class="feature-link"
+                        href="./privacy-policy.html"
                     >
-                        Contact Atmos Studio
+                        <div>
+                            <h3>Privacy Policy</h3>
+
+                            <p>
+                                Learn what information Atmos Studio may
+                                process, why it is used, and what rights
+                                users have.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
+                    </a>
+
+                    <a
+                        class="feature-link"
+                        href="./terms-of-use.html"
+                    >
+                        <div>
+                            <h3>Terms of Use</h3>
+
+                            <p>
+                                Review the rules for subscriptions, builds,
+                                licensing, distribution, payments, and
+                                product usage.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
                     </a>
                 </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Contact</span>
             </div>
+
+            <section class="cta-section">
+                <div class="cta-content">
+                    <p class="section-kicker">
+                        Questions and support
+                    </p>
+
+                    <h2>
+                        Get in touch with Atmos Studio
+                    </h2>
+
+                    <p class="section-description">
+                        Contact Atmos Studio regarding products, technical
+                        support, collaboration, privacy requests,
+                        subscriptions, or general questions.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a
+                            class="primary-button"
+                            href="mailto:atmos.studio.team@gmail.com"
+                        >
+                            atmos.studio.team@gmail.com
+                        </a>
+
+                        <a
+                            class="secondary-button"
+                            href="./builds.html"
+                        >
+                            View Builds
+                        </a>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <!-- ===================================================== -->
-        <!-- ABOUT                                               -->
+        <!-- RUSSIAN VERSION                                      -->
         <!-- ===================================================== -->
 
-        <div class="section-divider">
-            <span>About Atmos Studio</span>
+        <div class="language-divider">
+            <span>Русская версия</span>
         </div>
 
-        <section class="content-section">
-            <div class="section-heading">
-                <p class="section-kicker">
-                    Our direction
-                </p>
-
-                <h2>
-                    Digital projects built as complete experiences
-                </h2>
-
-                <p class="section-description">
-                    Atmos Studio develops products that combine technical
-                    depth, visual identity, structured progression, and
-                    carefully maintained content.
-                </p>
-            </div>
-
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="product-icon">
-                        M
+        <section
+            class="language-version"
+            id="russian"
+            lang="ru"
+        >
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-brand">
+                        <span class="brand-mark"></span>
+                        Независимая студия разработки
                     </div>
 
-                    <h3>Minecraft Modpacks</h3>
+                    <h1>
+                        Atmos
+                        <span class="hero-title-accent">Studio</span>
+                    </h1>
 
-                    <p>
-                        Large, curated modpacks with custom progression,
-                        quests, scripts, configurations, visual design,
-                        balancing, and original gameplay systems.
+                    <p class="hero-description">
+                        Мы создаём масштабные проекты для Minecraft,
+                        тщательно проработанные сборки, Discord-приложения,
+                        инструменты разработки и цифровые продукты,
+                        основанные на сильных идеях, подробных системах
+                        и долгосрочной поддержке.
                     </p>
 
-                    <div class="product-status">
-                        <span class="status-dot"></span>
-                        Active development
-                    </div>
-                </article>
+                    <div class="metadata">
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Minecraft-сборки
+                        </span>
 
-                <article class="product-card">
-                    <div class="product-icon">
-                        D
-                    </div>
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Discord-приложения
+                        </span>
 
-                    <h3>Discord Applications</h3>
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Инструменты разработки
+                        </span>
 
-                    <p>
-                        Community tools, integrations, automation systems,
-                        support utilities, and Discord applications designed
-                        around Atmos Studio products.
-                    </p>
-
-                    <div class="product-status">
-                        <span class="status-dot"></span>
-                        In development
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-icon">
-                        T
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Независимые проекты
+                        </span>
                     </div>
 
-                    <h3>Development Tools</h3>
+                    <div class="hero-actions">
+                        <a
+                            class="primary-button"
+                            href="./builds.html"
+                        >
+                            Перейти к сборкам
+                            <span aria-hidden="true">→</span>
+                        </a>
 
-                    <p>
-                        Internal and public utilities for project management,
-                        diagnostics, content creation, modpack development,
-                        distribution, and technical support.
-                    </p>
-
-                    <div class="product-status">
-                        <span class="status-dot"></span>
-                        Expanding platform
+                        <a
+                            class="secondary-button"
+                            href="mailto:atmos.studio.team@gmail.com"
+                        >
+                            Связаться с Atmos Studio
+                        </a>
                     </div>
-                </article>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <!-- ===================================================== -->
-        <!-- RELEASE MODEL                                       -->
-        <!-- ===================================================== -->
-
-        <div class="section-divider">
-            <span>Release Model</span>
-        </div>
-
-        <section class="content-section">
-            <div class="section-heading">
-                <p class="section-kicker">
-                    Access and distribution
-                </p>
-
-                <h2>
-                    Current builds first, public releases afterward
-                </h2>
-
-                <p class="section-description">
-                    Some Atmos Studio products use a rolling release model
-                    that provides subscribers with access to the newest
-                    available builds while older versions later become
-                    publicly available.
-                </p>
+            <div class="section-divider">
+                <span>Об Atmos Studio</span>
             </div>
 
-            <div class="release-grid">
-                <article class="release-card">
-                    <div class="release-number">
-                        01
-                    </div>
-
-                    <h3>Current Builds</h3>
-
-                    <p>
-                        The newest active builds may be published through
-                        Boosty for users with an active subscription.
-                        Subscribers receive access to eligible updates
-                        published during their active subscription period.
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Наше направление
                     </p>
 
-                    <div class="platform-list">
-                        <span class="platform-label">
-                            Boosty
-                        </span>
+                    <h2>
+                        Цифровые проекты как целостные произведения
+                    </h2>
 
-                        <span class="platform-label">
-                            Current versions
-                        </span>
-
-                        <span class="platform-label">
-                            Subscriber access
-                        </span>
-                    </div>
-                </article>
-
-                <article class="release-card">
-                    <div class="release-number">
-                        02
-                    </div>
-
-                    <h3>Public Builds</h3>
-
-                    <p>
-                        When a new current build is released, the previous
-                        eligible version may be prepared for free public
-                        publication through established distribution
-                        platforms.
+                    <p class="section-description">
+                        Atmos Studio разрабатывает продукты, объединяющие
+                        техническую глубину, собственный визуальный стиль,
+                        продуманное развитие и регулярно поддерживаемое
+                        содержимое.
                     </p>
+                </div>
 
-                    <div class="platform-list">
-                        <span class="platform-label">
-                            Modrinth
-                        </span>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-icon">
+                            M
+                        </div>
 
-                        <span class="platform-label">
-                            CurseForge
-                        </span>
-
-                        <span class="platform-label">
-                            Public access
-                        </span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ===================================================== -->
-        <!-- EXPLORE                                             -->
-        <!-- ===================================================== -->
-
-        <div class="section-divider">
-            <span>Explore</span>
-        </div>
-
-        <section class="content-section">
-            <div class="section-heading">
-                <p class="section-kicker">
-                    Atmos Studio website
-                </p>
-
-                <h2>
-                    Projects, releases, and legal information
-                </h2>
-
-                <p class="section-description">
-                    Use the sections below to explore available builds,
-                    learn how information is handled, and review the rules
-                    governing Atmos Studio products.
-                </p>
-            </div>
-
-            <div class="link-grid">
-                <a
-                    class="feature-link"
-                    href="./builds.html"
-                >
-                    <div>
-                        <h3>Builds</h3>
+                        <h3>Minecraft-сборки</h3>
 
                         <p>
-                            Browse Atmos Studio projects, available releases,
-                            supported versions, platforms, and download
-                            information.
+                            Масштабные и тщательно подобранные сборки
+                            с собственным развитием, квестами, скриптами,
+                            конфигурациями, балансом, оформлением
+                            и оригинальными игровыми системами.
                         </p>
-                    </div>
 
-                    <span class="feature-link-arrow">
-                        →
-                    </span>
-                </a>
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Активная разработка
+                        </div>
+                    </article>
 
-                <a
-                    class="feature-link"
-                    href="./privacy-policy.html"
-                >
-                    <div>
-                        <h3>Privacy Policy</h3>
+                    <article class="product-card">
+                        <div class="product-icon">
+                            D
+                        </div>
+
+                        <h3>Discord-приложения</h3>
 
                         <p>
-                            Learn what information Atmos Studio may process,
-                            why it is used, how it is protected, and what
-                            rights users have.
+                            Инструменты для сообществ, интеграции,
+                            системы автоматизации, техническая поддержка
+                            и Discord-приложения для проектов
+                            Atmos Studio.
                         </p>
-                    </div>
 
-                    <span class="feature-link-arrow">
-                        →
-                    </span>
-                </a>
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            В разработке
+                        </div>
+                    </article>
 
-                <a
-                    class="feature-link"
-                    href="./terms-of-use.html"
-                >
-                    <div>
-                        <h3>Terms of Use</h3>
+                    <article class="product-card">
+                        <div class="product-icon">
+                            T
+                        </div>
+
+                        <h3>Инструменты разработки</h3>
 
                         <p>
-                            Review the rules for subscriptions, builds,
-                            licensing, distribution, third-party content,
-                            payments, and product usage.
+                            Утилиты для диагностики, создания содержимого,
+                            управления проектами, разработки сборок,
+                            распространения и технической поддержки.
                         </p>
-                    </div>
 
-                    <span class="feature-link-arrow">
-                        →
-                    </span>
-                </a>
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Развивающаяся платформа
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Модель публикации</span>
             </div>
-        </section>
 
-        <!-- ===================================================== -->
-        <!-- CONTACT CTA                                         -->
-        <!-- ===================================================== -->
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Доступ и распространение
+                    </p>
 
-        <div class="section-divider">
-            <span>Contact</span>
-        </div>
+                    <h2>
+                        Сначала актуальные сборки, затем публичные версии
+                    </h2>
 
-        <section class="cta-section">
-            <div class="cta-content">
-                <p class="section-kicker">
-                    Questions and support
-                </p>
+                    <p class="section-description">
+                        Для некоторых продуктов Atmos Studio используется
+                        последовательная модель публикации. Подписчики
+                        получают доступ к новейшим сборкам, а предыдущие
+                        подходящие версии позднее становятся
+                        общедоступными.
+                    </p>
+                </div>
 
-                <h2>
-                    Get in touch with Atmos Studio
-                </h2>
+                <div class="release-grid">
+                    <article class="release-card">
+                        <div class="release-number">
+                            01
+                        </div>
 
-                <p class="section-description">
-                    Contact Atmos Studio regarding products, technical
-                    support, collaboration, privacy requests, account access,
-                    subscriptions, or general questions.
-                </p>
+                        <h3>Актуальные сборки</h3>
 
-                <div class="hero-actions">
+                        <p>
+                            Новейшие активные сборки могут публиковаться
+                            через Boosty. Пользователи с подходящей активной
+                            подпиской получают доступ к обновлениям,
+                            опубликованным в период её действия.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Boosty
+                            </span>
+
+                            <span class="platform-label">
+                                Актуальные версии
+                            </span>
+
+                            <span class="platform-label">
+                                Доступ подписчиков
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="release-card">
+                        <div class="release-number">
+                            02
+                        </div>
+
+                        <h3>Публичные сборки</h3>
+
+                        <p>
+                            После выпуска новой актуальной сборки
+                            предыдущая подходящая версия может быть
+                            подготовлена для бесплатной публикации
+                            на общедоступных платформах.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Modrinth
+                            </span>
+
+                            <span class="platform-label">
+                                CurseForge
+                            </span>
+
+                            <span class="platform-label">
+                                Бесплатный доступ
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Разделы сайта</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Сайт Atmos Studio
+                    </p>
+
+                    <h2>
+                        Проекты, выпуски и юридическая информация
+                    </h2>
+
+                    <p class="section-description">
+                        Просматривайте доступные сборки и изучайте
+                        документы, регулирующие продукты и сервисы
+                        Atmos Studio.
+                    </p>
+                </div>
+
+                <div class="link-grid">
                     <a
-                        class="primary-button"
-                        href="mailto:atmos.studio.team@gmail.com"
-                    >
-                        atmos.studio.team@gmail.com
-                    </a>
-
-                    <a
-                        class="secondary-button"
+                        class="feature-link"
                         href="./builds.html"
                     >
-                        View Builds
+                        <div>
+                            <h3>Сборки</h3>
+
+                            <p>
+                                Проекты Atmos Studio, актуальные и публичные
+                                версии, поддерживаемые платформы
+                                и информация о загрузке.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
+                    </a>
+
+                    <a
+                        class="feature-link"
+                        href="./privacy-policy.html"
+                    >
+                        <div>
+                            <h3>Политика конфиденциальности</h3>
+
+                            <p>
+                                Сведения о том, какую информацию может
+                                обрабатывать Atmos Studio, зачем она нужна
+                                и какие права есть у пользователей.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
+                    </a>
+
+                    <a
+                        class="feature-link"
+                        href="./terms-of-use.html"
+                    >
+                        <div>
+                            <h3>Условия использования</h3>
+
+                            <p>
+                                Правила подписок, сборок, лицензирования,
+                                распространения, платежей и использования
+                                продуктов.
+                            </p>
+                        </div>
+
+                        <span class="feature-link-arrow">
+                            →
+                        </span>
                     </a>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- ===================================================== -->
-        <!-- FOOTER                                              -->
-        <!-- ===================================================== -->
+            <div class="section-divider">
+                <span>Связь</span>
+            </div>
+
+            <section class="cta-section">
+                <div class="cta-content">
+                    <p class="section-kicker">
+                        Вопросы и поддержка
+                    </p>
+
+                    <h2>
+                        Свяжитесь с Atmos Studio
+                    </h2>
+
+                    <p class="section-description">
+                        Напишите нам по вопросам продуктов, технической
+                        поддержки, сотрудничества, конфиденциальности,
+                        подписок или по другим вопросам.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a
+                            class="primary-button"
+                            href="mailto:atmos.studio.team@gmail.com"
+                        >
+                            atmos.studio.team@gmail.com
+                        </a>
+
+                        <a
+                            class="secondary-button"
+                            href="./builds.html"
+                        >
+                            Открыть сборки
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
 
         <footer>
             <div class="footer-brand">
@@ -1492,7 +2070,7 @@
                 Atmos Studio
             </div>
 
-            <div class="footer-links">
+            <div class="footer-navigation">
                 <a href="./index.html">
                     Home
                 </a>
@@ -1508,9 +2086,25 @@
                 <a href="./terms-of-use.html">
                     Terms of Use
                 </a>
+            </div>
 
-                <a href="mailto:atmos.studio.team@gmail.com">
-                    Contact
+            <div class="footer-socials">
+                <a
+                    class="social-button discord"
+                    href="https://discord.gg/YOUR_INVITE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Discord
+                </a>
+
+                <a
+                    class="social-button telegram"
+                    href="https://t.me/YOUR_CHANNEL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Telegram
                 </a>
             </div>
 
