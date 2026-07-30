@@ -1,1 +1,1529 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Atmos Studio creates ambitious Minecraft modpacks, Discord applications, development tools, and related digital products."
+    >
+
+    <meta
+        name="theme-color"
+        content="#0d1117"
+    >
+
+    <title>Atmos Studio</title>
+
+    <style>
+        :root {
+            color-scheme: dark;
+
+            --background: #0d1117;
+            --surface: #161b22;
+            --surface-secondary: #1d2430;
+            --surface-highlight: #232b38;
+
+            --border: #30363d;
+            --border-accent: rgba(139, 92, 246, 0.65);
+
+            --text: #e6edf3;
+            --muted: #9da7b3;
+
+            --accent: #8b5cf6;
+            --accent-secondary: #a78bfa;
+            --accent-bright: #c4a7ff;
+
+            --success: #3fb950;
+            --warning: #d29922;
+
+            --shadow:
+                0 18px 45px rgba(0, 0, 0, 0.25);
+
+            --shadow-large:
+                0 26px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        body {
+            margin: 0;
+
+            background:
+                radial-gradient(
+                    circle at 8% 0%,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 34rem
+                ),
+                radial-gradient(
+                    circle at 92% 20%,
+                    rgba(91, 70, 180, 0.08),
+                    transparent 30rem
+                ),
+                var(--background);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.012) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.012) 1px,
+                    transparent 1px
+                );
+
+            background-size: 48px 48px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.75),
+                    transparent 70%
+                );
+        }
+
+        a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 24px 0 80px;
+        }
+
+        /* ========================================================= */
+        /* TOP NAVIGATION                                            */
+        /* ========================================================= */
+
+        .site-header {
+            position: sticky;
+            top: 12px;
+            z-index: 100;
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 18px;
+
+            margin-bottom: 22px;
+            padding: 12px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: rgba(22, 27, 34, 0.9);
+
+            box-shadow:
+                0 14px 35px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .studio-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            min-height: 44px;
+            padding: 0 12px;
+
+            color: var(--text);
+
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.035em;
+            text-transform: uppercase;
+
+            white-space: nowrap;
+        }
+
+        .studio-brand:hover {
+            color: var(--accent-secondary);
+        }
+
+        .brand-mark {
+            width: 13px;
+            height: 13px;
+            flex: 0 0 auto;
+
+            border-radius: 4px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent-secondary),
+                    var(--accent)
+                );
+
+            box-shadow:
+                0 0 18px rgba(139, 92, 246, 0.8);
+        }
+
+        .page-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+
+            padding: 5px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background: rgba(13, 17, 23, 0.58);
+        }
+
+        .navigation-tab {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 40px;
+            padding: 7px 15px;
+
+            border: 1px solid transparent;
+            border-radius: 9px;
+
+            color: var(--muted);
+
+            font-size: 0.91rem;
+            font-weight: 750;
+            white-space: nowrap;
+
+            transition:
+                background 160ms ease,
+                border-color 160ms ease,
+                color 160ms ease,
+                transform 160ms ease;
+        }
+
+        .navigation-tab:hover {
+            color: var(--text);
+            background: var(--surface-secondary);
+            transform: translateY(-1px);
+        }
+
+        .navigation-tab.active {
+            border-color: var(--border-accent);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.25),
+                    rgba(139, 92, 246, 0.12)
+                );
+
+            color: var(--accent-bright);
+
+            box-shadow:
+                inset 0 0 0 1px rgba(167, 139, 250, 0.08),
+                0 6px 20px rgba(88, 55, 160, 0.18);
+        }
+
+        .header-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 44px;
+            padding: 8px 15px;
+
+            border: 1px solid var(--border);
+            border-radius: 11px;
+
+            background: var(--surface-secondary);
+            color: var(--accent-secondary);
+
+            font-size: 0.91rem;
+            font-weight: 750;
+            white-space: nowrap;
+
+            transition:
+                border-color 160ms ease,
+                background 160ms ease,
+                transform 160ms ease;
+        }
+
+        .header-contact:hover {
+            border-color: rgba(139, 92, 246, 0.58);
+            background: rgba(139, 92, 246, 0.12);
+            transform: translateY(-1px);
+        }
+
+        /* ========================================================= */
+        /* HERO                                                      */
+        /* ========================================================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 510px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 66px 58px;
+
+            border: 1px solid var(--border);
+            border-radius: 26px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.2),
+                    rgba(22, 27, 34, 0.97) 58%,
+                    rgba(18, 23, 31, 0.98)
+                );
+
+            box-shadow: var(--shadow-large);
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            right: -135px;
+            top: -165px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.25),
+                    transparent 68%
+                );
+
+            filter: blur(2px);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            right: 80px;
+            bottom: -130px;
+
+            border: 1px solid rgba(167, 139, 250, 0.16);
+            border-radius: 42px;
+
+            transform: rotate(28deg);
+
+            background:
+                rgba(139, 92, 246, 0.035);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+
+            width: min(820px, 100%);
+        }
+
+        .hero-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 22px;
+
+            color: var(--accent-secondary);
+
+            font-weight: 800;
+            letter-spacing: 0.045em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 900px;
+
+            margin: 0 0 22px;
+
+            font-size: clamp(3rem, 8vw, 6.1rem);
+            line-height: 0.98;
+            letter-spacing: -0.06em;
+        }
+
+        .hero-title-accent {
+            color: var(--accent-secondary);
+        }
+
+        .hero-description {
+            max-width: 760px;
+            margin: 0;
+
+            color: #b4bdca;
+
+            font-size: clamp(1.02rem, 2.3vw, 1.22rem);
+            line-height: 1.75;
+        }
+
+        .metadata {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 32px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            min-height: 36px;
+            padding: 6px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(13, 17, 23, 0.58);
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+            background: var(--accent);
+
+            box-shadow:
+                0 0 10px rgba(139, 92, 246, 0.8);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin-top: 34px;
+        }
+
+        .primary-button,
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            min-height: 48px;
+            padding: 10px 20px;
+
+            border-radius: 11px;
+
+            font-weight: 780;
+
+            transition:
+                transform 160ms ease,
+                border-color 160ms ease,
+                background 160ms ease,
+                box-shadow 160ms ease;
+        }
+
+        .primary-button {
+            border: 1px solid rgba(167, 139, 250, 0.75);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.9),
+                    rgba(112, 70, 205, 0.9)
+                );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 10px 26px rgba(93, 54, 170, 0.3);
+        }
+
+        .primary-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 32px rgba(93, 54, 170, 0.4);
+        }
+
+        .secondary-button {
+            border: 1px solid var(--border);
+
+            background: rgba(29, 36, 48, 0.85);
+            color: var(--accent-secondary);
+        }
+
+        .secondary-button:hover {
+            transform: translateY(-2px);
+
+            border-color: rgba(139, 92, 246, 0.6);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        /* ========================================================= */
+        /* SECTIONS                                                  */
+        /* ========================================================= */
+
+        .section-divider {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 18px;
+
+            margin: 64px 0 34px;
+
+            color: #b8c2d1;
+
+            font-size: 0.91rem;
+            font-weight: 850;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--border)
+                );
+        }
+
+        .section-divider::after {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--border),
+                    transparent
+                );
+        }
+
+        .section-divider span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 34px;
+            padding: 5px 14px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: var(--surface);
+        }
+
+        .content-section {
+            padding: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            background:
+                rgba(22, 27, 34, 0.92);
+
+            box-shadow: var(--shadow);
+        }
+
+        .section-heading {
+            max-width: 800px;
+            margin-bottom: 28px;
+        }
+
+        .section-kicker {
+            margin: 0 0 7px;
+
+            color: var(--accent-secondary);
+
+            font-size: 0.83rem;
+            font-weight: 800;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1.12;
+            letter-spacing: -0.035em;
+        }
+
+        h3 {
+            margin: 0 0 10px;
+
+            font-size: 1.25rem;
+            line-height: 1.3;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        .section-description {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        /* ========================================================= */
+        /* PRODUCT CARDS                                             */
+        /* ========================================================= */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+
+            min-height: 245px;
+            padding: 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(35, 43, 56, 0.92),
+                    rgba(24, 30, 40, 0.92)
+                );
+
+            transition:
+                transform 180ms ease,
+                border-color 180ms ease,
+                background 180ms ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.52);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(50, 42, 76, 0.75),
+                    rgba(24, 30, 40, 0.94)
+                );
+        }
+
+        .product-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 46px;
+            height: 46px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 13px;
+
+            background: rgba(139, 92, 246, 0.13);
+            color: var(--accent-secondary);
+
+            font-size: 1.25rem;
+            font-weight: 850;
+        }
+
+        .product-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            margin-top: 18px;
+
+            color: #b7c1ce;
+            font-size: 0.87rem;
+            font-weight: 700;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            background: var(--success);
+
+            box-shadow:
+                0 0 10px rgba(63, 185, 80, 0.55);
+        }
+
+        /* ========================================================= */
+        /* RELEASE MODEL                                             */
+        /* ========================================================= */
+
+        .release-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .release-card {
+            padding: 26px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface-secondary);
+        }
+
+        .release-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            margin-bottom: 17px;
+
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 11px;
+
+            background: rgba(139, 92, 246, 0.13);
+            color: var(--accent-secondary);
+
+            font-weight: 850;
+        }
+
+        .release-card p {
+            color: var(--muted);
+        }
+
+        .platform-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+        .platform-label {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 5px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(13, 17, 23, 0.4);
+            color: #b9c2ce;
+
+            font-size: 0.83rem;
+            font-weight: 680;
+        }
+
+        /* ========================================================= */
+        /* FEATURE LINKS                                             */
+        /* ========================================================= */
+
+        .link-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .feature-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 22px;
+
+            min-height: 205px;
+            padding: 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface-secondary);
+            color: var(--text);
+
+            transition:
+                transform 180ms ease,
+                border-color 180ms ease,
+                background 180ms ease;
+        }
+
+        .feature-link:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(139, 92, 246, 0.55);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .feature-link p {
+            color: var(--muted);
+        }
+
+        .feature-link-arrow {
+            color: var(--accent-secondary);
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        /* ========================================================= */
+        /* CTA                                                       */
+        /* ========================================================= */
+
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+
+            padding: 46px;
+
+            border: 1px solid rgba(139, 92, 246, 0.48);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.22),
+                    rgba(22, 27, 34, 0.95)
+                );
+
+            box-shadow: var(--shadow);
+        }
+
+        .cta-section::after {
+            content: "";
+
+            position: absolute;
+            width: 250px;
+            height: 250px;
+
+            right: -90px;
+            bottom: -135px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.25),
+                    transparent 67%
+                );
+
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+
+            max-width: 760px;
+        }
+
+        /* ========================================================= */
+        /* FOOTER                                                    */
+        /* ========================================================= */
+
+        footer {
+            margin-top: 38px;
+            padding: 26px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface);
+            color: var(--muted);
+
+            text-align: center;
+        }
+
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 15px;
+
+            color: var(--text);
+
+            font-weight: 800;
+            letter-spacing: 0.035em;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+
+            margin-bottom: 17px;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 38px;
+            padding: 6px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--surface-secondary);
+            color: var(--accent-secondary);
+
+            font-size: 0.89rem;
+            font-weight: 700;
+        }
+
+        .footer-links a:hover {
+            border-color: rgba(139, 92, 246, 0.55);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================================= */
+        /* RESPONSIVE                                                */
+        /* ========================================================= */
+
+        @media (max-width: 980px) {
+            .site-header {
+                position: static;
+                grid-template-columns: 1fr;
+            }
+
+            .studio-brand {
+                justify-content: center;
+            }
+
+            .page-navigation {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .navigation-tab {
+                flex: 1 1 150px;
+            }
+
+            .header-contact {
+                width: 100%;
+            }
+
+            .product-grid,
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                width: min(100% - 20px, 1120px);
+                padding-top: 10px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 38px 24px;
+                border-radius: 19px;
+            }
+
+            h1 {
+                font-size: clamp(2.7rem, 15vw, 4.6rem);
+            }
+
+            .content-section,
+            .cta-section {
+                padding: 27px 21px;
+                border-radius: 18px;
+            }
+
+            .release-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .primary-button,
+            .secondary-button {
+                width: 100%;
+            }
+
+            .section-divider {
+                gap: 10px;
+                margin: 46px 0 28px;
+                font-size: 0.78rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links a {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .page-navigation {
+                flex-direction: column;
+            }
+
+            .navigation-tab {
+                width: 100%;
+                flex: none;
+            }
+
+            .metadata {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .badge {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+
+        <!-- ===================================================== -->
+        <!-- TOP NAVIGATION                                      -->
+        <!-- ===================================================== -->
+
+        <header class="site-header">
+            <a
+                class="studio-brand"
+                href="./index.html"
+                aria-label="Atmos Studio home"
+            >
+                <span class="brand-mark"></span>
+                Atmos Studio
+            </a>
+
+            <nav
+                class="page-navigation"
+                aria-label="Main navigation"
+            >
+                <a
+                    class="navigation-tab active"
+                    href="./index.html"
+                    aria-current="page"
+                >
+                    Home
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./builds.html"
+                >
+                    Builds
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./privacy-policy.html"
+                >
+                    Privacy Policy
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./terms-of-use.html"
+                >
+                    Terms of Use
+                </a>
+            </nav>
+
+            <a
+                class="header-contact"
+                href="mailto:atmos.studio.team@gmail.com"
+            >
+                Contact
+            </a>
+        </header>
+
+        <!-- ===================================================== -->
+        <!-- HERO                                                -->
+        <!-- ===================================================== -->
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <span class="brand-mark"></span>
+                    Independent Development Studio
+                </div>
+
+                <h1>
+                    Atmos
+                    <span class="hero-title-accent">Studio</span>
+                </h1>
+
+                <p class="hero-description">
+                    We create ambitious Minecraft experiences,
+                    carefully designed modpacks, Discord applications,
+                    development tools, and digital products built around
+                    strong ideas, detailed systems, and long-term support.
+                </p>
+
+                <div class="metadata">
+                    <span class="badge">
+                        <span class="badge-dot"></span>
+                        Minecraft Modpacks
+                    </span>
+
+                    <span class="badge">
+                        <span class="badge-dot"></span>
+                        Discord Applications
+                    </span>
+
+                    <span class="badge">
+                        <span class="badge-dot"></span>
+                        Development Tools
+                    </span>
+
+                    <span class="badge">
+                        <span class="badge-dot"></span>
+                        Independent Projects
+                    </span>
+                </div>
+
+                <div class="hero-actions">
+                    <a
+                        class="primary-button"
+                        href="./builds.html"
+                    >
+                        Explore Builds
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        class="secondary-button"
+                        href="mailto:atmos.studio.team@gmail.com"
+                    >
+                        Contact Atmos Studio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ABOUT                                               -->
+        <!-- ===================================================== -->
+
+        <div class="section-divider">
+            <span>About Atmos Studio</span>
+        </div>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="section-kicker">
+                    Our direction
+                </p>
+
+                <h2>
+                    Digital projects built as complete experiences
+                </h2>
+
+                <p class="section-description">
+                    Atmos Studio develops products that combine technical
+                    depth, visual identity, structured progression, and
+                    carefully maintained content.
+                </p>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-icon">
+                        M
+                    </div>
+
+                    <h3>Minecraft Modpacks</h3>
+
+                    <p>
+                        Large, curated modpacks with custom progression,
+                        quests, scripts, configurations, visual design,
+                        balancing, and original gameplay systems.
+                    </p>
+
+                    <div class="product-status">
+                        <span class="status-dot"></span>
+                        Active development
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-icon">
+                        D
+                    </div>
+
+                    <h3>Discord Applications</h3>
+
+                    <p>
+                        Community tools, integrations, automation systems,
+                        support utilities, and Discord applications designed
+                        around Atmos Studio products.
+                    </p>
+
+                    <div class="product-status">
+                        <span class="status-dot"></span>
+                        In development
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-icon">
+                        T
+                    </div>
+
+                    <h3>Development Tools</h3>
+
+                    <p>
+                        Internal and public utilities for project management,
+                        diagnostics, content creation, modpack development,
+                        distribution, and technical support.
+                    </p>
+
+                    <div class="product-status">
+                        <span class="status-dot"></span>
+                        Expanding platform
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- RELEASE MODEL                                       -->
+        <!-- ===================================================== -->
+
+        <div class="section-divider">
+            <span>Release Model</span>
+        </div>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="section-kicker">
+                    Access and distribution
+                </p>
+
+                <h2>
+                    Current builds first, public releases afterward
+                </h2>
+
+                <p class="section-description">
+                    Some Atmos Studio products use a rolling release model
+                    that provides subscribers with access to the newest
+                    available builds while older versions later become
+                    publicly available.
+                </p>
+            </div>
+
+            <div class="release-grid">
+                <article class="release-card">
+                    <div class="release-number">
+                        01
+                    </div>
+
+                    <h3>Current Builds</h3>
+
+                    <p>
+                        The newest active builds may be published through
+                        Boosty for users with an active subscription.
+                        Subscribers receive access to eligible updates
+                        published during their active subscription period.
+                    </p>
+
+                    <div class="platform-list">
+                        <span class="platform-label">
+                            Boosty
+                        </span>
+
+                        <span class="platform-label">
+                            Current versions
+                        </span>
+
+                        <span class="platform-label">
+                            Subscriber access
+                        </span>
+                    </div>
+                </article>
+
+                <article class="release-card">
+                    <div class="release-number">
+                        02
+                    </div>
+
+                    <h3>Public Builds</h3>
+
+                    <p>
+                        When a new current build is released, the previous
+                        eligible version may be prepared for free public
+                        publication through established distribution
+                        platforms.
+                    </p>
+
+                    <div class="platform-list">
+                        <span class="platform-label">
+                            Modrinth
+                        </span>
+
+                        <span class="platform-label">
+                            CurseForge
+                        </span>
+
+                        <span class="platform-label">
+                            Public access
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- EXPLORE                                             -->
+        <!-- ===================================================== -->
+
+        <div class="section-divider">
+            <span>Explore</span>
+        </div>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="section-kicker">
+                    Atmos Studio website
+                </p>
+
+                <h2>
+                    Projects, releases, and legal information
+                </h2>
+
+                <p class="section-description">
+                    Use the sections below to explore available builds,
+                    learn how information is handled, and review the rules
+                    governing Atmos Studio products.
+                </p>
+            </div>
+
+            <div class="link-grid">
+                <a
+                    class="feature-link"
+                    href="./builds.html"
+                >
+                    <div>
+                        <h3>Builds</h3>
+
+                        <p>
+                            Browse Atmos Studio projects, available releases,
+                            supported versions, platforms, and download
+                            information.
+                        </p>
+                    </div>
+
+                    <span class="feature-link-arrow">
+                        →
+                    </span>
+                </a>
+
+                <a
+                    class="feature-link"
+                    href="./privacy-policy.html"
+                >
+                    <div>
+                        <h3>Privacy Policy</h3>
+
+                        <p>
+                            Learn what information Atmos Studio may process,
+                            why it is used, how it is protected, and what
+                            rights users have.
+                        </p>
+                    </div>
+
+                    <span class="feature-link-arrow">
+                        →
+                    </span>
+                </a>
+
+                <a
+                    class="feature-link"
+                    href="./terms-of-use.html"
+                >
+                    <div>
+                        <h3>Terms of Use</h3>
+
+                        <p>
+                            Review the rules for subscriptions, builds,
+                            licensing, distribution, third-party content,
+                            payments, and product usage.
+                        </p>
+                    </div>
+
+                    <span class="feature-link-arrow">
+                        →
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- CONTACT CTA                                         -->
+        <!-- ===================================================== -->
+
+        <div class="section-divider">
+            <span>Contact</span>
+        </div>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <p class="section-kicker">
+                    Questions and support
+                </p>
+
+                <h2>
+                    Get in touch with Atmos Studio
+                </h2>
+
+                <p class="section-description">
+                    Contact Atmos Studio regarding products, technical
+                    support, collaboration, privacy requests, account access,
+                    subscriptions, or general questions.
+                </p>
+
+                <div class="hero-actions">
+                    <a
+                        class="primary-button"
+                        href="mailto:atmos.studio.team@gmail.com"
+                    >
+                        atmos.studio.team@gmail.com
+                    </a>
+
+                    <a
+                        class="secondary-button"
+                        href="./builds.html"
+                    >
+                        View Builds
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- FOOTER                                              -->
+        <!-- ===================================================== -->
+
+        <footer>
+            <div class="footer-brand">
+                <span class="brand-mark"></span>
+                Atmos Studio
+            </div>
+
+            <div class="footer-links">
+                <a href="./index.html">
+                    Home
+                </a>
+
+                <a href="./builds.html">
+                    Builds
+                </a>
+
+                <a href="./privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="./terms-of-use.html">
+                    Terms of Use
+                </a>
+
+                <a href="mailto:atmos.studio.team@gmail.com">
+                    Contact
+                </a>
+            </div>
+
+            <p>
+                © 2026 Atmos Studio. All rights reserved.
+            </p>
+
+            <p>
+                Independent development studio for Minecraft projects,
+                Discord applications, and digital tools.
+            </p>
+        </footer>
+
+    </main>
+</body>
+</html>
