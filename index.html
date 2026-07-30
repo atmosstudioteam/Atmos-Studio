@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -119,7 +120,7 @@
         }
 
         .hero-description {
-            max-width: 780px;
+            max-width: 800px;
             margin: 0;
             color: var(--muted);
             font-size: 1.08rem;
@@ -144,7 +145,7 @@
             font-size: 0.9rem;
         }
 
-        .language-navigation {
+        .navigation {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
@@ -155,7 +156,7 @@
             background: var(--surface);
         }
 
-        .language-navigation a {
+        .navigation a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -165,6 +166,12 @@
             border-radius: 10px;
             background: var(--surface-secondary);
             font-weight: 650;
+        }
+
+        .navigation a.active {
+            border-color: rgba(139, 92, 246, 0.65);
+            background: rgba(139, 92, 246, 0.14);
+            color: var(--accent-secondary);
         }
 
         .notice {
@@ -206,12 +213,12 @@
             color: var(--muted);
         }
 
-        section.policy-section {
+        .policy-section {
             scroll-margin-top: 24px;
             margin-top: 42px;
         }
 
-        section.policy-section:first-of-type {
+        .policy-section:first-of-type {
             margin-top: 0;
         }
 
@@ -304,6 +311,30 @@
             text-align: center;
         }
 
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 7px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface-secondary);
+            font-weight: 650;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
         @media (prefers-color-scheme: light) {
             :root {
                 --background: #f6f7fb;
@@ -345,11 +376,19 @@
                 border-radius: 18px;
             }
 
-            .language-navigation {
+            .navigation {
                 flex-direction: column;
             }
 
-            .language-navigation a {
+            .navigation a {
+                width: 100%;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links a {
                 width: 100%;
             }
 
@@ -385,9 +424,23 @@
             </div>
         </header>
 
-        <nav class="language-navigation" aria-label="Language navigation">
-            <a href="#english">English version</a>
-            <a href="#russian">Русская версия</a>
+        <nav class="navigation" aria-label="Document navigation">
+            <a class="active" href="./index.html">
+                Privacy Policy
+            </a>
+
+            <a href="./terms-of-use.html">
+                Terms of Use / Условия использования
+            </a>
+
+            <a href="#english">
+                English version
+            </a>
+
+            <a href="#russian">
+                Русская версия
+            </a>
+
             <a href="mailto:atmos.studio.team@gmail.com">
                 Contact Atmos Studio
             </a>
@@ -797,27 +850,11 @@
                 </p>
 
                 <ul>
-                    <li>
-                        performance of a requested service or action;
-                    </li>
-
-                    <li>
-                        steps taken at the user's request before providing
-                        access or support;
-                    </li>
-
-                    <li>
-                        legitimate interests in operating, securing, protecting,
-                        and improving products;
-                    </li>
-
-                    <li>
-                        user consent, where consent is required;
-                    </li>
-
-                    <li>
-                        compliance with legal obligations.
-                    </li>
+                    <li>performance of a requested service or action;</li>
+                    <li>steps taken at the user's request before providing access or support;</li>
+                    <li>legitimate interests in operating, securing, protecting, and improving products;</li>
+                    <li>user consent, where consent is required;</li>
+                    <li>compliance with legal obligations.</li>
                 </ul>
             </section>
 
@@ -1712,8 +1749,28 @@
         </article>
 
         <footer>
-            © 2026 Atmos Studio. This page contains the current version of the
-            Atmos Studio Global Privacy Policy.
+            <div class="footer-links">
+                <a href="./index.html">
+                    Privacy Policy
+                </a>
+
+                <a href="./terms-of-use.html">
+                    Terms of Use / Условия использования
+                </a>
+
+                <a href="mailto:atmos.studio.team@gmail.com">
+                    Contact Atmos Studio
+                </a>
+            </div>
+
+            <p>
+                © 2026 Atmos Studio.
+            </p>
+
+            <p>
+                This page contains the current version of the
+                Atmos Studio Global Privacy Policy.
+            </p>
         </footer>
 
     </main>
