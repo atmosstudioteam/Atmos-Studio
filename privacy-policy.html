@@ -12,24 +12,32 @@
         content="Global Privacy Policy for Atmos Studio products, Discord applications, Minecraft modpacks, Boosty publications, Modrinth and CurseForge releases."
     >
 
+    <meta name="theme-color" content="#0d1117">
+
     <title>Global Privacy Policy — Atmos Studio</title>
 
     <style>
         :root {
-            color-scheme: light dark;
+            color-scheme: dark;
 
             --background: #0d1117;
             --surface: #161b22;
             --surface-secondary: #1d2430;
-            --surface-highlight: #232b38;
             --border: #30363d;
+
             --text: #e6edf3;
             --muted: #9da7b3;
+
             --accent: #8b5cf6;
             --accent-secondary: #a78bfa;
+            --accent-bright: #c4a7ff;
+
             --warning: #d29922;
-            --link: #a78bfa;
-            --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+            --discord: #5865f2;
+            --telegram: #229ed9;
+
+            --shadow:
+                0 18px 45px rgba(0, 0, 0, 0.25);
         }
 
         * {
@@ -43,14 +51,17 @@
 
         body {
             margin: 0;
+
             background:
                 radial-gradient(
-                    circle at 10% 0%,
-                    rgba(139, 92, 246, 0.16),
-                    transparent 32rem
+                    circle at 8% 0%,
+                    rgba(139, 92, 246, 0.18),
+                    transparent 34rem
                 ),
                 var(--background);
+
             color: var(--text);
+
             font-family:
                 Inter,
                 -apple-system,
@@ -60,12 +71,13 @@
                 Helvetica,
                 Arial,
                 sans-serif;
+
             font-size: 16px;
             line-height: 1.7;
         }
 
         a {
-            color: var(--link);
+            color: var(--accent-secondary);
             text-decoration: none;
         }
 
@@ -80,7 +92,7 @@
         }
 
         /* ========================================================= */
-        /* ВЕРХНЯЯ ПАНЕЛЬ ДОКУМЕНТОВ                                 */
+        /* TOP NAVIGATION                                            */
         /* ========================================================= */
 
         .site-header {
@@ -91,7 +103,7 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
 
             margin-bottom: 22px;
             padding: 12px;
@@ -100,8 +112,9 @@
             border-radius: 18px;
 
             background: rgba(22, 27, 34, 0.92);
+
             box-shadow:
-                0 14px 35px rgba(0, 0, 0, 0.24),
+                0 14px 35px rgba(0, 0, 0, 0.25),
                 inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
             backdrop-filter: blur(16px);
@@ -112,13 +125,17 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+
             min-height: 44px;
             padding: 0 12px;
 
             color: var(--text);
+
+            font-size: 0.95rem;
             font-weight: 800;
             letter-spacing: 0.035em;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .studio-brand:hover {
@@ -131,33 +148,45 @@
             flex: 0 0 auto;
 
             border-radius: 4px;
-            background: var(--accent);
-            box-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--accent-secondary),
+                    var(--accent)
+                );
+
+            box-shadow:
+                0 0 18px rgba(139, 92, 246, 0.8);
         }
 
-        .document-switcher {
+        .page-navigation {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
+
             padding: 5px;
 
             border: 1px solid var(--border);
             border-radius: 13px;
+
             background: rgba(13, 17, 23, 0.58);
         }
 
-        .document-tab {
+        .navigation-tab {
             display: inline-flex;
             align-items: center;
             justify-content: center;
 
             min-height: 40px;
-            padding: 7px 18px;
+            padding: 7px 14px;
 
             border: 1px solid transparent;
             border-radius: 9px;
 
             color: var(--muted);
+
+            font-size: 0.9rem;
             font-weight: 750;
             white-space: nowrap;
 
@@ -168,50 +197,94 @@
                 transform 160ms ease;
         }
 
-        .document-tab:hover {
+        .navigation-tab:hover {
             color: var(--text);
             background: var(--surface-secondary);
             transform: translateY(-1px);
         }
 
-        .document-tab.active {
-            border-color: rgba(139, 92, 246, 0.72);
+        .navigation-tab.active {
+            border-color: rgba(139, 92, 246, 0.68);
+
             background:
                 linear-gradient(
                     135deg,
                     rgba(139, 92, 246, 0.25),
                     rgba(139, 92, 246, 0.12)
                 );
-            color: #c4a7ff;
+
+            color: var(--accent-bright);
+
             box-shadow:
                 inset 0 0 0 1px rgba(167, 139, 250, 0.08),
                 0 6px 20px rgba(88, 55, 160, 0.18);
         }
 
-        .header-contact {
+        .social-navigation {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
 
             min-height: 44px;
-            padding: 8px 15px;
+            padding: 8px 13px;
 
             border: 1px solid var(--border);
             border-radius: 11px;
 
             background: var(--surface-secondary);
-            color: var(--accent-secondary);
+            color: var(--text);
+
+            font-size: 0.89rem;
             font-weight: 750;
             white-space: nowrap;
+
+            transition:
+                transform 160ms ease,
+                border-color 160ms ease,
+                background 160ms ease,
+                box-shadow 160ms ease;
         }
 
-        .header-contact:hover {
-            border-color: rgba(139, 92, 246, 0.58);
-            background: rgba(139, 92, 246, 0.12);
+        .social-button svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            fill: currentColor;
+        }
+
+        .social-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .social-button.discord {
+            color: #b9bfff;
+        }
+
+        .social-button.discord:hover {
+            border-color: rgba(88, 101, 242, 0.75);
+            background: rgba(88, 101, 242, 0.14);
+            box-shadow: 0 8px 22px rgba(88, 101, 242, 0.15);
+        }
+
+        .social-button.telegram {
+            color: #83d8ff;
+        }
+
+        .social-button.telegram:hover {
+            border-color: rgba(34, 158, 217, 0.75);
+            background: rgba(34, 158, 217, 0.13);
+            box-shadow: 0 8px 22px rgba(34, 158, 217, 0.14);
         }
 
         /* ========================================================= */
-        /* ГЛАВНАЯ ШАПКА                                             */
+        /* HERO                                                      */
         /* ========================================================= */
 
         .hero {
@@ -223,7 +296,7 @@
             background:
                 linear-gradient(
                     135deg,
-                    rgba(139, 92, 246, 0.16),
+                    rgba(139, 92, 246, 0.17),
                     rgba(22, 27, 34, 0.96)
                 );
 
@@ -238,13 +311,14 @@
             margin-bottom: 20px;
 
             color: var(--accent-secondary);
+
             font-weight: 800;
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
 
         h1 {
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 0 18px;
 
             font-size: clamp(2.2rem, 6vw, 4.3rem);
@@ -253,7 +327,7 @@
         }
 
         .hero-description {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0;
 
             color: var(--muted);
@@ -280,11 +354,12 @@
 
             background: rgba(13, 17, 23, 0.55);
             color: var(--muted);
+
             font-size: 0.9rem;
         }
 
         /* ========================================================= */
-        /* ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА                                        */
+        /* LANGUAGE NAVIGATION                                       */
         /* ========================================================= */
 
         .language-panel {
@@ -328,8 +403,8 @@
             align-items: center;
             justify-content: center;
 
-            min-height: 42px;
             min-width: 140px;
+            min-height: 42px;
             padding: 8px 18px;
 
             border: 1px solid var(--border);
@@ -337,22 +412,23 @@
 
             background: var(--surface-secondary);
             color: var(--accent-secondary);
+
             font-weight: 750;
 
             transition:
+                transform 160ms ease,
                 border-color 160ms ease,
-                background 160ms ease,
-                transform 160ms ease;
+                background 160ms ease;
         }
 
         .language-button:hover {
+            transform: translateY(-1px);
             border-color: rgba(139, 92, 246, 0.58);
             background: rgba(139, 92, 246, 0.12);
-            transform: translateY(-1px);
         }
 
         /* ========================================================= */
-        /* УВЕДОМЛЕНИЯ И РАЗДЕЛИТЕЛИ                                 */
+        /* NOTICES AND DIVIDERS                                      */
         /* ========================================================= */
 
         .notice {
@@ -379,6 +455,7 @@
             margin: 58px 0 36px;
 
             color: #b8c2d1;
+
             font-size: 0.93rem;
             font-weight: 850;
             letter-spacing: 0.075em;
@@ -389,6 +466,7 @@
         .language-divider::after {
             content: "";
             height: 1px;
+
             background:
                 linear-gradient(
                     90deg,
@@ -421,7 +499,7 @@
         }
 
         /* ========================================================= */
-        /* ТЕКСТ ДОКУМЕНТА                                           */
+        /* DOCUMENT                                                  */
         /* ========================================================= */
 
         .document {
@@ -433,6 +511,7 @@
             border-radius: 22px;
 
             background: rgba(22, 27, 34, 0.92);
+
             box-shadow: var(--shadow);
         }
 
@@ -466,6 +545,7 @@
 
         h3 {
             margin: 0 0 16px;
+
             font-size: 1.45rem;
             line-height: 1.3;
         }
@@ -479,7 +559,8 @@
             margin: 12px 0;
         }
 
-        ul {
+        ul,
+        ol {
             margin: 14px 0;
             padding-left: 26px;
         }
@@ -490,7 +571,8 @@
 
         .platform-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(190px, 1fr));
             gap: 12px;
 
             margin: 20px 0;
@@ -529,6 +611,10 @@
             font-weight: 750;
         }
 
+        /* ========================================================= */
+        /* FOOTER                                                    */
+        /* ========================================================= */
+
         footer {
             margin-top: 36px;
             padding: 24px;
@@ -538,10 +624,12 @@
 
             background: var(--surface);
             color: var(--muted);
+
             text-align: center;
         }
 
-        .footer-links {
+        .footer-navigation,
+        .footer-socials {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -550,7 +638,7 @@
             margin-bottom: 14px;
         }
 
-        .footer-links a {
+        .footer-navigation a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -562,6 +650,7 @@
             border-radius: 10px;
 
             background: var(--surface-secondary);
+
             font-weight: 700;
         }
 
@@ -570,52 +659,10 @@
         }
 
         /* ========================================================= */
-        /* СВЕТЛАЯ ТЕМА                                              */
+        /* RESPONSIVE                                                */
         /* ========================================================= */
 
-        @media (prefers-color-scheme: light) {
-            :root {
-                --background: #f6f7fb;
-                --surface: #ffffff;
-                --surface-secondary: #f2f0ff;
-                --surface-highlight: #ece9fb;
-                --border: #dcdfea;
-                --text: #171923;
-                --muted: #5f6877;
-                --accent: #6d3fd1;
-                --accent-secondary: #6d3fd1;
-                --link: #6236c4;
-                --shadow: 0 18px 45px rgba(41, 36, 70, 0.1);
-            }
-
-            body {
-                background:
-                    radial-gradient(
-                        circle at 10% 0%,
-                        rgba(109, 63, 209, 0.12),
-                        transparent 32rem
-                    ),
-                    var(--background);
-            }
-
-            .site-header {
-                background: rgba(255, 255, 255, 0.9);
-            }
-
-            .badge {
-                background: rgba(255, 255, 255, 0.7);
-            }
-
-            .document {
-                background: rgba(255, 255, 255, 0.94);
-            }
-        }
-
-        /* ========================================================= */
-        /* МОБИЛЬНАЯ ВЕРСИЯ                                          */
-        /* ========================================================= */
-
-        @media (max-width: 850px) {
+        @media (max-width: 1080px) {
             .site-header {
                 position: static;
                 grid-template-columns: 1fr;
@@ -625,16 +672,21 @@
                 justify-content: center;
             }
 
-            .document-switcher {
+            .page-navigation {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .navigation-tab {
+                flex: 1 1 150px;
+            }
+
+            .social-navigation {
                 width: 100%;
             }
 
-            .document-tab {
+            .social-button {
                 flex: 1;
-            }
-
-            .header-contact {
-                width: 100%;
             }
         }
 
@@ -663,26 +715,33 @@
                 width: 100%;
             }
 
-            .document-switcher {
-                flex-direction: column;
-            }
-
-            .document-tab {
-                width: 100%;
-            }
-
             .language-divider {
                 gap: 10px;
                 margin: 44px 0 28px;
                 font-size: 0.79rem;
             }
 
-            .footer-links {
+            .footer-navigation,
+            .footer-socials {
                 flex-direction: column;
             }
 
-            .footer-links a {
+            .footer-navigation a,
+            .footer-socials a {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .page-navigation,
+            .social-navigation {
+                flex-direction: column;
+            }
+
+            .navigation-tab,
+            .social-button {
+                width: 100%;
+                flex: none;
             }
         }
     </style>
@@ -692,37 +751,79 @@
     <main class="page">
 
         <header class="site-header">
-            <a class="studio-brand" href="./index.html">
+            <a
+                class="studio-brand"
+                href="./index.html"
+                aria-label="Atmos Studio home"
+            >
                 <span class="brand-mark"></span>
                 Atmos Studio
             </a>
 
             <nav
-                class="document-switcher"
-                aria-label="Legal documents"
+                class="page-navigation"
+                aria-label="Main navigation"
             >
                 <a
-                    class="document-tab active"
+                    class="navigation-tab"
                     href="./index.html"
+                >
+                    Home
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./builds.html"
+                >
+                    Builds
+                </a>
+
+                <a
+                    class="navigation-tab active"
+                    href="./privacy-policy.html"
                     aria-current="page"
                 >
                     Privacy Policy
                 </a>
 
                 <a
-                    class="document-tab"
+                    class="navigation-tab"
                     href="./terms-of-use.html"
                 >
                     Terms of Use
                 </a>
             </nav>
 
-            <a
-                class="header-contact"
-                href="mailto:atmos.studio.team@gmail.com"
+            <nav
+                class="social-navigation"
+                aria-label="Atmos Studio communities"
             >
-                Contact
-            </a>
+                <a
+                    class="social-button discord"
+                    href="https://discord.gg/g9G3uHPzWQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.54 5.34A16.3 16.3 0 0 0 15.44 4a11.4 11.4 0 0 0-.52 1.07 15.25 15.25 0 0 0-4.84 0A11.4 11.4 0 0 0 9.56 4a16.4 16.4 0 0 0-4.11 1.35C2.85 9.2 2.15 12.95 2.5 16.65a16.7 16.7 0 0 0 5.03 2.55c.41-.55.77-1.14 1.08-1.76a10.7 10.7 0 0 1-1.7-.82c.14-.1.28-.21.41-.32a11.7 11.7 0 0 0 10.36 0l.42.32c-.55.33-1.12.6-1.71.82.31.62.67 1.21 1.08 1.76a16.6 16.6 0 0 0 5.03-2.55c.41-4.29-.7-8-2.96-11.31ZM9.22 14.38c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Zm5.56 0c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Z"/>
+                    </svg>
+
+                    Discord
+                </a>
+
+                <a
+                    class="social-button telegram"
+                    href="https://t.me/atmos_studio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.7 3.2 18.6 20c-.23 1.19-.85 1.48-1.72.92l-4.72-3.48-2.28 2.19c-.25.25-.46.46-.95.46l.34-4.81 8.76-7.92c.38-.34-.08-.53-.59-.19L6.61 13.99l-4.67-1.46c-1.02-.32-1.04-1.02.21-1.51L20.42 3.98c.85-.31 1.59.19 1.28-.78Z"/>
+                    </svg>
+
+                    Telegram
+                </a>
+            </nav>
         </header>
 
         <header class="hero">
@@ -753,7 +854,10 @@
         >
             <div class="language-label">
                 <strong>Language / Язык</strong>
-                <span>Jump to the required version of the document</span>
+
+                <span>
+                    Jump to the required version of the document
+                </span>
             </div>
 
             <div class="language-actions">
@@ -779,12 +883,23 @@
             <span>English version</span>
         </div>
 
-        <article class="document" id="english">
+        <article
+            class="document"
+            id="english"
+            lang="en"
+        >
             <header class="document-header">
                 <h2>Atmos Studio Global Privacy Policy</h2>
 
-                <p><strong>Effective date:</strong> July 30, 2026</p>
-                <p><strong>Last updated:</strong> July 31, 2026</p>
+                <p>
+                    <strong>Effective date:</strong>
+                    July 30, 2026
+                </p>
+
+                <p>
+                    <strong>Last updated:</strong>
+                    July 31, 2026
+                </p>
             </header>
 
             <section class="policy-section">
@@ -801,39 +916,51 @@
                 <div class="platform-grid">
                     <div class="platform-card">
                         <strong>Discord</strong>
-                        <span>Applications, bots, commands, and integrations</span>
+                        <span>
+                            Applications, bots, commands, and integrations
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Minecraft</strong>
-                        <span>Modpacks, data packs, resource packs, and configs</span>
+                        <span>
+                            Modpacks, data packs, resource packs, and configs
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Boosty</strong>
-                        <span>Subscriptions and access to current builds</span>
+                        <span>
+                            Subscriptions and access to current builds
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Modrinth</strong>
-                        <span>Public releases and project pages</span>
+                        <span>
+                            Public releases and project pages
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>CurseForge</strong>
-                        <span>Public releases and distribution</span>
+                        <span>
+                            Public releases and distribution
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Support</strong>
-                        <span>Email, Discord, logs, and crash reports</span>
+                        <span>
+                            Email, Discord, logs, and crash reports
+                        </span>
                     </div>
                 </div>
 
                 <p>
-                    This Policy also applies to future Atmos Studio products
+                    This Policy also applies to future Atmos Studio Products
                     where this Policy is referenced, unless a separate privacy
-                    policy is published for the relevant product.
+                    policy applies to the relevant Product.
                 </p>
             </section>
 
@@ -858,10 +985,10 @@
                 <h3>3. General principles</h3>
 
                 <p>
-                    Atmos Studio aims to process only the information reasonably
-                    necessary to operate its products, respond to requests,
-                    maintain security, diagnose errors, provide support, and
-                    prevent abuse.
+                    Atmos Studio aims to process only the information
+                    reasonably necessary to operate its Products, respond
+                    to requests, provide support, maintain security,
+                    diagnose errors, and prevent abuse.
                 </p>
 
                 <p>Atmos Studio does not:</p>
@@ -869,9 +996,15 @@
                 <ul>
                     <li>sell personal information;</li>
                     <li>rent personal information to advertisers;</li>
-                    <li>use personal information for personalized advertising;</li>
-                    <li>request passwords or Discord account tokens;</li>
-                    <li>intentionally collect full payment card details.</li>
+                    <li>
+                        use personal information for personalized advertising;
+                    </li>
+                    <li>
+                        request passwords or Discord account tokens;
+                    </li>
+                    <li>
+                        intentionally collect complete payment-card details.
+                    </li>
                 </ul>
 
                 <p>
@@ -885,198 +1018,179 @@
                 <h3>4. Discord applications and bots</h3>
 
                 <p>
-                    When a user interacts with an Atmos Studio Discord
+                    When a User interacts with an Atmos Studio Discord
                     application, the following information may be processed:
                 </p>
 
                 <ul>
                     <li>Discord User ID;</li>
                     <li>username, display name, and profile image;</li>
-                    <li>server, channel, role, message, and interaction IDs;</li>
+                    <li>
+                        server, channel, role, message, and interaction IDs;
+                    </li>
                     <li>server membership, roles, and permissions;</li>
                     <li>commands and command parameters;</li>
-                    <li>information submitted through forms and interactive components;</li>
-                    <li>user-level and server-level application settings;</li>
-                    <li>command execution, error, security, and abuse-prevention information.</li>
+                    <li>
+                        information submitted through forms and interactive
+                        components;
+                    </li>
+                    <li>
+                        user-level and server-level application settings;
+                    </li>
+                    <li>
+                        command execution, error, security, and
+                        abuse-prevention information.
+                    </li>
                 </ul>
 
                 <p>
-                    Ordinary message content is not intentionally collected or
-                    retained unless a particular application feature requires
-                    that content.
+                    Ordinary message content is not intentionally collected
+                    or retained unless a particular application feature
+                    requires that content.
                 </p>
 
                 <p>
-                    Where a feature requires message content, an attachment, or
-                    other user-provided content, it is processed only to provide
-                    the requested feature, maintain security, moderate abuse, or
-                    diagnose a technical problem.
+                    Where a feature requires message content, an attachment,
+                    or other user-provided content, it is processed only to
+                    provide the requested feature, maintain security,
+                    moderate abuse, or diagnose a technical problem.
                 </p>
 
                 <p>
-                    Atmos Studio Discord applications do not request a user's
-                    Discord password, account token, or full payment details.
+                    Atmos Studio Discord applications do not request a
+                    User's Discord password, account token, or complete
+                    payment details.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>5. Minecraft modpacks and related products</h3>
+                <h3>5. Minecraft modpacks and related Products</h3>
 
                 <p>
-                    Unless clearly stated otherwise in a product-specific notice,
-                    Atmos Studio Minecraft modpacks, data packs, resource packs,
-                    scripts, and configuration packages do not directly transmit
-                    personal information to Atmos Studio.
+                    Unless clearly stated otherwise in a Product-specific
+                    notice, Atmos Studio Minecraft modpacks, data packs,
+                    resource packs, scripts, and configuration packages do
+                    not directly transmit personal information to
+                    Atmos Studio.
                 </p>
 
                 <p>
-                    Local saves, settings, game logs, launcher information, and
-                    installation details generally remain on the user's device.
+                    Local saves, settings, game logs, launcher information,
+                    and installation details generally remain on the
+                    User's device.
                 </p>
 
                 <p>Atmos Studio may receive this information when:</p>
 
                 <ul>
                     <li>
-                        the user voluntarily submits a game log, crash report,
-                        screenshot, save, configuration, or other file;
+                        the User voluntarily submits a game log, crash report,
+                        screenshot, save, configuration, or another file;
                     </li>
-
                     <li>
-                        the user contacts technical support and provides
+                        the User contacts technical support and provides
                         information about their device or software;
                     </li>
-
                     <li>
-                        a product uses an online Atmos Studio feature that is
+                        a Product uses an online Atmos Studio feature that is
                         separately disclosed;
                     </li>
-
                     <li>
                         information is provided through a third-party platform
-                        selected by the user.
+                        selected by the User.
                     </li>
                 </ul>
 
                 <p>
-                    A modpack may contain third-party modifications, libraries,
-                    launchers, or services. Those components may independently
-                    connect to the internet, check for updates, download content,
-                    or process technical data.
+                    A modpack may contain third-party modifications,
+                    libraries, launchers, or services. Those components may
+                    independently connect to the internet, check for updates,
+                    download content, or process technical data.
                 </p>
 
                 <p>
-                    Independent processing by third-party components is governed
-                    by the relevant developers' and providers' own policies.
+                    Independent processing by third-party components is
+                    governed by the relevant developers' and providers'
+                    own policies.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>6. Boosty subscriptions and paid build access</h3>
+                <h3>6. Boosty subscriptions and restricted Builds</h3>
 
                 <p>
-                    Atmos Studio may use Boosty to publish current, experimental,
-                    early-access, or otherwise restricted builds of its products.
+                    Atmos Studio may use Boosty to publish current,
+                    experimental, early-access, or otherwise restricted
+                    Builds of its Products.
                 </p>
 
-                <h4>Current distribution model</h4>
-
-                <ul>
-                    <li>
-                        An active monthly subscription may provide access to
-                        builds and updates published for the relevant Boosty
-                        subscription tier during the active access period.
-                    </li>
-
-                    <li>
-                        When the subscription expires or is cancelled, the user
-                        may lose access to subscription-restricted posts, files,
-                        downloads, and future updates.
-                    </li>
-
-                    <li>
-                        Files lawfully downloaded while access was active are not
-                        remotely deleted by Atmos Studio from the user's device.
-                    </li>
-
-                    <li>
-                        When a newer current build is released through Boosty,
-                        the immediately preceding build will normally be prepared
-                        for free public publication on Modrinth, CurseForge, or
-                        another public distribution platform.
-                    </li>
-
-                    <li>
-                        The newest active build may remain available only through
-                        Boosty until it is replaced by a later build or otherwise
-                        released publicly.
-                    </li>
-                </ul>
-
-                <div class="notice">
-                    <strong>Distribution notice:</strong>
-                    this section describes the current distribution model.
-                    Prices, renewals, cancellations, refunds, payment disputes,
-                    subscription tiers, and exact access conditions are governed
-                    by Boosty's terms and any applicable Atmos Studio product
-                    terms. This Privacy Policy is not a replacement for those
-                    terms.
-                </div>
-
-                <h4>Information processed in connection with Boosty</h4>
-
                 <p>
-                    Depending on Boosty's available functions and the user's
+                    Depending on Boosty's available functions and the User's
                     activity, Atmos Studio may receive or view:
                 </p>
 
                 <ul>
-                    <li>Boosty profile name or public account information;</li>
-                    <li>platform account or subscriber identifiers;</li>
+                    <li>
+                        Boosty profile names and public account information;
+                    </li>
+                    <li>platform or subscriber identifiers;</li>
                     <li>subscription tier and subscription status;</li>
-                    <li>subscription start, renewal, or expiration information;</li>
-                    <li>access entitlement information;</li>
-                    <li>payment or transaction references that do not contain full card details;</li>
-                    <li>comments, messages, files, or other information sent by the user;</li>
-                    <li>information required to provide support or verify access.</li>
+                    <li>
+                        subscription start, renewal, and expiration
+                        information;
+                    </li>
+                    <li>access-entitlement information;</li>
+                    <li>
+                        transaction references that do not contain complete
+                        payment-card details;
+                    </li>
+                    <li>
+                        comments, messages, files, or other information
+                        submitted by the User;
+                    </li>
+                    <li>
+                        information required to provide support or verify
+                        access.
+                    </li>
                 </ul>
 
                 <p>
-                    Payments are processed by Boosty and its payment providers.
-                    Atmos Studio does not intentionally receive or store full
-                    payment card numbers, card security codes, or online banking
-                    credentials.
+                    Payments are processed by Boosty and its payment
+                    providers. Atmos Studio does not intentionally receive
+                    or store complete card numbers, card-security codes,
+                    or online-banking credentials.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>7. Modrinth and CurseForge releases</h3>
+                <h3>7. Modrinth and CurseForge</h3>
 
                 <p>
-                    Atmos Studio may publish free or previously subscription-only
-                    product versions on Modrinth, CurseForge, or similar
-                    distribution platforms.
+                    Atmos Studio may publish public or previously
+                    subscription-restricted Product versions through
+                    Modrinth, CurseForge, or similar distribution platforms.
                 </p>
 
                 <p>
-                    Atmos Studio may receive aggregated or account-related
-                    information made available to project authors by the relevant
-                    platform, such as:
+                    Atmos Studio may receive information made available to
+                    project authors by those platforms, including:
                 </p>
 
                 <ul>
                     <li>download and project statistics;</li>
                     <li>comments, reviews, reports, and support messages;</li>
                     <li>public usernames and profile information;</li>
-                    <li>project moderation or security notifications;</li>
-                    <li>creator reward or payout information, where applicable.</li>
+                    <li>moderation and security notifications;</li>
+                    <li>
+                        creator-reward or payout information, where applicable.
+                    </li>
                 </ul>
 
                 <p>
                     Modrinth, CurseForge, Overwolf, and similar platforms
-                    independently control information collected through their
-                    websites, applications, accounts, analytics, advertising,
-                    and payment systems.
+                    independently control information collected through
+                    their websites, applications, accounts, analytics,
+                    advertising, and payment systems.
                 </p>
             </section>
 
@@ -1084,8 +1198,8 @@
                 <h3>8. Websites and GitHub Pages</h3>
 
                 <p>
-                    Atmos Studio pages may be hosted using GitHub Pages or
-                    another hosting provider.
+                    Atmos Studio pages may be hosted using GitHub Pages
+                    or another hosting provider.
                 </p>
 
                 <p>
@@ -1099,188 +1213,184 @@
                     <li>browser and device information;</li>
                     <li>operating system;</li>
                     <li>requested page and request time;</li>
-                    <li>security, diagnostic, and server-log information.</li>
+                    <li>
+                        security, diagnostic, and server-log information.
+                    </li>
                 </ul>
 
                 <p>
-                    Atmos Studio static pages do not use first-party targeted
-                    advertising, profiling, or custom analytics unless a page
-                    clearly states otherwise.
+                    Atmos Studio static pages do not use first-party
+                    targeted advertising, profiling, or custom analytics
+                    unless a page clearly states otherwise.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>9. Technical support and communications</h3>
+                <h3>9. Support and communications</h3>
 
                 <p>
-                    When a user contacts Atmos Studio by email, Discord, Boosty,
-                    Modrinth, CurseForge, or another platform, Atmos Studio may
-                    process:
+                    When a User contacts Atmos Studio by email, Discord,
+                    Telegram, Boosty, Modrinth, CurseForge, or another
+                    platform, Atmos Studio may process:
                 </p>
 
                 <ul>
                     <li>name, username, or alias;</li>
                     <li>email address or platform identifier;</li>
-                    <li>Discord User ID;</li>
+                    <li>Discord or Telegram account identifiers;</li>
                     <li>message content;</li>
                     <li>screenshots and attachments;</li>
                     <li>game logs and crash reports;</li>
-                    <li>device, operating system, launcher, and software details;</li>
-                    <li>other information voluntarily provided by the user.</li>
+                    <li>
+                        device, operating-system, launcher, and software
+                        information;
+                    </li>
+                    <li>
+                        other information voluntarily provided by the User.
+                    </li>
                 </ul>
 
                 <p>
-                    Users should not submit passwords, account tokens, private
-                    keys, payment credentials, or other secret information.
+                    Users should not submit passwords, account tokens,
+                    private keys, payment credentials, or other secret
+                    information.
                 </p>
 
                 <p>
-                    Before submitting logs or crash reports, users should review
-                    them for personal folder paths, usernames, IP addresses,
-                    authentication tokens, and other information they do not wish
-                    to disclose.
+                    Before submitting logs or crash reports, Users should
+                    review them for personal folder paths, usernames,
+                    IP addresses, authentication tokens, and other
+                    information they do not wish to disclose.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>10. Purposes of processing</h3>
+                <h3>10. Purposes and legal bases</h3>
 
                 <p>Information may be processed to:</p>
 
                 <ul>
-                    <li>provide product functions and downloads;</li>
-                    <li>perform Discord commands and user requests;</li>
+                    <li>provide Product functions and downloads;</li>
+                    <li>perform commands and User requests;</li>
                     <li>verify subscription or access status;</li>
-                    <li>store user and server settings;</li>
+                    <li>store User and server settings;</li>
                     <li>provide technical support;</li>
                     <li>diagnose and correct errors;</li>
-                    <li>develop and improve Atmos Studio products;</li>
-                    <li>prevent spam, fraud, piracy, and abuse;</li>
-                    <li>protect users, products, and infrastructure;</li>
-                    <li>respond to legal claims and comply with applicable law.</li>
+                    <li>develop and improve Atmos Studio Products;</li>
+                    <li>
+                        prevent spam, fraud, piracy, and abuse;
+                    </li>
+                    <li>protect Users, Products, and infrastructure;</li>
+                    <li>
+                        comply with legal obligations and respond to claims.
+                    </li>
                 </ul>
-            </section>
-
-            <section class="policy-section">
-                <h3>11. Legal bases</h3>
 
                 <p>
-                    Depending on the circumstances and applicable law, Atmos
-                    Studio may process information on the basis of:
+                    Depending on the circumstances, processing may be based
+                    on the performance of a requested service, steps taken
+                    at the User's request, legitimate interests, consent,
+                    or compliance with legal obligations.
                 </p>
-
-                <ul>
-                    <li>performance of a requested service or action;</li>
-                    <li>steps taken at the user's request before providing access or support;</li>
-                    <li>legitimate interests in operating, securing, protecting, and improving products;</li>
-                    <li>user consent, where consent is required;</li>
-                    <li>compliance with legal obligations.</li>
-                </ul>
             </section>
 
             <section class="policy-section">
-                <h3>12. Sharing and third-party services</h3>
+                <h3>11. Sharing and third-party services</h3>
 
                 <p>
-                    Information may be processed or made available to the
-                    following categories of third parties where necessary:
+                    Where necessary, information may be processed or made
+                    available to:
                 </p>
 
                 <ul>
                     <li>Discord;</li>
+                    <li>Telegram;</li>
                     <li>Boosty and its payment providers;</li>
                     <li>GitHub and GitHub Pages;</li>
-                    <li>Google, when Gmail is used for communication;</li>
+                    <li>Google when Gmail is used for communication;</li>
                     <li>Modrinth;</li>
                     <li>CurseForge and Overwolf;</li>
-                    <li>hosting, database, and infrastructure providers;</li>
-                    <li>security and error-monitoring providers;</li>
-                    <li>professional advisers and public authorities where legally required.</li>
+                    <li>
+                        hosting, database, infrastructure, security, and
+                        error-monitoring providers;
+                    </li>
+                    <li>
+                        professional advisers and public authorities where
+                        legally required.
+                    </li>
                 </ul>
 
                 <p>
-                    These providers may act as independent controllers of the
-                    information they collect through their own platforms.
+                    Such providers may independently control information
+                    collected through their own platforms.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>13. International processing</h3>
+                <h3>12. International processing</h3>
 
                 <p>
                     Third-party platforms and infrastructure providers may
-                    process information outside the user's country, including
-                    outside the European Economic Area.
+                    process information outside the User's country,
+                    including outside the European Economic Area.
                 </p>
 
                 <p>
-                    Where required by applicable law, international transfers
-                    must be supported by appropriate legal safeguards.
+                    Where required by applicable law, international
+                    transfers must be supported by appropriate legal
+                    safeguards.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>14. Data retention</h3>
+                <h3>13. Data retention</h3>
 
                 <p>
                     Atmos Studio retains information only for as long as
                     reasonably necessary for the relevant purpose.
                 </p>
 
-                <p>Retention periods may depend on:</p>
+                <p>Retention may depend on:</p>
 
                 <ul>
-                    <li>the type of product or service;</li>
-                    <li>whether a subscription or account remains active;</li>
+                    <li>the type of Product or service;</li>
+                    <li>
+                        whether a subscription, account, or integration
+                        remains active;
+                    </li>
                     <li>whether the information is needed for support;</li>
-                    <li>security and abuse-prevention requirements;</li>
-                    <li>legal, accounting, or dispute-resolution obligations.</li>
-                </ul>
-
-                <p>Typical retention practices include:</p>
-
-                <ul>
                     <li>
-                        Discord and product settings may be retained while the
-                        relevant application or service remains in use;
+                        security and abuse-prevention requirements;
                     </li>
-
                     <li>
-                        transient technical logs are generally retained only for
-                        the period needed to diagnose errors and maintain security;
-                    </li>
-
-                    <li>
-                        support communications may be retained while the matter
-                        remains relevant and for a reasonable period afterward;
-                    </li>
-
-                    <li>
-                        abuse-prevention records may be retained while a security
-                        risk or legitimate enforcement need continues;
-                    </li>
-
-                    <li>
-                        information may be retained longer where required by law
-                        or necessary to establish, exercise, or defend legal claims.
+                        legal, accounting, or dispute-resolution obligations.
                     </li>
                 </ul>
 
                 <p>
-                    Backups may retain information for a limited additional
-                    period until they are routinely overwritten or deleted.
+                    Technical logs are generally retained only while needed
+                    for diagnostics and security. Support communications may
+                    be retained while the matter remains relevant and for a
+                    reasonable period afterward.
+                </p>
+
+                <p>
+                    Information may be retained longer where required by law
+                    or necessary to establish, exercise, or defend legal
+                    claims. Backups may retain information for a limited
+                    additional period until routinely overwritten or deleted.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>15. Security</h3>
+                <h3>14. Security</h3>
 
                 <p>
                     Atmos Studio uses reasonable technical and organizational
-                    measures to protect information, which may include access
-                    restrictions, permission controls, protected credentials,
-                    software updates, and deletion of information that is no
-                    longer required.
+                    safeguards, which may include access restrictions,
+                    permission controls, protected credentials, software
+                    updates, and deletion of information that is no longer
+                    required.
                 </p>
 
                 <p>
@@ -1290,22 +1400,29 @@
             </section>
 
             <section class="policy-section">
-                <h3>16. User rights</h3>
+                <h3>15. User rights</h3>
 
                 <p>
-                    Depending on applicable law, users may have the right to:
+                    Depending on applicable law, Users may have the right to:
                 </p>
 
                 <ul>
                     <li>receive information about data processing;</li>
-                    <li>request access to their personal information;</li>
+                    <li>request access to personal information;</li>
                     <li>request correction of inaccurate information;</li>
-                    <li>request deletion of information;</li>
+                    <li>request deletion;</li>
                     <li>request restriction of processing;</li>
                     <li>object to certain processing;</li>
-                    <li>receive portable information where applicable;</li>
-                    <li>withdraw consent where processing relies on consent;</li>
-                    <li>submit a complaint to a competent data protection authority.</li>
+                    <li>
+                        receive portable information where applicable;
+                    </li>
+                    <li>
+                        withdraw consent where processing relies on consent;
+                    </li>
+                    <li>
+                        submit a complaint to a competent data-protection
+                        authority.
+                    </li>
                 </ul>
 
                 <p>
@@ -1315,11 +1432,11 @@
             </section>
 
             <section class="policy-section">
-                <h3>17. Data requests</h3>
+                <h3>16. Data requests</h3>
 
                 <p>
-                    To request access, correction, deletion, restriction, or
-                    information about personal data, contact:
+                    To request access, correction, deletion, restriction,
+                    or information about personal data, contact:
                 </p>
 
                 <div class="contact-box">
@@ -1331,71 +1448,76 @@
                 <p>The request should identify:</p>
 
                 <ul>
-                    <li>the relevant Atmos Studio product;</li>
+                    <li>the relevant Atmos Studio Product;</li>
                     <li>the relevant platform;</li>
-                    <li>the user's Discord or platform ID, where applicable;</li>
+                    <li>
+                        the User's platform identifier, where applicable;
+                    </li>
                     <li>the requested action;</li>
-                    <li>information reasonably necessary to locate the data.</li>
+                    <li>
+                        information reasonably required to locate the data.
+                    </li>
                 </ul>
 
                 <p>
-                    Atmos Studio may request reasonable verification that the
-                    requester controls the relevant account.
+                    Atmos Studio may request reasonable verification that
+                    the requester controls the relevant account.
                 </p>
 
                 <p>
-                    Users must not send passwords, Discord tokens, full card
-                    numbers, or other secret credentials.
+                    Users must not send passwords, account tokens,
+                    complete card numbers, or other secret credentials.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>18. Children and minimum age</h3>
+                <h3>17. Children and minimum age</h3>
 
                 <p>
-                    Atmos Studio products are not intended for individuals below
-                    the minimum age required to lawfully use the relevant
-                    platform or service in their country.
+                    Atmos Studio Products are not intended for individuals
+                    below the minimum age required to lawfully use the
+                    relevant platform or service in their country.
                 </p>
 
                 <p>
-                    Atmos Studio does not knowingly collect children's personal
-                    information in violation of applicable law. Information
-                    discovered to have been obtained unlawfully may be deleted.
-                </p>
-            </section>
-
-            <section class="policy-section">
-                <h3>19. Automated decision-making</h3>
-
-                <p>
-                    Atmos Studio does not currently use personal information for
-                    automated decision-making or profiling that produces legal
-                    or similarly significant effects on users.
+                    Atmos Studio does not knowingly collect children's
+                    personal information in violation of applicable law.
+                    Information discovered to have been obtained unlawfully
+                    may be deleted.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>20. Changes to this Policy</h3>
+                <h3>18. Automated decision-making</h3>
 
                 <p>
-                    Atmos Studio may update this Policy when its products,
-                    distribution model, infrastructure, legal obligations, or
-                    data practices change.
-                </p>
-
-                <p>
-                    The current version will be published on this page. The
-                    “Last updated” date at the beginning of the document will
-                    indicate when the latest changes were made.
+                    Atmos Studio does not currently use personal information
+                    for automated decision-making or profiling that produces
+                    legal or similarly significant effects on Users.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>21. Contact</h3>
+                <h3>19. Changes to this Policy</h3>
+
+                <p>
+                    Atmos Studio may update this Policy when its Products,
+                    distribution model, infrastructure, legal obligations,
+                    or data practices change.
+                </p>
+
+                <p>
+                    The current version will be published on this page.
+                    The “Last updated” date indicates when the latest changes
+                    were made.
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h3>20. Contact</h3>
 
                 <div class="contact-box">
-                    For privacy questions and data requests:
+                    Privacy questions and data requests:
                     <a href="mailto:atmos.studio.team@gmail.com">
                         atmos.studio.team@gmail.com
                     </a>
@@ -1407,9 +1529,16 @@
             <span>Русская версия</span>
         </div>
 
-        <article class="document" id="russian">
+        <article
+            class="document"
+            id="russian"
+            lang="ru"
+        >
             <header class="document-header">
-                <h2>Глобальная политика конфиденциальности Atmos Studio</h2>
+                <h2>
+                    Глобальная политика конфиденциальности
+                    Atmos Studio
+                </h2>
 
                 <p>
                     <strong>Дата вступления в силу:</strong>
@@ -1426,10 +1555,10 @@
                 <h3>1. Область действия Политики</h3>
 
                 <p>
-                    Настоящая Глобальная политика конфиденциальности описывает
-                    порядок обработки информации в продуктах и сервисах,
-                    выпускаемых, публикуемых, поддерживаемых или управляемых
-                    под названием Atmos Studio.
+                    Настоящая Глобальная политика конфиденциальности
+                    описывает порядок обработки информации в продуктах
+                    и сервисах, выпускаемых, публикуемых, поддерживаемых
+                    или управляемых под названием Atmos Studio.
                 </p>
 
                 <p>Политика распространяется, в частности, на:</p>
@@ -1437,40 +1566,53 @@
                 <div class="platform-grid">
                     <div class="platform-card">
                         <strong>Discord</strong>
-                        <span>Приложения, боты, команды и интеграции</span>
+                        <span>
+                            Приложения, боты, команды и интеграции
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Minecraft</strong>
-                        <span>Сборки, датапаки, ресурспаки и конфигурации</span>
+                        <span>
+                            Сборки, датапаки, ресурспаки и конфигурации
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Boosty</strong>
-                        <span>Подписки и доступ к актуальным сборкам</span>
+                        <span>
+                            Подписки и доступ к актуальным сборкам
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Modrinth</strong>
-                        <span>Бесплатные публикации и страницы проектов</span>
+                        <span>
+                            Публичные версии и страницы проектов
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>CurseForge</strong>
-                        <span>Бесплатные публикации и распространение</span>
+                        <span>
+                            Публичные версии и распространение
+                        </span>
                     </div>
 
                     <div class="platform-card">
                         <strong>Поддержка</strong>
-                        <span>Почта, Discord, логи и отчёты о сбоях</span>
+                        <span>
+                            Почта, Discord, Telegram, логи и отчёты
+                            о сбоях
+                        </span>
                     </div>
                 </div>
 
                 <p>
-                    Политика также распространяется на будущие продукты Atmos
-                    Studio, в которых размещена ссылка на настоящий документ,
-                    если для соответствующего продукта не опубликована отдельная
-                    политика конфиденциальности.
+                    Политика также распространяется на будущие продукты
+                    Atmos Studio, в которых размещена ссылка на настоящий
+                    документ, если для соответствующего продукта не
+                    применяется отдельная политика конфиденциальности.
                 </p>
             </section>
 
@@ -1495,26 +1637,38 @@
                 <h3>3. Общие принципы</h3>
 
                 <p>
-                    Atmos Studio стремится обрабатывать только ту информацию,
-                    которая обоснованно необходима для работы продуктов,
-                    выполнения запросов, обеспечения безопасности, диагностики
-                    ошибок, оказания поддержки и предотвращения злоупотреблений.
+                    Atmos Studio стремится обрабатывать только ту
+                    информацию, которая обоснованно необходима для работы
+                    продуктов, выполнения запросов, оказания поддержки,
+                    обеспечения безопасности, диагностики ошибок и
+                    предотвращения злоупотреблений.
                 </p>
 
                 <p>Atmos Studio не:</p>
 
                 <ul>
                     <li>продаёт персональные данные;</li>
-                    <li>передаёт персональные данные рекламодателям в аренду;</li>
-                    <li>использует персональные данные для персонализированной рекламы;</li>
-                    <li>запрашивает пароли или токены учётных записей Discord;</li>
-                    <li>намеренно собирает полные данные банковских карт.</li>
+                    <li>
+                        передаёт персональные данные рекламодателям в аренду;
+                    </li>
+                    <li>
+                        использует персональные данные для
+                        персонализированной рекламы;
+                    </li>
+                    <li>
+                        запрашивает пароли или токены учётных записей
+                        Discord;
+                    </li>
+                    <li>
+                        намеренно собирает полные данные банковских карт.
+                    </li>
                 </ul>
 
                 <p>
                     Сторонние платформы могут самостоятельно использовать
-                    аналитику, cookies, рекламные системы или платёжные сервисы
-                    в соответствии со своими политиками конфиденциальности.
+                    аналитику, cookies, рекламные системы и платёжные
+                    сервисы в соответствии со своими политиками
+                    конфиденциальности.
                 </p>
             </section>
 
@@ -1522,38 +1676,53 @@
                 <h3>4. Discord-приложения и боты</h3>
 
                 <p>
-                    При взаимодействии с Discord-приложением Atmos Studio может
-                    обрабатываться следующая информация:
+                    При взаимодействии с Discord-приложением Atmos Studio
+                    может обрабатываться следующая информация:
                 </p>
 
                 <ul>
                     <li>Discord User ID;</li>
-                    <li>имя пользователя, отображаемое имя и изображение профиля;</li>
-                    <li>идентификаторы серверов, каналов, ролей, сообщений и взаимодействий;</li>
+                    <li>
+                        имя пользователя, отображаемое имя и изображение
+                        профиля;
+                    </li>
+                    <li>
+                        идентификаторы серверов, каналов, ролей, сообщений
+                        и взаимодействий;
+                    </li>
                     <li>участие на сервере, роли и разрешения;</li>
                     <li>команды и параметры команд;</li>
-                    <li>информация, переданная через формы и интерактивные компоненты;</li>
-                    <li>пользовательские настройки и настройки Discord-сервера;</li>
-                    <li>сведения о выполнении команд, ошибках, безопасности и злоупотреблениях.</li>
+                    <li>
+                        информация, переданная через формы и интерактивные
+                        элементы;
+                    </li>
+                    <li>
+                        пользовательские настройки и настройки
+                        Discord-сервера;
+                    </li>
+                    <li>
+                        сведения о выполнении команд, ошибках, безопасности
+                        и злоупотреблениях.
+                    </li>
                 </ul>
 
                 <p>
-                    Содержимое обычных сообщений намеренно не собирается и не
-                    сохраняется, если оно не требуется для конкретной функции
-                    приложения.
+                    Содержимое обычных сообщений намеренно не собирается
+                    и не сохраняется, если оно не требуется для конкретной
+                    функции приложения.
                 </p>
 
                 <p>
-                    Когда функции требуется содержимое сообщения, вложение или
-                    другая предоставленная пользователем информация, она
-                    обрабатывается только для выполнения запрошенной функции,
-                    обеспечения безопасности, предотвращения злоупотреблений
-                    или диагностики технической проблемы.
+                    Когда функции требуется содержимое сообщения, вложение
+                    или другая предоставленная пользователем информация,
+                    она обрабатывается только для выполнения запрошенной
+                    функции, обеспечения безопасности, предотвращения
+                    злоупотреблений или диагностики технической проблемы.
                 </p>
 
                 <p>
-                    Discord-приложения Atmos Studio не запрашивают пароль
-                    Discord, токен учётной записи или полные платёжные данные.
+                    Discord-приложения Atmos Studio не запрашивают пароль,
+                    токен учётной записи или полные платёжные данные.
                 </p>
             </section>
 
@@ -1561,114 +1730,66 @@
                 <h3>5. Minecraft-сборки и связанные продукты</h3>
 
                 <p>
-                    Если в уведомлении конкретного продукта прямо не указано
-                    иное, Minecraft-сборки, датапаки, ресурспаки, скрипты и
-                    конфигурации Atmos Studio не передают персональные данные
-                    непосредственно Atmos Studio.
+                    Если в уведомлении конкретного продукта прямо не
+                    указано иное, Minecraft-сборки, датапаки, ресурспаки,
+                    скрипты и конфигурации Atmos Studio не передают
+                    персональные данные непосредственно Atmos Studio.
                 </p>
 
                 <p>
-                    Локальные сохранения, настройки, игровые журналы, сведения
-                    лаунчера и информация об установке обычно остаются на
-                    устройстве пользователя.
+                    Локальные сохранения, настройки, игровые журналы,
+                    сведения лаунчера и информация об установке обычно
+                    остаются на устройстве пользователя.
                 </p>
 
                 <p>Atmos Studio может получить такую информацию, когда:</p>
 
                 <ul>
                     <li>
-                        пользователь добровольно отправляет игровой журнал,
-                        crash-report, снимок экрана, сохранение, конфигурацию
-                        или другой файл;
+                        пользователь добровольно отправляет журнал,
+                        crash-report, снимок экрана, сохранение,
+                        конфигурацию или другой файл;
                     </li>
-
                     <li>
-                        пользователь обращается в техническую поддержку и
-                        сообщает сведения об устройстве или программном
+                        пользователь обращается в техническую поддержку
+                        и сообщает сведения об устройстве или программном
                         обеспечении;
                     </li>
-
                     <li>
-                        продукт использует отдельно обозначенную онлайн-функцию
-                        Atmos Studio;
+                        продукт использует отдельно обозначенную
+                        онлайн-функцию Atmos Studio;
                     </li>
-
                     <li>
-                        пользователь передаёт информацию через выбранную им
-                        стороннюю платформу.
+                        информация передаётся через выбранную
+                        пользователем стороннюю платформу.
                     </li>
                 </ul>
 
                 <p>
-                    Сборка может содержать сторонние модификации, библиотеки,
-                    лаунчеры или сервисы. Такие компоненты могут самостоятельно
-                    подключаться к интернету, проверять обновления, загружать
-                    содержимое или обрабатывать технические данные.
+                    Сборка может содержать сторонние модификации,
+                    библиотеки, лаунчеры или сервисы. Такие компоненты
+                    могут самостоятельно подключаться к интернету,
+                    проверять обновления, загружать содержимое или
+                    обрабатывать технические данные.
                 </p>
 
                 <p>
-                    Самостоятельная обработка данных сторонними компонентами
-                    регулируется политиками соответствующих разработчиков
-                    и поставщиков.
+                    Самостоятельная обработка данных сторонними
+                    компонентами регулируется политиками соответствующих
+                    разработчиков и поставщиков.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>6. Подписки Boosty и доступ к платным сборкам</h3>
+                <h3>
+                    6. Подписки Boosty и закрытые сборки
+                </h3>
 
                 <p>
                     Atmos Studio может использовать Boosty для публикации
                     актуальных, экспериментальных, ранних или иным образом
-                    ограниченных версий своих продуктов.
+                    ограниченных версий продуктов.
                 </p>
-
-                <h4>Текущая модель распространения</h4>
-
-                <ul>
-                    <li>
-                        Активная месячная подписка может предоставлять доступ
-                        к сборкам и обновлениям, опубликованным для
-                        соответствующего уровня подписки Boosty в период
-                        действия доступа.
-                    </li>
-
-                    <li>
-                        После окончания или отмены подписки пользователь может
-                        потерять доступ к закрытым публикациям, файлам,
-                        загрузкам и последующим обновлениям.
-                    </li>
-
-                    <li>
-                        Файлы, законно загруженные во время действия доступа,
-                        не удаляются Atmos Studio дистанционно с устройства
-                        пользователя.
-                    </li>
-
-                    <li>
-                        После выпуска новой актуальной сборки через Boosty
-                        непосредственно предшествующая сборка обычно
-                        подготавливается для бесплатной публикации на Modrinth,
-                        CurseForge или другой общедоступной платформе.
-                    </li>
-
-                    <li>
-                        Самая новая актуальная сборка может оставаться доступной
-                        только через Boosty до момента её замены последующей
-                        сборкой или иной общедоступной публикации.
-                    </li>
-                </ul>
-
-                <div class="notice">
-                    <strong>Уведомление о распространении:</strong>
-                    настоящий раздел описывает текущую модель распространения.
-                    Цены, автоматическое продление, отмена, возвраты, платёжные
-                    споры, уровни подписки и точные условия доступа регулируются
-                    правилами Boosty и отдельными условиями соответствующего
-                    продукта Atmos Studio. Настоящая Политика
-                    конфиденциальности не заменяет такие условия.
-                </div>
-
-                <h4>Информация, связанная с использованием Boosty</h4>
 
                 <p>
                     В зависимости от функций Boosty и действий пользователя
@@ -1676,52 +1797,78 @@
                 </p>
 
                 <ul>
-                    <li>имя профиля Boosty или публичные данные аккаунта;</li>
-                    <li>идентификатор аккаунта или подписчика;</li>
+                    <li>
+                        имя профиля Boosty и публичные данные аккаунта;
+                    </li>
+                    <li>
+                        идентификатор аккаунта или подписчика;
+                    </li>
                     <li>уровень и статус подписки;</li>
-                    <li>сведения о начале, продлении или окончании подписки;</li>
-                    <li>сведения о наличии права доступа;</li>
-                    <li>идентификатор платежа или операции без полных данных карты;</li>
-                    <li>комментарии, сообщения, файлы и другую отправленную пользователем информацию;</li>
-                    <li>информацию, необходимую для поддержки или проверки доступа.</li>
+                    <li>
+                        сведения о начале, продлении и окончании подписки;
+                    </li>
+                    <li>
+                        сведения о наличии права доступа;
+                    </li>
+                    <li>
+                        идентификатор операции без полных данных карты;
+                    </li>
+                    <li>
+                        комментарии, сообщения, файлы и другую отправленную
+                        пользователем информацию;
+                    </li>
+                    <li>
+                        информацию, необходимую для поддержки или проверки
+                        доступа.
+                    </li>
                 </ul>
 
                 <p>
-                    Платежи обрабатываются Boosty и его платёжными поставщиками.
-                    Atmos Studio намеренно не получает и не хранит полные номера
-                    банковских карт, коды безопасности карт или данные для входа
-                    в онлайн-банкинг.
+                    Платежи обрабатываются Boosty и его платёжными
+                    поставщиками. Atmos Studio намеренно не получает и не
+                    хранит полные номера банковских карт, коды безопасности
+                    карт и данные для входа в онлайн-банкинг.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>7. Публикации на Modrinth и CurseForge</h3>
+                <h3>7. Modrinth и CurseForge</h3>
 
                 <p>
-                    Atmos Studio может бесплатно публиковать на Modrinth,
-                    CurseForge или аналогичных платформах общедоступные версии
-                    продуктов и версии, которые ранее были доступны по подписке.
+                    Atmos Studio может публиковать публичные версии
+                    продуктов и версии, которые ранее были доступны
+                    по подписке, через Modrinth, CurseForge и аналогичные
+                    платформы.
                 </p>
 
                 <p>
-                    Atmos Studio может получать агрегированную или связанную
-                    с аккаунтами информацию, предоставляемую авторам проектов
-                    соответствующей платформой, включая:
+                    Atmos Studio может получать информацию, которую
+                    соответствующая платформа предоставляет авторам
+                    проектов, включая:
                 </p>
 
                 <ul>
                     <li>статистику загрузок и проекта;</li>
-                    <li>комментарии, отзывы, жалобы и обращения поддержки;</li>
-                    <li>публичные имена пользователей и данные профилей;</li>
-                    <li>уведомления о модерации или безопасности;</li>
-                    <li>сведения о вознаграждениях или выплатах авторам, если применимо.</li>
+                    <li>
+                        комментарии, отзывы, жалобы и обращения поддержки;
+                    </li>
+                    <li>
+                        публичные имена пользователей и данные профилей;
+                    </li>
+                    <li>
+                        уведомления о модерации и безопасности;
+                    </li>
+                    <li>
+                        сведения о вознаграждениях и выплатах авторам,
+                        если применимо.
+                    </li>
                 </ul>
 
                 <p>
                     Modrinth, CurseForge, Overwolf и аналогичные платформы
-                    самостоятельно отвечают за информацию, собираемую через их
-                    сайты, приложения, аккаунты, аналитику, рекламу и платёжные
-                    системы.
+                    самостоятельно отвечают за информацию, собираемую через
+                    их сайты, приложения, аккаунты, аналитику, рекламу
+                    и платёжные системы.
                 </p>
             </section>
 
@@ -1735,8 +1882,8 @@
 
                 <p>
                     Поставщик хостинга может автоматически обрабатывать
-                    техническую информацию, необходимую для доставки и защиты
-                    сайта, включая:
+                    техническую информацию, необходимую для доставки
+                    и защиты сайта, включая:
                 </p>
 
                 <ul>
@@ -1744,41 +1891,53 @@
                     <li>сведения о браузере и устройстве;</li>
                     <li>операционную систему;</li>
                     <li>запрошенную страницу и время запроса;</li>
-                    <li>сведения безопасности, диагностики и серверных журналов.</li>
+                    <li>
+                        сведения безопасности, диагностики и серверных
+                        журналов.
+                    </li>
                 </ul>
 
                 <p>
-                    Статические страницы Atmos Studio не используют собственную
-                    таргетированную рекламу, профилирование или специальную
-                    аналитику, если на соответствующей странице прямо не
-                    указано иное.
+                    Статические страницы Atmos Studio не используют
+                    собственную таргетированную рекламу, профилирование
+                    или специальную аналитику, если на соответствующей
+                    странице прямо не указано иное.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>9. Техническая поддержка и обращения</h3>
+                <h3>9. Поддержка и обращения</h3>
 
                 <p>
-                    При обращении в Atmos Studio по электронной почте, через
-                    Discord, Boosty, Modrinth, CurseForge или другую платформу
-                    может обрабатываться:
+                    При обращении в Atmos Studio по электронной почте,
+                    через Discord, Telegram, Boosty, Modrinth, CurseForge
+                    или другую платформу может обрабатываться:
                 </p>
 
                 <ul>
                     <li>имя, имя пользователя или псевдоним;</li>
-                    <li>адрес электронной почты или идентификатор платформы;</li>
-                    <li>Discord User ID;</li>
+                    <li>
+                        адрес электронной почты или идентификатор платформы;
+                    </li>
+                    <li>
+                        идентификаторы аккаунтов Discord или Telegram;
+                    </li>
                     <li>содержимое сообщения;</li>
                     <li>снимки экрана и вложения;</li>
                     <li>игровые журналы и crash-reports;</li>
-                    <li>сведения об устройстве, системе, лаунчере и программах;</li>
-                    <li>другая добровольно предоставленная информация.</li>
+                    <li>
+                        сведения об устройстве, операционной системе,
+                        лаунчере и программном обеспечении;
+                    </li>
+                    <li>
+                        другая добровольно предоставленная информация.
+                    </li>
                 </ul>
 
                 <p>
-                    Пользователям не следует отправлять пароли, токены аккаунтов,
-                    приватные ключи, платёжные данные и другую секретную
-                    информацию.
+                    Пользователям не следует отправлять пароли, токены
+                    аккаунтов, приватные ключи, платёжные данные и другую
+                    секретную информацию.
                 </p>
 
                 <p>
@@ -1790,87 +1949,105 @@
             </section>
 
             <section class="policy-section">
-                <h3>10. Цели обработки</h3>
+                <h3>10. Цели и правовые основания</h3>
 
                 <p>Информация может обрабатываться для:</p>
 
                 <ul>
-                    <li>предоставления функций и загрузок продуктов;</li>
-                    <li>выполнения Discord-команд и запросов пользователей;</li>
-                    <li>проверки статуса подписки или права доступа;</li>
-                    <li>хранения пользовательских настроек и настроек серверов;</li>
+                    <li>
+                        предоставления функций и загрузок продуктов;
+                    </li>
+                    <li>
+                        выполнения команд и запросов пользователей;
+                    </li>
+                    <li>
+                        проверки статуса подписки или права доступа;
+                    </li>
+                    <li>
+                        хранения пользовательских настроек и настроек
+                        серверов;
+                    </li>
                     <li>оказания технической поддержки;</li>
                     <li>диагностики и устранения ошибок;</li>
-                    <li>разработки и улучшения продуктов Atmos Studio;</li>
-                    <li>предотвращения спама, мошенничества, пиратства и злоупотреблений;</li>
-                    <li>защиты пользователей, продуктов и инфраструктуры;</li>
-                    <li>рассмотрения юридических требований и соблюдения законодательства.</li>
+                    <li>
+                        разработки и улучшения продуктов Atmos Studio;
+                    </li>
+                    <li>
+                        предотвращения спама, мошенничества, пиратства
+                        и злоупотреблений;
+                    </li>
+                    <li>
+                        защиты пользователей, продуктов и инфраструктуры;
+                    </li>
+                    <li>
+                        соблюдения законодательства и рассмотрения
+                        юридических требований.
+                    </li>
                 </ul>
-            </section>
-
-            <section class="policy-section">
-                <h3>11. Правовые основания</h3>
 
                 <p>
-                    В зависимости от обстоятельств и применимого
-                    законодательства Atmos Studio может обрабатывать информацию
-                    на основании:
+                    В зависимости от обстоятельств обработка может
+                    основываться на необходимости предоставления
+                    запрошенной услуги, действиях по запросу пользователя,
+                    законном интересе, согласии или выполнении юридических
+                    обязательств.
                 </p>
-
-                <ul>
-                    <li>необходимости предоставления запрошенной услуги или функции;</li>
-                    <li>действий по запросу пользователя до предоставления доступа или поддержки;</li>
-                    <li>законного интереса в работе, защите и улучшении продуктов;</li>
-                    <li>согласия пользователя, когда оно требуется;</li>
-                    <li>выполнения юридических обязательств.</li>
-                </ul>
             </section>
 
             <section class="policy-section">
-                <h3>12. Передача информации и сторонние сервисы</h3>
+                <h3>11. Передача и сторонние сервисы</h3>
 
                 <p>
-                    При необходимости информация может обрабатываться или
-                    становиться доступной следующим категориям третьих лиц:
+                    При необходимости информация может обрабатываться
+                    или становиться доступной следующим сторонам:
                 </p>
 
                 <ul>
                     <li>Discord;</li>
+                    <li>Telegram;</li>
                     <li>Boosty и его платёжным поставщикам;</li>
                     <li>GitHub и GitHub Pages;</li>
-                    <li>Google при использовании Gmail для переписки;</li>
+                    <li>
+                        Google при использовании Gmail для переписки;
+                    </li>
                     <li>Modrinth;</li>
                     <li>CurseForge и Overwolf;</li>
-                    <li>поставщикам серверов, баз данных и инфраструктуры;</li>
-                    <li>поставщикам безопасности и мониторинга ошибок;</li>
-                    <li>консультантам и государственным органам, когда этого требует закон.</li>
+                    <li>
+                        поставщикам серверов, баз данных, инфраструктуры,
+                        безопасности и мониторинга ошибок;
+                    </li>
+                    <li>
+                        консультантам и государственным органам,
+                        когда этого требует закон.
+                    </li>
                 </ul>
 
                 <p>
-                    Такие поставщики могут самостоятельно определять порядок
-                    обработки информации, которую они собирают через свои
-                    платформы.
+                    Такие поставщики могут самостоятельно определять
+                    порядок обработки информации, которую они собирают
+                    через свои платформы.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>13. Международная обработка</h3>
+                <h3>12. Международная обработка</h3>
 
                 <p>
                     Сторонние платформы и поставщики инфраструктуры могут
-                    обрабатывать информацию за пределами страны пользователя,
-                    включая страны за пределами Европейской экономической зоны.
+                    обрабатывать информацию за пределами страны
+                    пользователя, включая страны за пределами Европейской
+                    экономической зоны.
                 </p>
 
                 <p>
-                    Когда это требуется применимым законодательством,
-                    международная передача должна осуществляться с применением
-                    соответствующих правовых гарантий.
+                    Когда этого требует применимое законодательство,
+                    международная передача должна осуществляться
+                    с применением соответствующих правовых гарантий.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>14. Сроки хранения</h3>
+                <h3>13. Сроки хранения</h3>
 
                 <p>
                     Atmos Studio хранит информацию только столько времени,
@@ -1881,86 +2058,93 @@
 
                 <ul>
                     <li>типа продукта или услуги;</li>
-                    <li>того, остаётся ли подписка или аккаунт активным;</li>
-                    <li>необходимости информации для технической поддержки;</li>
-                    <li>требований безопасности и предотвращения злоупотреблений;</li>
-                    <li>юридических, бухгалтерских обязательств и разрешения споров.</li>
-                </ul>
-
-                <p>Обычная практика хранения включает следующее:</p>
-
-                <ul>
                     <li>
-                        настройки Discord и продуктов могут храниться, пока
-                        соответствующее приложение или сервис используется;
+                        того, остаётся ли подписка, аккаунт или интеграция
+                        активной;
                     </li>
-
                     <li>
-                        временные технические журналы обычно хранятся только
-                        в течение периода, необходимого для диагностики ошибок
-                        и обеспечения безопасности;
+                        необходимости информации для технической поддержки;
                     </li>
-
                     <li>
-                        обращения поддержки могут храниться, пока вопрос
-                        остаётся актуальным, и разумный срок после его решения;
+                        требований безопасности и предотвращения
+                        злоупотреблений;
                     </li>
-
                     <li>
-                        сведения о злоупотреблениях могут храниться, пока
-                        сохраняется риск безопасности или необходимость
-                        применения правил;
-                    </li>
-
-                    <li>
-                        информация может храниться дольше, когда этого требует
-                        закон или когда она нужна для предъявления, реализации
-                        или защиты юридических требований.
+                        юридических, бухгалтерских обязательств
+                        и разрешения споров.
                     </li>
                 </ul>
 
                 <p>
+                    Технические журналы обычно хранятся только в течение
+                    периода, необходимого для диагностики и обеспечения
+                    безопасности. Обращения поддержки могут храниться,
+                    пока вопрос остаётся актуальным, и разумный срок после
+                    его решения.
+                </p>
+
+                <p>
+                    Информация может храниться дольше, когда этого требует
+                    закон или когда она необходима для предъявления,
+                    реализации или защиты юридических требований.
                     Резервные копии могут содержать информацию в течение
-                    ограниченного дополнительного периода до их планового
-                    удаления или перезаписи.
+                    ограниченного дополнительного периода.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>15. Безопасность</h3>
+                <h3>14. Безопасность</h3>
 
                 <p>
-                    Atmos Studio применяет разумные технические и
-                    организационные меры для защиты информации. Они могут
-                    включать ограничение доступа, контроль разрешений, защиту
-                    учётных данных, обновление программного обеспечения и
-                    удаление информации, которая больше не требуется.
+                    Atmos Studio применяет разумные технические
+                    и организационные меры, которые могут включать
+                    ограничение доступа, контроль разрешений, защиту
+                    учётных данных, обновление программного обеспечения
+                    и удаление информации, которая больше не требуется.
                 </p>
 
                 <p>
-                    Ни один способ электронной передачи или хранения данных не
-                    может гарантировать абсолютную безопасность.
+                    Ни один способ электронной передачи или хранения
+                    данных не может гарантировать абсолютную безопасность.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>16. Права пользователей</h3>
+                <h3>15. Права пользователей</h3>
 
                 <p>
-                    В зависимости от применимого законодательства пользователь
-                    может иметь право:
+                    В зависимости от применимого законодательства
+                    пользователь может иметь право:
                 </p>
 
                 <ul>
-                    <li>получить информацию об обработке данных;</li>
-                    <li>запросить доступ к персональным данным;</li>
-                    <li>запросить исправление неточной информации;</li>
-                    <li>запросить удаление информации;</li>
-                    <li>запросить ограничение обработки;</li>
-                    <li>возразить против определённых способов обработки;</li>
-                    <li>получить данные в переносимом формате, когда это применимо;</li>
-                    <li>отозвать согласие, если обработка основана на согласии;</li>
-                    <li>подать жалобу в компетентный орган по защите данных.</li>
+                    <li>
+                        получить информацию об обработке данных;
+                    </li>
+                    <li>
+                        запросить доступ к персональным данным;
+                    </li>
+                    <li>
+                        запросить исправление неточной информации;
+                    </li>
+                    <li>запросить удаление;</li>
+                    <li>
+                        запросить ограничение обработки;
+                    </li>
+                    <li>
+                        возразить против определённых способов обработки;
+                    </li>
+                    <li>
+                        получить данные в переносимом формате,
+                        когда это применимо;
+                    </li>
+                    <li>
+                        отозвать согласие, если обработка основана
+                        на согласии;
+                    </li>
+                    <li>
+                        подать жалобу в компетентный орган по защите данных.
+                    </li>
                 </ul>
 
                 <p>
@@ -1970,12 +2154,12 @@
             </section>
 
             <section class="policy-section">
-                <h3>17. Запросы пользователей</h3>
+                <h3>16. Запросы пользователей</h3>
 
                 <p>
-                    Для запроса доступа, исправления, удаления, ограничения или
-                    информации об обработке персональных данных необходимо
-                    обратиться по адресу:
+                    Для запроса доступа, исправления, удаления,
+                    ограничения или информации об обработке персональных
+                    данных необходимо обратиться по адресу:
                 </p>
 
                 <div class="contact-box">
@@ -1987,70 +2171,80 @@
                 <p>В обращении следует указать:</p>
 
                 <ul>
-                    <li>соответствующий продукт Atmos Studio;</li>
+                    <li>
+                        соответствующий продукт Atmos Studio;
+                    </li>
                     <li>платформу, к которой относится запрос;</li>
-                    <li>Discord ID или другой идентификатор, если применимо;</li>
+                    <li>
+                        идентификатор пользователя, если применимо;
+                    </li>
                     <li>требуемое действие;</li>
-                    <li>информацию, обоснованно необходимую для поиска данных.</li>
+                    <li>
+                        информацию, необходимую для поиска данных.
+                    </li>
                 </ul>
 
                 <p>
-                    Atmos Studio может запросить разумное подтверждение того,
-                    что заявитель управляет соответствующей учётной записью.
+                    Atmos Studio может запросить разумное подтверждение
+                    того, что заявитель управляет соответствующей
+                    учётной записью.
                 </p>
 
                 <p>
-                    Не следует отправлять пароли, токены Discord, полные номера
-                    банковских карт или другие секретные данные.
-                </p>
-            </section>
-
-            <section class="policy-section">
-                <h3>18. Несовершеннолетние и минимальный возраст</h3>
-
-                <p>
-                    Продукты Atmos Studio не предназначены для лиц, не
-                    достигших минимального возраста, необходимого для законного
-                    использования соответствующей платформы или сервиса
-                    в их стране.
-                </p>
-
-                <p>
-                    Atmos Studio сознательно не собирает данные детей в
-                    нарушение применимого законодательства. Неправомерно
-                    полученная информация может быть удалена.
+                    Не следует отправлять пароли, токены аккаунтов,
+                    полные номера банковских карт или другие секретные
+                    данные.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>19. Автоматизированные решения</h3>
+                <h3>17. Несовершеннолетние</h3>
 
                 <p>
-                    В настоящее время Atmos Studio не использует персональные
-                    данные для автоматизированного принятия решений или
-                    профилирования, создающего юридические или аналогично
-                    существенные последствия для пользователей.
+                    Продукты Atmos Studio не предназначены для лиц,
+                    не достигших минимального возраста, необходимого
+                    для законного использования соответствующей платформы
+                    или сервиса в их стране.
+                </p>
+
+                <p>
+                    Atmos Studio сознательно не собирает данные детей
+                    в нарушение применимого законодательства.
+                    Неправомерно полученная информация может быть удалена.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>20. Изменения Политики</h3>
+                <h3>18. Автоматизированные решения</h3>
 
                 <p>
-                    Atmos Studio может обновлять настоящую Политику при
-                    изменении продуктов, модели распространения, инфраструктуры,
-                    юридических обязательств или способов обработки данных.
+                    В настоящее время Atmos Studio не использует
+                    персональные данные для автоматизированного принятия
+                    решений или профилирования, создающего юридические
+                    или аналогично существенные последствия для
+                    пользователей.
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h3>19. Изменения Политики</h3>
+
+                <p>
+                    Atmos Studio может обновлять настоящую Политику
+                    при изменении продуктов, модели распространения,
+                    инфраструктуры, юридических обязательств или способов
+                    обработки данных.
                 </p>
 
                 <p>
                     Актуальная версия будет публиковаться на этой странице.
-                    Дата в начале документа показывает время последнего
-                    обновления.
+                    Дата последнего обновления указывается в начале
+                    документа.
                 </p>
             </section>
 
             <section class="policy-section">
-                <h3>21. Контактная информация</h3>
+                <h3>20. Контактная информация</h3>
 
                 <div class="contact-box">
                     Вопросы конфиденциальности и запросы пользователей:
@@ -2062,17 +2256,30 @@
         </article>
 
         <footer>
-            <div class="footer-links">
-                <a href="./index.html">
-                    Privacy Policy
+            <div class="footer-navigation">
+                <a href="./index.html">Home</a>
+                <a href="./builds.html">Builds</a>
+                <a href="./privacy-policy.html">Privacy Policy</a>
+                <a href="./terms-of-use.html">Terms of Use</a>
+            </div>
+
+            <div class="footer-socials">
+                <a
+                    class="social-button discord"
+                    href="https://discord.gg/YOUR_INVITE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Discord
                 </a>
 
-                <a href="./terms-of-use.html">
-                    Terms of Use
-                </a>
-
-                <a href="mailto:atmos.studio.team@gmail.com">
-                    Contact Atmos Studio
+                <a
+                    class="social-button telegram"
+                    href="https://t.me/YOUR_CHANNEL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Telegram
                 </a>
             </div>
 
