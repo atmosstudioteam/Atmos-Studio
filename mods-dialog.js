@@ -35,7 +35,6 @@
                 }
             ],
             confirm: "Got it",
-            closeAction: "Close",
             close: "Close mod list"
         },
         ru: {
@@ -73,7 +72,6 @@
                 }
             ],
             confirm: "Понятно",
-            closeAction: "Закрыть",
             close: "Закрыть список модов"
         }
     };
@@ -129,12 +127,6 @@
 
                 <div class="mods-dialog-actions">
                     <button
-                        class="mods-dialog-secondary"
-                        type="button"
-                        data-mods-copy="closeAction"
-                    ></button>
-
-                    <button
                         class="mods-dialog-confirm"
                         type="button"
                         data-mods-copy="confirm"
@@ -144,9 +136,6 @@
         `;
 
         const closeButton = root.querySelector(".mods-dialog-close");
-        const secondaryButton = root.querySelector(
-            ".mods-dialog-secondary"
-        );
         const confirmButton = root.querySelector(".mods-dialog-confirm");
         const categories = root.querySelector("[data-mods-categories]");
         let activeTrigger = null;
@@ -208,7 +197,6 @@
         });
 
         closeButton.addEventListener("click", () => close());
-        secondaryButton.addEventListener("click", () => close());
         confirmButton.addEventListener("click", () => close());
 
         root.addEventListener("click", (event) => {
@@ -228,11 +216,7 @@
             }
 
             if (event.key === "Tab") {
-                const focusable = [
-                    closeButton,
-                    secondaryButton,
-                    confirmButton
-                ];
+                const focusable = [closeButton, confirmButton];
                 const currentIndex = focusable.indexOf(
                     document.activeElement
                 );
