@@ -66,6 +66,16 @@
     outline-offset: 2px;
 }
 
+.social-button.boosty {
+    color: #ff9a72;
+}
+
+.social-button.boosty:hover {
+    border-color: rgba(255, 95, 46, 0.72);
+    background: rgba(255, 95, 46, 0.13);
+    box-shadow: 0 8px 22px rgba(255, 95, 46, 0.14);
+}
+
 html[data-language="en"] #russian,
 html[data-language="ru"] #english {
     display: none !important;
