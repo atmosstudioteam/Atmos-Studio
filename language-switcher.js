@@ -372,8 +372,24 @@
             .forEach((link) => link.setAttribute("href", youtubeUrl));
 
         document
-            .querySelectorAll(".social-navigation, .footer-socials")
+            .querySelectorAll(
+                ".social-navigation, .footer-socials, .cta-actions",
+            )
             .forEach((container) => {
+                const isCommunityContainer =
+                    container.matches(
+                        ".social-navigation, .footer-socials",
+                    ) ||
+                    container.querySelector(
+                        ".social-button.boosty, " +
+                            ".social-button.discord, " +
+                            ".social-button.telegram",
+                    );
+
+                if (!isCommunityContainer) {
+                    return;
+                }
+
                 if (!container.querySelector(".social-button.boosty")) {
                     const boostyLink = document.createElement("a");
                     boostyLink.className = "social-button boosty";
@@ -393,14 +409,14 @@
                 if (!youtubeLink) {
                     youtubeLink = document.createElement("a");
                     youtubeLink.className = "social-button youtube";
-                    youtubeLink.href = youtubeUrl;
-                    youtubeLink.target = "_blank";
-                    youtubeLink.rel = "noopener noreferrer";
-                    youtubeLink.setAttribute("aria-label", "YouTube");
-                    youtubeLink.title = "YouTube";
-                    youtubeLink.innerHTML =
-                        `${socialIcons.youtube}<span class="social-label">YouTube</span>`;
                 }
+
+                youtubeLink.href = youtubeUrl;
+                youtubeLink.target = "_blank";
+                youtubeLink.rel = "noopener noreferrer";
+                youtubeLink.setAttribute("aria-label", "YouTube");
+                youtubeLink.title = "YouTube";
+                youtubeLink.innerHTML = `${socialIcons.youtube}YouTube`;
 
                 const discordLink =
                     container.querySelector(".social-button.discord");
