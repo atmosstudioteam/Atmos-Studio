@@ -69,21 +69,18 @@
 }
 
 .page-navigation {
-    display: grid;
-    grid-template-columns:
-        minmax(64px, 0.72fr)
-        minmax(64px, 0.72fr)
-        minmax(175px, 1.95fr)
-        minmax(92px, 1fr);
-    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 420px;
     max-width: 100%;
     justify-self: center;
 }
 
 .page-navigation .navigation-tab {
     min-width: 0;
-    width: 100%;
-    padding-inline: 8px;
+    width: auto;
+    padding-inline: 10px;
     text-align: center;
 }
 
@@ -117,7 +114,7 @@
 
 .site-header {
     gap: 8px;
-    padding: 10px;
+    padding: 10px 14px;
 }
 
 .site-header .studio-brand {
@@ -131,8 +128,8 @@
 
 .site-header .social-button {
     gap: 6px;
-    padding-inline: 9px;
-    font-size: 0.82rem;
+    padding-inline: 8px;
+    font-size: 0.8rem;
 }
 
 html[data-language="en"] #russian,
@@ -147,10 +144,6 @@ html[data-language="ru"] #english {
 }
 
 @media (max-width: 520px) {
-    .page-navigation {
-        grid-template-columns: 1fr;
-    }
-
     .language-switcher {
         width: 100%;
         flex: 1 1 auto;
