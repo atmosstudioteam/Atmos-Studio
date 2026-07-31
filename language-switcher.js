@@ -165,17 +165,14 @@
         "The information below describes the current development and distribution structure. Exact versions and download availability may change as development progresses.":
             "Ниже описана текущая структура разработки и распространения. Точные версии и доступность загрузок могут меняться по мере развития проекта.",
         "In active development": "В активной разработке",
-        "A large-scale techno-magical Minecraft modpack combining industrial systems, dangerous caverns, structured progression, exploration, rituals, quests, custom scripts, and original content.":
-            "Масштабная техно-магическая Minecraft-сборка, объединяющая промышленные системы, опасные пещеры, продуманное развитие, исследование, ритуалы, квесты, собственные скрипты и оригинальное содержимое.",
+        "A large-scale techno-magical Minecraft modpack combining industrial systems, structured progression, exploration, rituals, quests, custom scripts, and original content.":
+            "Масштабная техно-магическая Minecraft-сборка, объединяющая промышленные системы, продуманное развитие, исследование, ритуалы, квесты, собственные скрипты и оригинальное содержимое.",
         "Conflux is designed as a cohesive experience rather than a simple collection of mods. Progression, resources, recipes, dimensions, quests, interfaces, visual identity, and technical systems are adjusted to support a unified long-term playthrough.":
             "Conflux создаётся как цельное игровое приключение, а не простой набор модов. Развитие, ресурсы, рецепты, измерения, квесты, интерфейсы, визуальный стиль и игровые системы настроены для единого продолжительного прохождения.",
-        "Game": "Игра",
-        "Project type": "Тип проекта",
-        "Modpack": "Сборка",
+        "Version": "Версия",
+        "Mod loader": "Загрузчик",
         "Status": "Статус",
         "In development": "В разработке",
-        "Distribution": "Распространение",
-        "Boosty and public platforms": "Boosty и публичные платформы",
         "Industry": "Промышленность",
         "Large production systems, complex processing, machinery, resources, automation, and technological progression.":
             "Крупные производственные системы, сложная переработка, механизмы, ресурсы, автоматизация и технологическое развитие.",
