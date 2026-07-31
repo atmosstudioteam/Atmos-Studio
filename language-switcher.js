@@ -4,6 +4,7 @@
     const boostyUrl = "https://boosty.to/atmos.studio";
     const discordUrl = "https://discord.gg/g9G3uHPzWQ";
     const telegramUrl = "https://t.me/atmos_studio";
+    const youtubeUrl = "https://www.youtube.com/@AtmosStudioTeam";
     const socialIcons = {
         boosty: `
             <svg class="boosty-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -21,6 +22,11 @@
         telegram: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M21.7 3.2 18.6 20c-.23 1.19-.85 1.48-1.72.92l-4.72-3.48-2.28 2.19c-.25.25-.46.46-.95.46l.34-4.81 8.76-7.92c.38-.34-.08-.53-.59-.19L6.61 13.99l-4.67-1.46c-1.02-.32-1.04-1.02.21-1.51L20.42 3.98c.85-.31 1.59.19 1.28-.78Z"></path>
+            </svg>
+        `,
+        youtube: `
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"></path>
             </svg>
         `
     };
@@ -360,21 +366,37 @@
             .forEach((link) => link.setAttribute("href", telegramUrl));
 
         document
+            .querySelectorAll("a.social-button.youtube")
+            .forEach((link) => link.setAttribute("href", youtubeUrl));
+
+        document
             .querySelectorAll(".social-navigation, .footer-socials")
             .forEach((container) => {
-                if (container.querySelector(".social-button.boosty")) {
-                    return;
+                if (!container.querySelector(".social-button.boosty")) {
+                    const boostyLink = document.createElement("a");
+                    boostyLink.className = "social-button boosty";
+                    boostyLink.href = boostyUrl;
+                    boostyLink.target = "_blank";
+                    boostyLink.rel = "noopener noreferrer";
+                    boostyLink.innerHTML = `${socialIcons.boosty}Boosty`;
+
+                    const firstSocialLink =
+                        container.querySelector("a.social-button");
+                    container.insertBefore(boostyLink, firstSocialLink);
                 }
 
-                const boostyLink = document.createElement("a");
-                boostyLink.className = "social-button boosty";
-                boostyLink.href = boostyUrl;
-                boostyLink.target = "_blank";
-                boostyLink.rel = "noopener noreferrer";
-                boostyLink.innerHTML = `${socialIcons.boosty}Boosty`;
-
-                const firstSocialLink = container.querySelector("a.social-button");
-                container.insertBefore(boostyLink, firstSocialLink);
+                if (!container.querySelector(".social-button.youtube")) {
+                    const youtubeLink = document.createElement("a");
+                    youtubeLink.className = "social-button youtube";
+                    youtubeLink.href = youtubeUrl;
+                    youtubeLink.target = "_blank";
+                    youtubeLink.rel = "noopener noreferrer";
+                    youtubeLink.setAttribute("aria-label", "YouTube");
+                    youtubeLink.title = "YouTube";
+                    youtubeLink.innerHTML =
+                        `${socialIcons.youtube}<span class="social-label">YouTube</span>`;
+                    container.append(youtubeLink);
+                }
             });
 
         Object.entries(socialIcons).forEach(([platform, icon]) => {

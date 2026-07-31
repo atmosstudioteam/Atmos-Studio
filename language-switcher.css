@@ -6,6 +6,8 @@
 .language-switcher {
     display: inline-grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 92px;
+    flex: 0 0 92px;
     gap: 3px;
     padding: 3px;
 
@@ -16,9 +18,9 @@
 }
 
 .language-switcher .language-button {
-    min-width: 42px;
+    min-width: 0;
     min-height: 36px;
-    width: auto;
+    width: 100%;
     padding: 6px 10px;
 
     border: 1px solid transparent;
@@ -63,7 +65,26 @@
 
 .language-switcher .language-button:focus-visible {
     outline: 2px solid var(--accent-secondary);
-    outline-offset: 2px;
+    outline-offset: -3px;
+}
+
+.page-navigation {
+    display: grid;
+    grid-template-columns:
+        minmax(72px, 0.85fr)
+        minmax(72px, 0.85fr)
+        minmax(145px, 1.65fr)
+        minmax(100px, 1.15fr);
+    width: 430px;
+    max-width: 100%;
+    justify-self: center;
+}
+
+.page-navigation .navigation-tab {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 8px;
+    text-align: center;
 }
 
 .social-button.boosty {
@@ -84,14 +105,43 @@
     box-shadow: 0 8px 22px rgba(255, 95, 46, 0.14);
 }
 
+.social-button.youtube {
+    color: #ff8585;
+}
+
+.social-button.youtube:hover {
+    border-color: rgba(255, 0, 51, 0.72);
+    background: rgba(255, 0, 51, 0.13);
+    box-shadow: 0 8px 22px rgba(255, 0, 51, 0.14);
+}
+
+.site-header .social-button.youtube .social-label {
+    display: none;
+}
+
 html[data-language="en"] #russian,
 html[data-language="ru"] #english {
     display: none !important;
 }
 
+@media (max-width: 1080px) {
+    .page-navigation {
+        width: 100%;
+    }
+
+    .site-header .social-button.youtube .social-label {
+        display: inline;
+    }
+}
+
 @media (max-width: 520px) {
+    .page-navigation {
+        grid-template-columns: 1fr;
+    }
+
     .language-switcher {
         width: 100%;
+        flex: 1 1 auto;
     }
 
     .language-switcher .language-button {
