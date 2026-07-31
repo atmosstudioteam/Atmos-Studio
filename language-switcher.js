@@ -173,7 +173,7 @@
         "Mod loader": "Загрузчик",
         "Status": "Статус",
         "In development": "В разработке",
-        "Distribution methods": "Способы распространения",
+        "Distribution": "Распространение",
         "Boosty, Modrinth and CurseForge":
             "Boosty, Modrinth и CurseForge",
         "Technologies": "Технологии",

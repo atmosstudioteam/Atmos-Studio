@@ -4,28 +4,76 @@
             label: "Modpack contents",
             title: "Conflux Mods",
             description:
-                "The complete mod list is still being prepared. This temporary list will be replaced when the final modpack lineup is ready.",
-            items: [
-                "Technology mod — details will be added later",
-                "Magic mod — details will be added later",
-                "Exploration mod — details will be added later",
-                "Additional mod — details will be added later"
+                "The current Conflux mod list is grouped by category. Additional mods may be added as development continues.",
+            categories: [
+                {
+                    title: "World Enhancement",
+                    items: [
+                        "Alex's Caves",
+                        "Alex's Mobs",
+                        "Arts & Crafts",
+                        "Atmospheric",
+                        "Autumnity",
+                        "Caverns & Chasms",
+                        "Environmental",
+                        "Farmer's Delight",
+                        "Naturalist",
+                        "Terralith",
+                        "Upgrade Aquatic"
+                    ]
+                },
+                {
+                    title: "Technologies",
+                    items: [
+                        "Applied Energistics 2",
+                        "Modern Industrialization"
+                    ]
+                },
+                {
+                    title: "Magic",
+                    items: ["Malum", "Spectrum"]
+                }
             ],
-            confirm: "Close",
+            confirm: "Got it",
+            closeAction: "Close",
             close: "Close mod list"
         },
         ru: {
             label: "Состав сборки",
             title: "Моды Conflux",
             description:
-                "Полный список модов ещё готовится. Этот временный перечень будет заменён, когда окончательный состав сборки будет готов.",
-            items: [
-                "Технологический мод — подробности появятся позже",
-                "Магический мод — подробности появятся позже",
-                "Исследовательский мод — подробности появятся позже",
-                "Дополнительный мод — подробности появятся позже"
+                "Текущий список модов Conflux распределён по категориям. По мере разработки сборка может пополняться.",
+            categories: [
+                {
+                    title: "Улучшение мира",
+                    items: [
+                        "Alex's Caves",
+                        "Alex's Mobs",
+                        "Arts & Crafts",
+                        "Atmospheric",
+                        "Autumnity",
+                        "Caverns & Chasms",
+                        "Environmental",
+                        "Farmer's Delight",
+                        "Naturalist",
+                        "Terralith",
+                        "Upgrade Aquatic"
+                    ]
+                },
+                {
+                    title: "Технологии",
+                    items: [
+                        "Applied Energistics 2",
+                        "Modern Industrialization"
+                    ]
+                },
+                {
+                    title: "Магия",
+                    items: ["Malum", "Spectrum"]
+                }
             ],
-            confirm: "Закрыть",
+            confirm: "Понятно",
+            closeAction: "Закрыть",
             close: "Закрыть список модов"
         }
     };
@@ -74,19 +122,33 @@
                     data-mods-copy="description"
                 ></p>
 
-                <ul class="mods-dialog-list" data-mods-list></ul>
+                <div
+                    class="mods-dialog-categories"
+                    data-mods-categories
+                ></div>
 
-                <button
-                    class="mods-dialog-confirm"
-                    type="button"
-                    data-mods-copy="confirm"
-                ></button>
+                <div class="mods-dialog-actions">
+                    <button
+                        class="mods-dialog-secondary"
+                        type="button"
+                        data-mods-copy="closeAction"
+                    ></button>
+
+                    <button
+                        class="mods-dialog-confirm"
+                        type="button"
+                        data-mods-copy="confirm"
+                    ></button>
+                </div>
             </section>
         `;
 
         const closeButton = root.querySelector(".mods-dialog-close");
+        const secondaryButton = root.querySelector(
+            ".mods-dialog-secondary"
+        );
         const confirmButton = root.querySelector(".mods-dialog-confirm");
-        const list = root.querySelector("[data-mods-list]");
+        const categories = root.querySelector("[data-mods-categories]");
         let activeTrigger = null;
 
         const localize = () => {
@@ -97,12 +159,28 @@
                 element.textContent = localizedCopy[key];
             });
 
-            list.replaceChildren(
-                ...localizedCopy.items.map((item) => {
-                    const listItem = document.createElement("li");
-                    listItem.className = "mods-dialog-item";
-                    listItem.textContent = item;
-                    return listItem;
+            categories.replaceChildren(
+                ...localizedCopy.categories.map((category) => {
+                    const card = document.createElement("section");
+                    card.className = "mods-dialog-category";
+
+                    const heading = document.createElement("h3");
+                    heading.textContent = category.title;
+
+                    const list = document.createElement("ul");
+                    list.className = "mods-dialog-list";
+
+                    list.replaceChildren(
+                        ...category.items.map((item) => {
+                            const listItem = document.createElement("li");
+                            listItem.className = "mods-dialog-item";
+                            listItem.textContent = item;
+                            return listItem;
+                        })
+                    );
+
+                    card.append(heading, list);
+                    return card;
                 })
             );
 
@@ -130,6 +208,7 @@
         });
 
         closeButton.addEventListener("click", () => close());
+        secondaryButton.addEventListener("click", () => close());
         confirmButton.addEventListener("click", () => close());
 
         root.addEventListener("click", (event) => {
@@ -149,7 +228,11 @@
             }
 
             if (event.key === "Tab") {
-                const focusable = [closeButton, confirmButton];
+                const focusable = [
+                    closeButton,
+                    secondaryButton,
+                    confirmButton
+                ];
                 const currentIndex = focusable.indexOf(
                     document.activeElement
                 );

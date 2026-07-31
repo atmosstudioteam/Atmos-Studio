@@ -1,74 +1,18 @@
 .mods-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 11px;
-
-    min-height: 48px;
     margin-top: 18px;
-    padding: 10px 17px;
-
-    border: 1px solid rgba(139, 92, 246, 0.58);
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139, 92, 246, 0.24),
-            rgba(139, 92, 246, 0.1)
-        );
-    color: var(--accent-bright, #c4b5fd);
 
     font: inherit;
-    font-size: 0.9rem;
-    font-weight: 850;
+    font-weight: 760;
 
     cursor: pointer;
-
-    transition:
-        border-color 160ms ease,
-        background 160ms ease,
-        color 160ms ease,
-        transform 160ms ease;
-}
-
-.mods-button:hover {
-    border-color: rgba(167, 139, 250, 0.9);
-    background: rgba(139, 92, 246, 0.24);
-    color: var(--text, #e6edf3);
-    transform: translateY(-1px);
 }
 
 .mods-button:focus-visible,
 .mods-dialog-close:focus-visible,
-.mods-dialog-confirm:focus-visible {
+.mods-dialog-confirm:focus-visible,
+.mods-dialog-secondary:focus-visible {
     outline: 2px solid var(--accent-secondary, #a78bfa);
     outline-offset: 3px;
-}
-
-.mods-button-mark {
-    display: grid;
-    place-items: center;
-
-    width: 27px;
-    height: 27px;
-
-    border: 1px solid rgba(167, 139, 250, 0.62);
-    border-radius: 8px;
-
-    background: rgba(139, 92, 246, 0.18);
-
-    font-size: 0.78rem;
-}
-
-.mods-button-chevron {
-    width: 8px;
-    height: 8px;
-
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-
-    transform: rotate(-45deg);
 }
 
 .mods-dialog {
@@ -103,7 +47,7 @@
 .mods-dialog-card {
     position: relative;
 
-    width: min(620px, 100%);
+    width: min(900px, 100%);
     max-height: calc(100vh - 40px);
     overflow-y: auto;
     padding: 26px;
@@ -212,12 +156,38 @@
     line-height: 1.65;
 }
 
+.mods-dialog-categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.mods-dialog-category {
+    min-width: 0;
+    padding: 17px;
+
+    border: 1px solid var(--border, #30363d);
+    border-radius: 14px;
+
+    background: rgba(13, 17, 23, 0.46);
+}
+
+.mods-dialog-category h3 {
+    margin: 0 0 13px;
+
+    color: var(--text, #e6edf3);
+
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
 .mods-dialog-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
 
-    margin: 0 0 22px;
+    margin: 0;
     padding: 0;
 
     list-style: none;
@@ -226,34 +196,36 @@
 .mods-dialog-item {
     position: relative;
 
-    min-height: 68px;
-    padding: 14px 14px 14px 38px;
+    padding-left: 17px;
 
-    border: 1px solid var(--border, #30363d);
-    border-radius: 12px;
-
-    background: rgba(13, 17, 23, 0.46);
     color: var(--muted, #9da7b4);
 
     font-size: 0.86rem;
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 .mods-dialog-item::before {
     position: absolute;
-    top: 20px;
-    left: 16px;
+    top: 0.54em;
+    left: 0;
 
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
 
-    border-radius: 3px;
+    border-radius: 2px;
 
     background: var(--accent-secondary, #a78bfa);
     box-shadow: 0 0 13px rgba(167, 139, 250, 0.6);
     content: "";
 }
 
+.mods-dialog-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.mods-dialog-secondary,
 .mods-dialog-confirm {
     display: inline-flex;
     align-items: center;
@@ -283,13 +255,33 @@
     transition:
         border-color 160ms ease,
         background 160ms ease,
+        color 160ms ease,
         transform 160ms ease;
+}
+
+.mods-dialog-secondary {
+    border-color: var(--border, #30363d);
+    background: rgba(13, 17, 23, 0.62);
+    color: var(--muted, #9da7b4);
+}
+
+.mods-dialog-secondary:hover {
+    border-color: rgba(167, 139, 250, 0.52);
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--text, #e6edf3);
+    transform: translateY(-1px);
 }
 
 .mods-dialog-confirm:hover {
     border-color: rgba(167, 139, 250, 0.88);
     background: rgba(139, 92, 246, 0.26);
     transform: translateY(-1px);
+}
+
+@media (max-width: 820px) {
+    .mods-dialog-categories {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 560px) {
@@ -306,7 +298,7 @@
         transform: translateY(28px) scale(0.98);
     }
 
-    .mods-dialog-list {
+    .mods-dialog-actions {
         grid-template-columns: 1fr;
     }
 }
@@ -316,7 +308,8 @@
     .mods-dialog,
     .mods-dialog-card,
     .mods-dialog-close,
-    .mods-dialog-confirm {
+    .mods-dialog-confirm,
+    .mods-dialog-secondary {
         transition: none;
     }
 }
