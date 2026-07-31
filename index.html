@@ -921,56 +921,6 @@
         }
 
         /* ========================================================= */
-        /* EXPLORE LINKS                                             */
-        /* ========================================================= */
-
-        .link-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .feature-link {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 22px;
-
-            min-height: 205px;
-            padding: 24px;
-
-            border: 1px solid var(--border);
-            border-radius: 17px;
-
-            background: var(--surface-secondary);
-            color: var(--text);
-
-            transition:
-                transform 180ms ease,
-                border-color 180ms ease,
-                background 180ms ease;
-        }
-
-        .feature-link:hover {
-            transform: translateY(-4px);
-
-            border-color: rgba(139, 92, 246, 0.55);
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        .feature-link p {
-            color: var(--muted);
-        }
-
-        .feature-link-arrow {
-            color: var(--accent-secondary);
-
-            font-size: 1.3rem;
-            font-weight: 800;
-        }
-
-        /* ========================================================= */
         /* CONTACT                                                   */
         /* ========================================================= */
 
@@ -1123,8 +1073,7 @@
                 flex: 1;
             }
 
-            .product-grid,
-            .link-grid {
+            .product-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1457,82 +1406,85 @@
             </section>
 
             <div class="section-divider">
-                <span>Explore</span>
+                <span>Release Model</span>
             </div>
 
             <section class="content-section">
                 <div class="section-heading">
                     <p class="section-kicker">
-                        Atmos Studio website
+                        Access and distribution
                     </p>
 
                     <h2>
-                        Projects, releases, and legal information
+                        Current builds first, public releases afterward
                     </h2>
 
                     <p class="section-description">
-                        Explore available builds and review the documents
-                        governing Atmos Studio products and services.
+                        Some Atmos Studio products use a rolling release
+                        model. Subscribers receive access to the newest
+                        available builds, while previous eligible versions
+                        later become publicly available.
                     </p>
                 </div>
 
-                <div class="link-grid">
-                    <a
-                        class="feature-link"
-                        href="./builds.html"
-                    >
-                        <div>
-                            <h3>Builds</h3>
-
-                            <p>
-                                Browse Atmos Studio projects, current releases,
-                                public versions, supported platforms, and
-                                download information.
-                            </p>
+                <div class="release-grid">
+                    <article class="release-card">
+                        <div class="release-number">
+                            01
                         </div>
 
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                        <h3>Current Builds</h3>
 
-                    <a
-                        class="feature-link"
-                        href="./privacy-policy.html"
-                    >
-                        <div>
-                            <h3>Privacy Policy</h3>
+                        <p>
+                            The newest active builds may be published through
+                            Boosty. Users with an active eligible subscription
+                            can access the updates published during their
+                            subscription period.
+                        </p>
 
-                            <p>
-                                Learn what information Atmos Studio may
-                                process, why it is used, and what rights
-                                users have.
-                            </p>
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Boosty
+                            </span>
+
+                            <span class="platform-label">
+                                Current versions
+                            </span>
+
+                            <span class="platform-label">
+                                Subscriber access
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="release-card">
+                        <div class="release-number">
+                            02
                         </div>
 
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                        <h3>Public Builds</h3>
 
-                    <a
-                        class="feature-link"
-                        href="./terms-of-use.html"
-                    >
-                        <div>
-                            <h3>Terms of Use</h3>
+                        <p>
+                            When a newer current build is released, the
+                            previous eligible version may be prepared for
+                            free publication through public distribution
+                            platforms.
+                        </p>
 
-                            <p>
-                                Review the rules for subscriptions, builds,
-                                licensing, distribution, payments, and
-                                product usage.
-                            </p>
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Modrinth
+                            </span>
+
+                            <span class="platform-label">
+                                CurseForge
+                            </span>
+
+                            <span class="platform-label">
+                                Public access
+                            </span>
                         </div>
-
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                    </article>
                 </div>
             </section>
         </section>
@@ -1672,83 +1624,86 @@
             </section>
 
             <div class="section-divider">
-                <span>Разделы сайта</span>
+                <span>Модель публикации</span>
             </div>
 
             <section class="content-section">
                 <div class="section-heading">
                     <p class="section-kicker">
-                        Сайт Atmos Studio
+                        Доступ и распространение
                     </p>
 
                     <h2>
-                        Проекты, выпуски и юридическая информация
+                        Сначала актуальные сборки, затем публичные версии
                     </h2>
 
                     <p class="section-description">
-                        Просматривайте доступные сборки и изучайте
-                        документы, регулирующие продукты и сервисы
-                        Atmos Studio.
+                        Для некоторых продуктов Atmos Studio используется
+                        последовательная модель публикации. Подписчики
+                        получают доступ к новейшим сборкам, а предыдущие
+                        подходящие версии позднее становятся
+                        общедоступными.
                     </p>
                 </div>
 
-                <div class="link-grid">
-                    <a
-                        class="feature-link"
-                        href="./builds.html"
-                    >
-                        <div>
-                            <h3>Сборки</h3>
-
-                            <p>
-                                Проекты Atmos Studio, актуальные и публичные
-                                версии, поддерживаемые платформы
-                                и информация о загрузке.
-                            </p>
+                <div class="release-grid">
+                    <article class="release-card">
+                        <div class="release-number">
+                            01
                         </div>
 
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                        <h3>Актуальные сборки</h3>
 
-                    <a
-                        class="feature-link"
-                        href="./privacy-policy.html"
-                    >
-                        <div>
-                            <h3>Политика конфиденциальности</h3>
+                        <p>
+                            Новейшие активные сборки могут публиковаться
+                            через Boosty. Пользователи с подходящей активной
+                            подпиской получают доступ к обновлениям,
+                            опубликованным в период её действия.
+                        </p>
 
-                            <p>
-                                Сведения о том, какую информацию может
-                                обрабатывать Atmos Studio, зачем она нужна
-                                и какие права есть у пользователей.
-                            </p>
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Boosty
+                            </span>
+
+                            <span class="platform-label">
+                                Актуальные версии
+                            </span>
+
+                            <span class="platform-label">
+                                Доступ подписчиков
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="release-card">
+                        <div class="release-number">
+                            02
                         </div>
 
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                        <h3>Публичные сборки</h3>
 
-                    <a
-                        class="feature-link"
-                        href="./terms-of-use.html"
-                    >
-                        <div>
-                            <h3>Условия использования</h3>
+                        <p>
+                            После выпуска новой актуальной сборки
+                            предыдущая подходящая версия может быть
+                            подготовлена для бесплатной публикации
+                            на общедоступных платформах.
+                        </p>
 
-                            <p>
-                                Правила подписок, сборок, лицензирования,
-                                распространения, платежей и использования
-                                продуктов.
-                            </p>
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Modrinth
+                            </span>
+
+                            <span class="platform-label">
+                                CurseForge
+                            </span>
+
+                            <span class="platform-label">
+                                Бесплатный доступ
+                            </span>
                         </div>
-
-                        <span class="feature-link-arrow">
-                            →
-                        </span>
-                    </a>
+                    </article>
                 </div>
             </section>
         </section>

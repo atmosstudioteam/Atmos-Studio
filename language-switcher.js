@@ -94,7 +94,7 @@
     const pageCopy = {
         "privacy-policy.html": {
             en: {
-                title: "Global Privacy Policy",
+                title: "Privacy Policy",
                 description:
                     "This Policy explains how Atmos Studio processes information across its Minecraft products, support services, websites, community channels, and publications distributed through Boosty, Modrinth, CurseForge, and other platforms.",
                 metadata: [
@@ -105,10 +105,10 @@
                 notice:
                     "<strong>Important:</strong> product-specific notices or terms may supplement this Policy. Where a product-specific privacy notice conflicts with this document, the product-specific notice takes priority for that product.",
                 footer:
-                    "This page contains the current version of the Atmos Studio Global Privacy Policy."
+                    "This page contains the current version of the Atmos Studio Privacy Policy."
             },
             ru: {
-                title: "Глобальная политика конфиденциальности",
+                title: "Политика конфиденциальности",
                 description:
                     "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
                 metadata: [
@@ -119,7 +119,7 @@
                 notice:
                     "<strong>Важно:</strong> эту Политику могут дополнять уведомления или условия для отдельных продуктов. Если специальное уведомление о конфиденциальности противоречит этому документу, для соответствующего продукта применяется специальное уведомление.",
                 footer:
-                    "На этой странице опубликована текущая версия Глобальной политики конфиденциальности Atmos Studio."
+                    "На этой странице опубликована текущая версия Политики конфиденциальности Atmos Studio."
             }
         },
         "terms-of-use.html": {
@@ -130,7 +130,6 @@
                 metadata: [
                     "Effective: July 30, 2026",
                     "Last updated: July 31, 2026",
-                    "Version 1.0",
                     "English and Russian"
                 ],
                 notice:
@@ -145,7 +144,6 @@
                 metadata: [
                     "Действуют с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г.",
-                    "Версия 1.0",
                     "Английский и русский"
                 ],
                 notice:
