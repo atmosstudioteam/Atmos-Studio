@@ -156,9 +156,9 @@
         "Browse Atmos Studio projects, current subscription releases, public builds, supported platforms, and official download locations.":
             "Здесь собраны проекты Atmos Studio, актуальные версии по подписке, публичные сборки, поддерживаемые платформы и официальные ссылки для загрузки.",
         "Projects in development": "Проекты в разработке",
-        "Boosty current builds": "Актуальные версии сборок на Boosty",
+        "Boosty current builds": "Актуальные сборки на Boosty",
         "Public releases on Modrinth and CurseForge":
-            "Предыдущие версии сборок на Modrinth и CurseForge",
+            "Публичные версии на Modrinth и CurseForge",
         "Featured Project": "Главный проект",
         "Minecraft modpack": "Minecraft-сборка",
         "Current Atmos Studio project": "Текущий проект Atmos Studio",
