@@ -1,6 +1,9 @@
 (() => {
     const storageKey = "atmos-language";
     const supportedLanguages = new Set(["en", "ru"]);
+    const boostyUrl = "https://boosty.to/atmos.studio";
+    const discordUrl = "https://discord.gg/g9G3uHPzWQ";
+    const telegramUrl = "https://t.me/atmos_studio";
 
     const getInitialLanguage = () => {
         const queryLanguage = new URLSearchParams(window.location.search).get("lang");
@@ -67,7 +70,7 @@
             en: {
                 title: "Global Privacy Policy",
                 description:
-                    "This Policy explains how Atmos Studio processes information across its Discord applications, Minecraft products, support services, websites, and publications distributed through Boosty, Modrinth, CurseForge, and other platforms.",
+                    "This Policy explains how Atmos Studio processes information across its Minecraft products, support services, websites, community channels, and publications distributed through Boosty, Modrinth, CurseForge, and other platforms.",
                 metadata: [
                     "Effective: July 30, 2026",
                     "Last updated: July 31, 2026",
@@ -81,7 +84,7 @@
             ru: {
                 title: "Глобальная политика конфиденциальности",
                 description:
-                    "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в Discord-приложениях, продуктах Minecraft, службах поддержки, на сайтах и в публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
+                    "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
                 metadata: [
                     "Действует с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г.",
@@ -97,7 +100,7 @@
             en: {
                 title: "Terms of Use",
                 description:
-                    "These Terms govern access to and use of Atmos Studio Products, including Discord applications, Minecraft modpacks, Boosty subscription releases, public Builds, websites, downloads, and technical support services.",
+                    "These Terms govern access to and use of Atmos Studio Products, including Minecraft modpacks, Boosty subscription releases, public Builds, websites, community channels, downloads, and technical support services.",
                 metadata: [
                     "Effective: July 30, 2026",
                     "Last updated: July 31, 2026",
@@ -112,7 +115,7 @@
             ru: {
                 title: "Условия использования",
                 description:
-                    "Настоящие Условия регулируют доступ к продуктам Atmos Studio и их использование, включая Discord-приложения, сборки Minecraft, выпуски по подписке Boosty, публичные сборки, сайты, загрузки и техническую поддержку.",
+                    "Настоящие Условия регулируют доступ к продуктам Atmos Studio и их использование, включая сборки Minecraft, выпуски по подписке Boosty, публичные сборки, сайты, каналы сообщества, загрузки и техническую поддержку.",
                 metadata: [
                     "Действуют с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г.",
@@ -126,6 +129,84 @@
             }
         }
     };
+
+    const buildsTranslations = {
+        "Atmos Studio Projects": "Проекты Atmos Studio",
+        "Builds": "Сборки",
+        "Browse Atmos Studio projects, current subscription releases, public builds, supported platforms, and official download locations.":
+            "Здесь собраны проекты Atmos Studio, актуальные версии по подписке, публичные сборки, поддерживаемые платформы и официальные ссылки для загрузки.",
+        "Projects in development": "Проекты в разработке",
+        "Boosty current builds": "Актуальные сборки на Boosty",
+        "Modrinth public releases": "Публичные версии на Modrinth",
+        "CurseForge public releases": "Публичные версии на CurseForge",
+        "Featured Project": "Главный проект",
+        "Minecraft modpack": "Minecraft-сборка",
+        "Current Atmos Studio project": "Текущий проект Atmos Studio",
+        "The information below describes the current development and distribution structure. Exact versions and download availability may change as development progresses.":
+            "Ниже описана текущая структура разработки и распространения. Точные версии и доступность загрузок могут меняться по мере развития проекта.",
+        "In active development": "В активной разработке",
+        "A large-scale techno-magical Minecraft modpack combining industrial systems, dangerous caverns, structured progression, exploration, rituals, quests, custom scripts, and original content.":
+            "Масштабная техно-магическая Minecraft-сборка, объединяющая промышленные системы, опасные пещеры, продуманное развитие, исследование, ритуалы, квесты, собственные скрипты и оригинальное содержимое.",
+        "Conflux is designed as a cohesive experience rather than a simple collection of mods. Progression, resources, recipes, dimensions, quests, interfaces, visual identity, and technical systems are adjusted to support a unified long-term playthrough.":
+            "Conflux создаётся как цельное игровое приключение, а не простой набор модов. Развитие, ресурсы, рецепты, измерения, квесты, интерфейсы, визуальный стиль и игровые системы настроены для единого продолжительного прохождения.",
+        "Game": "Игра",
+        "Project type": "Тип проекта",
+        "Modpack": "Сборка",
+        "Status": "Статус",
+        "In development": "В разработке",
+        "Distribution": "Распространение",
+        "Boosty and public platforms": "Boosty и публичные платформы",
+        "Industry": "Промышленность",
+        "Large production systems, complex processing, machinery, resources, automation, and technological progression.":
+            "Крупные производственные системы, сложная переработка, механизмы, ресурсы, автоматизация и технологическое развитие.",
+        "Magic and Exploration": "Магия и исследование",
+        "Rituals, dangerous dimensions, underground biomes, hidden locations, bosses, and exploration-focused progression.":
+            "Ритуалы, опасные измерения, подземные биомы, скрытые места, боссы и развитие через исследование мира.",
+        "Custom Development": "Собственная разработка",
+        "Custom scripts, recipes, quests, balancing, interfaces, visual design, and original systems developed for the modpack.":
+            "Собственные скрипты, рецепты, квесты, баланс, интерфейсы, визуальное оформление и оригинальные системы сборки.",
+        "Current restricted build": "Текущая закрытая сборка",
+        "Access the newest eligible Conflux builds and updates available to the relevant active subscription tier.":
+            "Доступ к новейшим сборкам и обновлениям Conflux для соответствующего активного уровня подписки.",
+        "Open Boosty": "Открыть Boosty",
+        "Public release page": "Страница публичных версий",
+        "Previous eligible versions may be published publicly after the release of a newer current build.":
+            "Предыдущие подходящие версии могут публиковаться бесплатно после выхода новой актуальной сборки.",
+        "Open Modrinth": "Открыть Modrinth",
+        "Public Conflux releases may also be distributed through CurseForge when the relevant version becomes available.":
+            "Публичные версии Conflux также могут распространяться через CurseForge после подготовки соответствующего выпуска.",
+        "Open CurseForge": "Открыть CurseForge",
+        "Important:": "Важно:",
+        "use only official Atmos Studio links. Files published by unrelated websites, unofficial mirrors, reupload services, or other users may be outdated, modified, incomplete, or unsafe.":
+            "используйте только официальные ссылки Atmos Studio. Файлы со сторонних сайтов, неофициальных зеркал, сервисов повторной загрузки или от других пользователей могут быть устаревшими, изменёнными, неполными или небезопасными.",
+        "Release Process": "Процесс публикации",
+        "Rolling distribution model": "Последовательная модель распространения",
+        "How Atmos Studio builds are published": "Как публикуются сборки Atmos Studio",
+        "Some products may follow the distribution process described below. Product-specific announcements may provide additional details.":
+            "Некоторые продукты могут распространяться по описанной ниже схеме. Дополнительные сведения публикуются в объявлениях конкретного проекта.",
+        "Current build": "Актуальная сборка",
+        "The newest active version may first be published through Boosty for users with an eligible active subscription.":
+            "Новейшая активная версия может сначала публиковаться на Boosty для пользователей с подходящей активной подпиской.",
+        "Subscription updates": "Обновления по подписке",
+        "During the active subscription period, a user may access eligible updates published for their subscription tier.":
+            "В период активной подписки пользователь может получать подходящие обновления своего уровня подписки.",
+        "Public release": "Публичная версия",
+        "When a newer current build is released, the previous eligible version may later be published freely on Modrinth, CurseForge, or another official platform.":
+            "После выхода новой актуальной сборки предыдущая подходящая версия может быть опубликована бесплатно на Modrinth, CurseForge или другой официальной платформе.",
+        "Community": "Сообщество",
+        "News and support": "Новости и поддержка",
+        "Follow Atmos Studio development": "Следите за разработкой Atmos Studio",
+        "Join the official Discord and Telegram communities for project announcements, development news, support, release information, and important updates.":
+            "Подписывайтесь на Boosty и присоединяйтесь к официальным сообществам Discord и Telegram, чтобы получать новости разработки, поддержку, сведения о выпусках и важные обновления.",
+        "Join Discord": "Открыть Discord",
+        "Open Telegram": "Открыть Telegram",
+        "© 2026 Atmos Studio. All rights reserved.":
+            "© 2026 Atmos Studio. Все права защищены.",
+        "Download Atmos Studio products only from official distribution pages.":
+            "Загружайте продукты Atmos Studio только с официальных страниц распространения."
+    };
+
+    const buildsOriginalText = new WeakMap();
 
     const getPageName = () => {
         const pageName = window.location.pathname.split("/").pop();
@@ -193,6 +274,87 @@
         document.title = `${localizedPage.title} — Atmos Studio`;
     };
 
+    const localizeBuildsPage = (language) => {
+        if (getPageName() !== "builds.html") {
+            return;
+        }
+
+        const root = document.querySelector("main");
+
+        if (!root) {
+            return;
+        }
+
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        let node = walker.nextNode();
+
+        while (node) {
+            const parent = node.parentElement;
+            const skipNode = parent?.closest(
+                ".site-header, .footer-navigation, .footer-socials"
+            );
+
+            if (!skipNode && node.nodeValue.trim()) {
+                if (!buildsOriginalText.has(node)) {
+                    buildsOriginalText.set(node, node.nodeValue);
+                }
+
+                const originalText = buildsOriginalText.get(node);
+
+                if (language === "en") {
+                    node.nodeValue = originalText;
+                } else {
+                    const normalizedText = originalText
+                        .replace(/\s+/g, " ")
+                        .trim();
+                    const translation = buildsTranslations[normalizedText];
+
+                    if (translation) {
+                        const leadingSpace = originalText.match(/^\s*/)?.[0] ?? "";
+                        const trailingSpace = originalText.match(/\s*$/)?.[0] ?? "";
+                        node.nodeValue =
+                            `${leadingSpace}${translation}${trailingSpace}`;
+                    }
+                }
+            }
+
+            node = walker.nextNode();
+        }
+
+        document.title =
+            language === "ru"
+                ? "Сборки — Atmos Studio"
+                : "Builds — Atmos Studio";
+    };
+
+    const ensureOfficialCommunityLinks = () => {
+        document
+            .querySelectorAll("a.social-button.discord")
+            .forEach((link) => link.setAttribute("href", discordUrl));
+
+        document
+            .querySelectorAll("a.social-button.telegram")
+            .forEach((link) => link.setAttribute("href", telegramUrl));
+
+        document
+            .querySelectorAll(".social-navigation, .footer-socials")
+            .forEach((container) => {
+                if (container.querySelector(".social-button.boosty")) {
+                    return;
+                }
+
+                const boostyLink = document.createElement("a");
+                boostyLink.className = "social-button boosty";
+                boostyLink.href = boostyUrl;
+                boostyLink.target = "_blank";
+                boostyLink.rel = "noopener noreferrer";
+                boostyLink.textContent = "Boosty";
+
+                const firstSocialLink = container.querySelector("a.social-button");
+                container.insertBefore(boostyLink, firstSocialLink);
+            });
+    };
+
     const syncSwitcher = (language) => {
         document.querySelectorAll("[data-language-button]").forEach((button) => {
             const isActive = button.dataset.languageButton === language;
@@ -228,6 +390,7 @@
             }
         }
 
+        localizeBuildsPage(language);
         localizeNavigation(language);
         localizeSharedPageContent(language);
         syncSwitcher(language);
@@ -236,7 +399,11 @@
     const createSwitcher = () => {
         const socialNavigation = document.querySelector(".social-navigation");
 
-        if (!socialNavigation || !document.querySelector("#english, #russian")) {
+        const supportsLanguageSwitching =
+            document.querySelector("#english, #russian") ||
+            getPageName() === "builds.html";
+
+        if (!socialNavigation || !supportsLanguageSwitching) {
             return;
         }
 
@@ -273,6 +440,7 @@
 
     const initialize = () => {
         createSwitcher();
+        ensureOfficialCommunityLinks();
         setLanguage(currentLanguage, false);
     };
 
