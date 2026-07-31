@@ -835,7 +835,779 @@
             justify-content: center;
 
             width: 46px;
-            heigh…5692 tokens truncated…          <a
+            height: 46px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 13px;
+
+            background: rgba(139, 92, 246, 0.13);
+            color: var(--accent-secondary);
+
+            font-size: 1.25rem;
+            font-weight: 850;
+        }
+
+        .product-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            margin-top: 18px;
+
+            color: #b7c1ce;
+
+            font-size: 0.87rem;
+            font-weight: 700;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+
+            box-shadow:
+                0 0 10px rgba(63, 185, 80, 0.55);
+        }
+
+        /* ========================================================= */
+        /* RELEASE MODEL                                             */
+        /* ========================================================= */
+
+        .release-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .release-card {
+            padding: 26px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface-secondary);
+        }
+
+        .release-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 38px;
+            height: 38px;
+
+            margin-bottom: 17px;
+
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 11px;
+
+            background: rgba(139, 92, 246, 0.13);
+            color: var(--accent-secondary);
+
+            font-weight: 850;
+        }
+
+        .release-card p {
+            color: var(--muted);
+        }
+
+        .platform-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+        .platform-label {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 5px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(13, 17, 23, 0.4);
+            color: #b9c2ce;
+
+            font-size: 0.83rem;
+            font-weight: 680;
+        }
+
+        /* ========================================================= */
+        /* EXPLORE LINKS                                             */
+        /* ========================================================= */
+
+        .link-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .feature-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 22px;
+
+            min-height: 205px;
+            padding: 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface-secondary);
+            color: var(--text);
+
+            transition:
+                transform 180ms ease,
+                border-color 180ms ease,
+                background 180ms ease;
+        }
+
+        .feature-link:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(139, 92, 246, 0.55);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .feature-link p {
+            color: var(--muted);
+        }
+
+        .feature-link-arrow {
+            color: var(--accent-secondary);
+
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        /* ========================================================= */
+        /* CONTACT                                                   */
+        /* ========================================================= */
+
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+
+            padding: 46px;
+
+            border: 1px solid rgba(139, 92, 246, 0.48);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.22),
+                    rgba(22, 27, 34, 0.95)
+                );
+
+            box-shadow: var(--shadow);
+        }
+
+        .cta-section::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: -90px;
+            bottom: -135px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.25),
+                    transparent 67%
+                );
+
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+
+            max-width: 760px;
+        }
+
+        /* ========================================================= */
+        /* FOOTER                                                    */
+        /* ========================================================= */
+
+        footer {
+            margin-top: 42px;
+            padding: 26px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface);
+            color: var(--muted);
+
+            text-align: center;
+        }
+
+        .footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 15px;
+
+            color: var(--text);
+
+            font-weight: 800;
+            letter-spacing: 0.035em;
+            text-transform: uppercase;
+        }
+
+        .footer-navigation,
+        .footer-socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+
+            margin-bottom: 14px;
+        }
+
+        .footer-navigation a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 38px;
+            padding: 6px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background: var(--surface-secondary);
+            color: var(--accent-secondary);
+
+            font-size: 0.89rem;
+            font-weight: 700;
+        }
+
+        .footer-navigation a:hover {
+            border-color: rgba(139, 92, 246, 0.55);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================================= */
+        /* RESPONSIVE                                                */
+        /* ========================================================= */
+
+        @media (max-width: 1080px) {
+            .site-header {
+                position: static;
+                grid-template-columns: 1fr;
+            }
+
+            .studio-brand {
+                justify-content: center;
+            }
+
+            .page-navigation {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .navigation-tab {
+                flex: 1 1 150px;
+            }
+
+            .social-navigation {
+                width: 100%;
+            }
+
+            .social-button {
+                flex: 1;
+            }
+
+            .product-grid,
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                width: min(100% - 20px, 1120px);
+                padding-top: 10px;
+            }
+
+            .language-panel {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .language-actions {
+                flex-direction: column;
+            }
+
+            .language-button {
+                width: 100%;
+            }
+
+            .language-divider,
+            .section-divider {
+                gap: 10px;
+                margin: 44px 0 28px;
+                font-size: 0.79rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 38px 24px;
+                border-radius: 19px;
+            }
+
+            h1 {
+                font-size: clamp(2.7rem, 15vw, 4.6rem);
+            }
+
+            .content-section,
+            .cta-section {
+                padding: 27px 21px;
+                border-radius: 18px;
+            }
+
+            .release-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .primary-button,
+            .secondary-button {
+                width: 100%;
+            }
+
+            .footer-navigation,
+            .footer-socials {
+                flex-direction: column;
+            }
+
+            .footer-navigation a,
+            .footer-socials a {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .page-navigation,
+            .social-navigation {
+                flex-direction: column;
+            }
+
+            .navigation-tab,
+            .social-button {
+                width: 100%;
+                flex: none;
+            }
+
+            .metadata {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .badge {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="./language-switcher.css">
+    <script src="./language-switcher.js"></script>
+</head>
+
+<body>
+    <main class="page">
+
+        <header class="site-header">
+            <a
+                class="studio-brand"
+                href="./index.html"
+                aria-label="Atmos Studio home"
+            >
+                <span class="brand-mark"></span>
+                Atmos Studio
+            </a>
+
+            <nav
+                class="page-navigation"
+                aria-label="Main navigation"
+            >
+                <a
+                    class="navigation-tab active"
+                    href="./index.html"
+                    aria-current="page"
+                >
+                    Home
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./builds.html"
+                >
+                    Builds
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./privacy-policy.html"
+                >
+                    Privacy Policy
+                </a>
+
+                <a
+                    class="navigation-tab"
+                    href="./terms-of-use.html"
+                >
+                    Terms of Use
+                </a>
+            </nav>
+
+            <nav
+                class="social-navigation"
+                aria-label="Atmos Studio communities"
+            >
+                <a
+                    class="social-button discord"
+                    href="https://discord.gg/YOUR_INVITE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.54 5.34A16.3 16.3 0 0 0 15.44 4a11.4 11.4 0 0 0-.52 1.07 15.25 15.25 0 0 0-4.84 0A11.4 11.4 0 0 0 9.56 4a16.4 16.4 0 0 0-4.11 1.35C2.85 9.2 2.15 12.95 2.5 16.65a16.7 16.7 0 0 0 5.03 2.55c.41-.55.77-1.14 1.08-1.76a10.7 10.7 0 0 1-1.7-.82c.14-.1.28-.21.41-.32a11.7 11.7 0 0 0 10.36 0l.42.32c-.55.33-1.12.6-1.71.82.31.62.67 1.21 1.08 1.76a16.6 16.6 0 0 0 5.03-2.55c.41-4.29-.7-8-2.96-11.31ZM9.22 14.38c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Zm5.56 0c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Z"/>
+                    </svg>
+
+                    Discord
+                </a>
+
+                <a
+                    class="social-button telegram"
+                    href="https://t.me/atmos_studio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.7 3.2 18.6 20c-.23 1.19-.85 1.48-1.72.92l-4.72-3.48-2.28 2.19c-.25.25-.46.46-.95.46l.34-4.81 8.76-7.92c.38-.34-.08-.53-.59-.19L6.61 13.99l-4.67-1.46c-1.02-.32-1.04-1.02.21-1.51L20.42 3.98c.85-.31 1.59.19 1.28-.78Z"/>
+                    </svg>
+
+                    Telegram
+                </a>
+            </nav>
+        </header>
+
+        <nav
+            class="language-panel"
+            aria-label="Language navigation"
+        >
+            <div class="language-label">
+                <strong>Language / Язык</strong>
+
+                <span>
+                    Jump to the required version of the page
+                </span>
+            </div>
+
+            <div class="language-actions">
+                <a class="language-button" href="#english">
+                    English
+                </a>
+
+                <a class="language-button" href="#russian">
+                    Русский
+                </a>
+            </div>
+        </nav>
+
+        <!-- ===================================================== -->
+        <!-- ENGLISH VERSION                                      -->
+        <!-- ===================================================== -->
+
+        <div class="language-divider">
+            <span>English version</span>
+        </div>
+
+        <section
+            class="language-version"
+            id="english"
+            lang="en"
+        >
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-brand">
+                        <span class="brand-mark"></span>
+                        Independent Development Studio
+                    </div>
+
+                    <h1>
+                        Atmos
+                        <span class="hero-title-accent">Studio</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        We create ambitious Minecraft experiences,
+                        carefully designed modpacks, Discord applications,
+                        development tools, and digital products built around
+                        strong ideas, detailed systems, and long-term support.
+                    </p>
+
+                    <div class="metadata">
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Minecraft Modpacks
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Discord Applications
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Development Tools
+                        </span>
+
+                        <span class="badge">
+                            <span class="badge-dot"></span>
+                            Independent Projects
+                        </span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a
+                            class="primary-button"
+                            href="./builds.html"
+                        >
+                            Explore Builds
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            class="secondary-button"
+                            href="mailto:atmos.studio.team@gmail.com"
+                        >
+                            Contact Atmos Studio
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>About Atmos Studio</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Our direction
+                    </p>
+
+                    <h2>
+                        Digital projects built as complete experiences
+                    </h2>
+
+                    <p class="section-description">
+                        Atmos Studio develops products that combine technical
+                        depth, visual identity, structured progression, and
+                        carefully maintained content.
+                    </p>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-icon">
+                            M
+                        </div>
+
+                        <h3>Minecraft Modpacks</h3>
+
+                        <p>
+                            Large, curated modpacks with custom progression,
+                            quests, scripts, configurations, visual design,
+                            balancing, and original gameplay systems.
+                        </p>
+
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Active development
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-icon">
+                            D
+                        </div>
+
+                        <h3>Discord Applications</h3>
+
+                        <p>
+                            Community tools, integrations, automation systems,
+                            support utilities, and Discord applications built
+                            around Atmos Studio projects.
+                        </p>
+
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            In development
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-icon">
+                            T
+                        </div>
+
+                        <h3>Development Tools</h3>
+
+                        <p>
+                            Utilities for diagnostics, content creation,
+                            project management, modpack development,
+                            distribution, and technical support.
+                        </p>
+
+                        <div class="product-status">
+                            <span class="status-dot"></span>
+                            Expanding platform
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Release Model</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Access and distribution
+                    </p>
+
+                    <h2>
+                        Current builds first, public releases afterward
+                    </h2>
+
+                    <p class="section-description">
+                        Some Atmos Studio products use a rolling release
+                        model. Subscribers receive access to the newest
+                        available builds, while previous eligible versions
+                        later become publicly available.
+                    </p>
+                </div>
+
+                <div class="release-grid">
+                    <article class="release-card">
+                        <div class="release-number">
+                            01
+                        </div>
+
+                        <h3>Current Builds</h3>
+
+                        <p>
+                            The newest active builds may be published through
+                            Boosty. Users with an active eligible subscription
+                            can access the updates published during their
+                            subscription period.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Boosty
+                            </span>
+
+                            <span class="platform-label">
+                                Current versions
+                            </span>
+
+                            <span class="platform-label">
+                                Subscriber access
+                            </span>
+                        </div>
+                    </article>
+
+                    <article class="release-card">
+                        <div class="release-number">
+                            02
+                        </div>
+
+                        <h3>Public Builds</h3>
+
+                        <p>
+                            When a newer current build is released, the
+                            previous eligible version may be prepared for
+                            free publication through public distribution
+                            platforms.
+                        </p>
+
+                        <div class="platform-list">
+                            <span class="platform-label">
+                                Modrinth
+                            </span>
+
+                            <span class="platform-label">
+                                CurseForge
+                            </span>
+
+                            <span class="platform-label">
+                                Public access
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider">
+                <span>Explore</span>
+            </div>
+
+            <section class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">
+                        Atmos Studio website
+                    </p>
+
+                    <h2>
+                        Projects, releases, and legal information
+                    </h2>
+
+                    <p class="section-description">
+                        Explore available builds and review the documents
+                        governing Atmos Studio products and services.
+                    </p>
+                </div>
+
+                <div class="link-grid">
+                    <a
                         class="feature-link"
                         href="./builds.html"
                     >
@@ -1352,4 +2124,3 @@
     </main>
 </body>
 </html>
-
