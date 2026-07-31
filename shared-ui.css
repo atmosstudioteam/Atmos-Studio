@@ -1,0 +1,180 @@
+/* Shared footer layout */
+
+footer {
+    margin-top: 42px;
+    padding: 26px;
+
+    border: 1px solid var(--border, #30363d);
+    border-radius: 17px;
+
+    background: var(--surface, #161b22);
+    color: var(--muted, #9da7b4);
+
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 15px;
+
+    color: var(--text, #e6edf3);
+
+    font-weight: 800;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+.footer-navigation,
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.footer-navigation a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 6px 13px;
+
+    border: 1px solid var(--border, #30363d);
+    border-radius: 10px;
+
+    background: var(--surface-secondary, #1f2631);
+    color: var(--accent-secondary, #a78bfa);
+
+    font-size: 0.89rem;
+    font-weight: 700;
+
+    transition:
+        border-color 160ms ease,
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+.footer-navigation a:hover {
+    border-color: rgba(139, 92, 246, 0.55);
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.footer-socials .social-button {
+    flex: 0 0 auto;
+}
+
+footer p {
+    margin: 5px 0;
+
+    color: var(--muted, #9da7b4);
+
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+/* Shared card interaction */
+
+.product-card,
+.release-card,
+.build-meta,
+.feature-card,
+.download-card,
+.platform-card,
+.policy-section,
+.contact-box,
+.mods-dialog-category {
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.product-card:hover,
+.release-card:hover,
+.build-meta:hover,
+.feature-card:hover,
+.download-card:hover,
+.platform-card:hover,
+.contact-box:hover,
+.mods-dialog-category:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(139, 92, 246, 0.52);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(50, 42, 76, 0.75),
+            rgba(24, 30, 40, 0.94)
+        );
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
+.policy-section:hover:not(
+    :has(.platform-card:hover, .contact-box:hover)
+) {
+    transform: translateY(-4px);
+
+    border-color: rgba(139, 92, 246, 0.52);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(50, 42, 76, 0.75),
+            rgba(24, 30, 40, 0.94)
+        );
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 760px) {
+    .footer-navigation,
+    .footer-socials {
+        flex-direction: column;
+    }
+
+    .footer-navigation a,
+    .footer-socials a {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-navigation a,
+    .product-card,
+    .release-card,
+    .build-meta,
+    .feature-card,
+    .download-card,
+    .platform-card,
+    .policy-section,
+    .contact-box,
+    .mods-dialog-category {
+        transition: none;
+    }
+
+    .product-card:hover,
+    .release-card:hover,
+    .build-meta:hover,
+    .feature-card:hover,
+    .download-card:hover,
+    .platform-card:hover,
+    .contact-box:hover,
+    .mods-dialog-category:hover {
+        transform: none;
+    }
+
+    .policy-section:hover:not(
+        :has(.platform-card:hover, .contact-box:hover)
+    ) {
+        transform: none;
+    }
+}
