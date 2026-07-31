@@ -235,11 +235,19 @@
     line-height: 1;
 
     cursor: pointer;
+
+    transition:
+        border-color 160ms ease,
+        background 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
 }
 
 .news-close:hover {
     border-color: rgba(139, 92, 246, 0.58);
+    background: rgba(139, 92, 246, 0.12);
     color: var(--text, #e6edf3);
+    transform: rotate(5deg);
 }
 
 .news-panel-visual {
@@ -386,6 +394,7 @@
     .news-toast,
     .news-panel,
     .news-toast-chevron,
+    .news-close,
     .news-action {
         transition: none;
     }
