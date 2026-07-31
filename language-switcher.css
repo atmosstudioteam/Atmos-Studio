@@ -71,11 +71,11 @@
 .page-navigation {
     display: grid;
     grid-template-columns:
-        minmax(72px, 0.85fr)
-        minmax(72px, 0.85fr)
-        minmax(145px, 1.65fr)
-        minmax(100px, 1.15fr);
-    width: 430px;
+        minmax(64px, 0.72fr)
+        minmax(64px, 0.72fr)
+        minmax(175px, 1.95fr)
+        minmax(92px, 1fr);
+    width: 450px;
     max-width: 100%;
     justify-self: center;
 }
@@ -115,8 +115,24 @@
     box-shadow: 0 8px 22px rgba(255, 0, 51, 0.14);
 }
 
-.site-header .social-button.youtube .social-label {
-    display: none;
+.site-header {
+    gap: 8px;
+    padding: 10px;
+}
+
+.site-header .studio-brand {
+    padding-inline: 6px;
+    font-size: 0.9rem;
+}
+
+.site-header .social-navigation {
+    gap: 6px;
+}
+
+.site-header .social-button {
+    gap: 6px;
+    padding-inline: 9px;
+    font-size: 0.82rem;
 }
 
 html[data-language="en"] #russian,
@@ -127,10 +143,6 @@ html[data-language="ru"] #english {
 @media (max-width: 1080px) {
     .page-navigation {
         width: 100%;
-    }
-
-    .site-header .social-button.youtube .social-label {
-        display: inline;
     }
 }
 
