@@ -99,8 +99,7 @@
                     "This Policy explains how Atmos Studio processes information across its Minecraft products, support services, websites, community channels, and publications distributed through Boosty, Modrinth, CurseForge, and other platforms.",
                 metadata: [
                     "Effective: July 30, 2026",
-                    "Last updated: July 31, 2026",
-                    "English and Russian"
+                    "Last updated: July 31, 2026"
                 ],
                 notice:
                     "<strong>Important:</strong> product-specific notices or terms may supplement this Policy. Where a product-specific privacy notice conflicts with this document, the product-specific notice takes priority for that product.",
@@ -113,8 +112,7 @@
                     "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
                 metadata: [
                     "Действует с: 30 июля 2026 г.",
-                    "Последнее обновление: 31 июля 2026 г.",
-                    "Английский и русский"
+                    "Последнее обновление: 31 июля 2026 г."
                 ],
                 notice:
                     "<strong>Важно:</strong> эту Политику могут дополнять уведомления или условия для отдельных продуктов. Если специальное уведомление о конфиденциальности противоречит этому документу, для соответствующего продукта применяется специальное уведомление.",
@@ -129,8 +127,7 @@
                     "These Terms govern access to and use of Atmos Studio Products, including Minecraft modpacks, Boosty subscription releases, public Builds, websites, community channels, downloads, and technical support services.",
                 metadata: [
                     "Effective: July 30, 2026",
-                    "Last updated: July 31, 2026",
-                    "English and Russian"
+                    "Last updated: July 31, 2026"
                 ],
                 notice:
                     "<strong>Important:</strong> these Terms apply together with the rules of the platform through which a Product is accessed or distributed. Platform rules, third-party licenses, and mandatory consumer law may take priority where legally required.",
@@ -143,8 +140,7 @@
                     "Настоящие Условия регулируют доступ к продуктам Atmos Studio и их использование, включая сборки Minecraft, выпуски по подписке Boosty, публичные сборки, сайты, каналы сообщества, загрузки и техническую поддержку.",
                 metadata: [
                     "Действуют с: 30 июля 2026 г.",
-                    "Последнее обновление: 31 июля 2026 г.",
-                    "Английский и русский"
+                    "Последнее обновление: 31 июля 2026 г."
                 ],
                 notice:
                     "<strong>Важно:</strong> настоящие Условия применяются вместе с правилами платформы, через которую предоставляется или распространяется продукт. Правила платформы, сторонние лицензии и обязательные нормы защиты потребителей могут иметь приоритет, если этого требует закон.",
@@ -161,8 +157,8 @@
             "Здесь собраны проекты Atmos Studio, актуальные версии по подписке, публичные сборки, поддерживаемые платформы и официальные ссылки для загрузки.",
         "Projects in development": "Проекты в разработке",
         "Boosty current builds": "Актуальные сборки на Boosty",
-        "Modrinth public releases": "Публичные версии на Modrinth",
-        "CurseForge public releases": "Публичные версии на CurseForge",
+        "Public releases on Modrinth and CurseForge":
+            "Публичные версии на Modrinth и CurseForge",
         "Featured Project": "Главный проект",
         "Minecraft modpack": "Minecraft-сборка",
         "Current Atmos Studio project": "Текущий проект Atmos Studio",
@@ -197,8 +193,6 @@
         "Previous eligible versions may be published publicly after the release of a newer current build.":
             "Предыдущие подходящие версии могут публиковаться бесплатно после выхода новой актуальной сборки.",
         "Open Modrinth": "Открыть Modrinth",
-        "Public Conflux releases may also be distributed through CurseForge when the relevant version becomes available.":
-            "Публичные версии Conflux также могут распространяться через CurseForge после подготовки соответствующего выпуска.",
         "Open CurseForge": "Открыть CurseForge",
         "Important:": "Важно:",
         "use only official Atmos Studio links. Files published by unrelated websites, unofficial mirrors, reupload services, or other users may be outdated, modified, incomplete, or unsafe.":
@@ -519,7 +513,7 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        socialNavigation.prepend(switcher);
+        socialNavigation.before(switcher);
     };
 
     const initialize = () => {
