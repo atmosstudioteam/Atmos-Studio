@@ -728,7 +728,7 @@
         .feature-grid {
             display: grid;
             grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+                repeat(4, minmax(0, 1fr));
             gap: 12px;
 
             margin-top: 26px;
@@ -1197,7 +1197,10 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .feature-grid,
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .download-grid,
             .release-grid {
                 grid-template-columns: 1fr;
@@ -1233,6 +1236,10 @@
             }
 
             .build-meta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1477,12 +1484,22 @@
                         </article>
 
                         <article class="feature-card">
-                            <h3>Magic and Exploration</h3>
+                            <h3>Magic</h3>
 
                             <p>
-                                Rituals, dangerous dimensions, underground
-                                biomes, hidden locations, bosses, and
-                                exploration-focused progression.
+                                Arcane rituals, powerful spells, mysterious
+                                dungeons, ancient secrets, magical puzzles,
+                                and progression through hidden knowledge.
+                            </p>
+                        </article>
+
+                        <article class="feature-card">
+                            <h3>Exploration</h3>
+
+                            <p>
+                                Varied dungeons, updated caves, hidden
+                                locations, dangerous dimensions, powerful
+                                bosses, and rewards for exploring the world.
                             </p>
                         </article>
 

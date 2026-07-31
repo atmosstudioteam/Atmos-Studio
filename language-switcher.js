@@ -176,9 +176,12 @@
         "Industry": "Промышленность",
         "Large production systems, complex processing, machinery, resources, automation, and technological progression.":
             "Крупные производственные системы, сложная переработка, механизмы, ресурсы, автоматизация и технологическое развитие.",
-        "Magic and Exploration": "Магия и исследование",
-        "Rituals, dangerous dimensions, underground biomes, hidden locations, bosses, and exploration-focused progression.":
-            "Ритуалы, опасные измерения, подземные биомы, скрытые места, боссы и развитие через исследование мира.",
+        "Magic": "Магия",
+        "Arcane rituals, powerful spells, mysterious dungeons, ancient secrets, magical puzzles, and progression through hidden knowledge.":
+            "Магические ритуалы, могущественные заклинания, загадочные подземелья, древние тайны, магические головоломки и развитие через скрытые знания.",
+        "Exploration": "Исследование",
+        "Varied dungeons, updated caves, hidden locations, dangerous dimensions, powerful bosses, and rewards for exploring the world.":
+            "Разнообразные данжи и подземелья, обновлённые пещеры, скрытые локации, опасные измерения, сильные боссы и награды за исследование мира.",
         "Custom Development": "Собственная разработка",
         "Custom scripts, recipes, quests, balancing, interfaces, visual design, and original systems developed for the modpack.":
             "Собственные скрипты, рецепты, квесты, баланс, интерфейсы, визуальное оформление и оригинальные системы сборки.",
