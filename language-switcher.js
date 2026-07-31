@@ -227,7 +227,21 @@
             "Загружайте продукты Atmos Studio только с официальных страниц распространения."
     };
 
+    const footerTranslations = {
+        "© 2026 Atmos Studio. All rights reserved.":
+            "© 2026 Atmos Studio. Все права защищены.",
+        "Independent studio creating Minecraft projects and modpacks.":
+            "Независимая студия, создающая Minecraft-проекты и сборки.",
+        "Download Atmos Studio products only from official distribution pages.":
+            "Загружайте продукты Atmos Studio только с официальных страниц распространения.",
+        "This page contains the current version of the Atmos Studio Privacy Policy.":
+            "На этой странице опубликована текущая версия Политики конфиденциальности Atmos Studio.",
+        "This page contains the current version of the Atmos Studio Terms of Use.":
+            "На этой странице опубликована текущая версия Условий использования Atmos Studio."
+    };
+
     const buildsOriginalText = new WeakMap();
+    const footerOriginalText = new WeakMap();
 
     const getPageName = () => {
         const pageName = window.location.pathname.split("/").pop();
@@ -254,6 +268,56 @@
             });
     };
 
+    const localizeFooter = (language) => {
+        const footer = document.querySelector("footer");
+
+        if (!footer) {
+            return;
+        }
+
+        const walker = document.createTreeWalker(
+            footer,
+            NodeFilter.SHOW_TEXT
+        );
+        let node = walker.nextNode();
+
+        while (node) {
+            const parent = node.parentElement;
+            const skipNode = parent?.closest(
+                ".footer-navigation, .footer-socials"
+            );
+
+            if (!skipNode && node.nodeValue.trim()) {
+                if (!footerOriginalText.has(node)) {
+                    footerOriginalText.set(node, node.nodeValue);
+                }
+
+                const originalText = footerOriginalText.get(node);
+
+                if (language === "en") {
+                    node.nodeValue = originalText;
+                } else {
+                    const normalizedText = originalText
+                        .replace(/\s+/g, " ")
+                        .trim();
+                    const translation =
+                        footerTranslations[normalizedText];
+
+                    if (translation) {
+                        const leadingSpace =
+                            originalText.match(/^\s*/)?.[0] ?? "";
+                        const trailingSpace =
+                            originalText.match(/\s*$/)?.[0] ?? "";
+                        node.nodeValue =
+                            `${leadingSpace}${translation}${trailingSpace}`;
+                    }
+                }
+            }
+
+            node = walker.nextNode();
+        }
+    };
+
     const localizeSharedPageContent = (language) => {
         const pageName = getPageName();
         const localizedPage = pageCopy[pageName]?.[language];
@@ -267,7 +331,6 @@
         const heroDescription = hero?.querySelector(".hero-description");
         const metadata = hero?.querySelectorAll(".metadata .badge");
         const notice = document.querySelector("main > .notice");
-        const footerParagraphs = document.querySelectorAll("footer > p");
 
         if (heroTitle) {
             heroTitle.textContent = localizedPage.title;
@@ -291,11 +354,6 @@
             notice.innerHTML = localizedPage.notice;
         }
 
-        if (footerParagraphs.length > 1) {
-            footerParagraphs[footerParagraphs.length - 1].textContent =
-                localizedPage.footer;
-        }
-
         document.title = `${localizedPage.title} — Atmos Studio`;
     };
 
@@ -316,7 +374,7 @@
         while (node) {
             const parent = node.parentElement;
             const skipNode = parent?.closest(
-                ".site-header, .footer-navigation, .footer-socials"
+                ".site-header, footer"
             );
 
             if (!skipNode && node.nodeValue.trim()) {
@@ -475,6 +533,7 @@
         localizeBuildsPage(language);
         localizeNavigation(language);
         localizeSharedPageContent(language);
+        localizeFooter(language);
         syncSwitcher(language);
     };
 
