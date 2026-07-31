@@ -693,7 +693,7 @@
         .build-meta-grid {
             display: grid;
             grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+                repeat(4, minmax(0, 1fr));
             gap: 12px;
 
             margin: 28px 0;
@@ -1292,6 +1292,8 @@
     <script src="./news-widget.js"></script>
     <link rel="stylesheet" href="./release-notice.css">
     <script src="./release-notice.js"></script>
+    <link rel="stylesheet" href="./mods-dialog.css">
+    <script src="./mods-dialog.js"></script>
 </head>
 
 <body>
@@ -1470,11 +1472,17 @@
                             <span>Status</span>
                             <strong>In development</strong>
                         </div>
+
+                        <div class="build-meta">
+                            <span>Distribution methods</span>
+                            <strong>Boosty, Modrinth and CurseForge</strong>
+                        </div>
+
                     </div>
 
                     <div class="feature-grid">
                         <article class="feature-card">
-                            <h3>Industry</h3>
+                            <h3>Technologies</h3>
 
                             <p>
                                 Large production systems, complex processing,
@@ -1513,6 +1521,23 @@
                             </p>
                         </article>
                     </div>
+
+                    <button
+                        class="mods-button"
+                        type="button"
+                        data-mods-dialog-open
+                    >
+                        <span class="mods-button-mark" aria-hidden="true">
+                            M
+                        </span>
+
+                        <span>Mods</span>
+
+                        <span
+                            class="mods-button-chevron"
+                            aria-hidden="true"
+                        ></span>
+                    </button>
                 </div>
             </article>
 
@@ -1821,4 +1846,3 @@
 
     </main>
 </body>
-</html>

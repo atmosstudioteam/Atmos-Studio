@@ -173,7 +173,10 @@
         "Mod loader": "Загрузчик",
         "Status": "Статус",
         "In development": "В разработке",
-        "Industry": "Промышленность",
+        "Distribution methods": "Способы распространения",
+        "Boosty, Modrinth and CurseForge":
+            "Boosty, Modrinth и CurseForge",
+        "Technologies": "Технологии",
         "Large production systems, complex processing, machinery, resources, automation, and technological progression.":
             "Крупные производственные системы, сложная переработка, механизмы, ресурсы, автоматизация и технологическое развитие.",
         "Magic": "Магия",
@@ -185,6 +188,7 @@
         "Custom Development": "Собственная разработка",
         "Custom scripts, recipes, quests, balancing, interfaces, visual design, and original systems developed for the modpack.":
             "Собственные скрипты, рецепты, квесты, баланс, интерфейсы, визуальное оформление и оригинальные системы сборки.",
+        "Mods": "Моды",
         "Current restricted build": "Текущая закрытая сборка",
         "Access the newest eligible Conflux builds and updates available to the relevant active subscription tier.":
             "Доступ к новейшим сборкам и обновлениям Conflux для соответствующего активного уровня подписки.",
