@@ -8,6 +8,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 92px;
     flex: 0 0 92px;
+    justify-self: center;
     gap: 3px;
     padding: 3px;
 
@@ -113,6 +114,8 @@
 }
 
 .site-header {
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
     gap: 8px;
     padding: 10px 14px;
 }
@@ -138,6 +141,11 @@ html[data-language="ru"] #english {
 }
 
 @media (max-width: 1080px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        justify-content: stretch;
+    }
+
     .page-navigation {
         width: 100%;
     }
