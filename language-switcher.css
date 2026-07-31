@@ -70,6 +70,14 @@
     color: #ff9a72;
 }
 
+.social-button .boosty-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .social-button.boosty:hover {
     border-color: rgba(255, 95, 46, 0.72);
     background: rgba(255, 95, 46, 0.13);
