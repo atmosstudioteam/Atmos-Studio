@@ -893,15 +893,14 @@
         /* RELEASE MODEL                                             */
         /* ========================================================= */
 
-        .release-steps {
+        .release-grid {
             display: grid;
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
 
-        .release-step {
-            padding: 24px;
+        .release-card {
+            padding: 26px;
 
             border: 1px solid var(--border);
             border-radius: 17px;
@@ -914,8 +913,8 @@
             align-items: center;
             justify-content: center;
 
-            width: 39px;
-            height: 39px;
+            width: 38px;
+            height: 38px;
 
             margin-bottom: 17px;
 
@@ -928,8 +927,32 @@
             font-weight: 850;
         }
 
-        .release-step p {
+        .release-card p {
             color: var(--muted);
+        }
+
+        .platform-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+        .platform-label {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 5px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(13, 17, 23, 0.4);
+            color: #b9c2ce;
+
+            font-size: 0.83rem;
+            font-weight: 680;
         }
 
         /* ========================================================= */
@@ -1176,7 +1199,7 @@
 
             .feature-grid,
             .download-grid,
-            .release-steps {
+            .release-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1583,67 +1606,84 @@
         </section>
 
         <div class="section-divider">
-            <span>Release Process</span>
+            <span>Release Model</span>
         </div>
 
         <section class="content-section">
             <div class="section-heading">
                 <p class="section-kicker">
-                    Rolling distribution model
+                    Access and distribution
                 </p>
 
                 <h2>
-                    How Atmos Studio builds are published
+                    Current builds first, public releases afterward
                 </h2>
 
                 <p class="section-description">
-                    Some products may follow the distribution process
-                    described below. Product-specific announcements may
-                    provide additional details.
+                    Some Atmos Studio products use a rolling release
+                    model. Subscribers receive access to the newest
+                    available builds, while previous eligible versions
+                    later become publicly available.
                 </p>
             </div>
 
-            <div class="release-steps">
-                <article class="release-step">
+            <div class="release-grid">
+                <article class="release-card">
                     <div class="release-number">
                         01
                     </div>
 
-                    <h3>Current build</h3>
+                    <h3>Current Builds</h3>
 
                     <p>
-                        The newest active version may first be published
-                        through Boosty for users with an eligible active
-                        subscription.
+                        The newest active builds may be published through
+                        Boosty. Users with an active eligible subscription
+                        can access the updates published during their
+                        subscription period.
                     </p>
+
+                    <div class="platform-list">
+                        <span class="platform-label">
+                            Boosty
+                        </span>
+
+                        <span class="platform-label">
+                            Current versions
+                        </span>
+
+                        <span class="platform-label">
+                            Subscriber access
+                        </span>
+                    </div>
                 </article>
 
-                <article class="release-step">
+                <article class="release-card">
                     <div class="release-number">
                         02
                     </div>
 
-                    <h3>Subscription updates</h3>
+                    <h3>Public Builds</h3>
 
                     <p>
-                        During the active subscription period, a user may
-                        access eligible updates published for their
-                        subscription tier.
+                        When a newer current build is released, the
+                        previous eligible version may be prepared for
+                        free publication through public distribution
+                        platforms.
                     </p>
-                </article>
 
-                <article class="release-step">
-                    <div class="release-number">
-                        03
+                    <div class="platform-list">
+                        <span class="platform-label">
+                            Modrinth
+                        </span>
+
+                        <span class="platform-label">
+                            CurseForge
+                        </span>
+
+                        <span class="platform-label">
+                            Public access
+                        </span>
                     </div>
-
-                    <h3>Public release</h3>
-
-                    <p>
-                        When a newer current build is released, the previous
-                        eligible version may later be published freely on
-                        Modrinth, CurseForge, or another official platform.
-                    </p>
                 </article>
             </div>
         </section>
@@ -1663,37 +1703,38 @@
                 </h2>
 
                 <p class="section-description">
-                    Join the official Discord and Telegram communities for
-                    project announcements, development news, support,
-                    release information, and important updates.
+                    Follow Atmos Studio on Boosty and join the official
+                    Discord and Telegram communities for project
+                    announcements, development news, support, release
+                    information, and important updates.
                 </p>
 
                 <div class="cta-actions">
                     <a
-                        class="primary-button"
+                        class="social-button boosty"
                         href="https://boosty.to/atmos.studio"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Open Boosty
+                        Boosty
                     </a>
 
                     <a
-                        class="secondary-button"
+                        class="social-button discord"
                         href="https://discord.gg/g9G3uHPzWQ"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Join Discord
+                        Discord
                     </a>
 
                     <a
-                        class="secondary-button"
+                        class="social-button telegram"
                         href="https://t.me/atmos_studio"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Open Telegram
+                        Telegram
                     </a>
                 </div>
             </div>

@@ -4,6 +4,26 @@
     const boostyUrl = "https://boosty.to/atmos.studio";
     const discordUrl = "https://discord.gg/g9G3uHPzWQ";
     const telegramUrl = "https://t.me/atmos_studio";
+    const socialIcons = {
+        boosty: `
+            <svg class="boosty-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path>
+                <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path>
+            </svg>
+        `,
+        discord: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.54 5.34A16.3 16.3 0 0 0 15.44 4a11.4 11.4 0 0 0-.52 1.07 15.25 15.25 0 0 0-4.84 0A11.4 11.4 0 0 0 9.56 4a16.4 16.4 0 0 0-4.11 1.35C2.85 9.2 2.15 12.95 2.5 16.65a16.7 16.7 0 0 0 5.03 2.55c.41-.55.77-1.14 1.08-1.76a10.7 10.7 0 0 1-1.7-.82c.14-.1.28-.21.41-.32a11.7 11.7 0 0 0 10.36 0l.42.32c-.55.33-1.12.6-1.71.82.31.62.67 1.21 1.08 1.76a16.6 16.6 0 0 0 5.03-2.55c.41-4.29-.7-8-2.96-11.31ZM9.22 14.38c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Zm5.56 0c-1 0-1.82-.93-1.82-2.08s.8-2.08 1.82-2.08c1.02 0 1.84.94 1.82 2.08 0 1.15-.8 2.08-1.82 2.08Z"></path>
+            </svg>
+        `,
+        telegram: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.7 3.2 18.6 20c-.23 1.19-.85 1.48-1.72.92l-4.72-3.48-2.28 2.19c-.25.25-.46.46-.95.46l.34-4.81 8.76-7.92c.38-.34-.08-.53-.59-.19L6.61 13.99l-4.67-1.46c-1.02-.32-1.04-1.02.21-1.51L20.42 3.98c.85-.31 1.59.19 1.28-.78Z"></path>
+            </svg>
+        `
+    };
 
     const getInitialLanguage = () => {
         const queryLanguage = new URLSearchParams(window.location.search).get("lang");
@@ -179,27 +199,26 @@
         "Important:": "Важно:",
         "use only official Atmos Studio links. Files published by unrelated websites, unofficial mirrors, reupload services, or other users may be outdated, modified, incomplete, or unsafe.":
             "используйте только официальные ссылки Atmos Studio. Файлы со сторонних сайтов, неофициальных зеркал, сервисов повторной загрузки или от других пользователей могут быть устаревшими, изменёнными, неполными или небезопасными.",
-        "Release Process": "Процесс публикации",
-        "Rolling distribution model": "Последовательная модель распространения",
-        "How Atmos Studio builds are published": "Как публикуются сборки Atmos Studio",
-        "Some products may follow the distribution process described below. Product-specific announcements may provide additional details.":
-            "Некоторые продукты могут распространяться по описанной ниже схеме. Дополнительные сведения публикуются в объявлениях конкретного проекта.",
-        "Current build": "Актуальная сборка",
-        "The newest active version may first be published through Boosty for users with an eligible active subscription.":
-            "Новейшая активная версия может сначала публиковаться на Boosty для пользователей с подходящей активной подпиской.",
-        "Subscription updates": "Обновления по подписке",
-        "During the active subscription period, a user may access eligible updates published for their subscription tier.":
-            "В период активной подписки пользователь может получать подходящие обновления своего уровня подписки.",
-        "Public release": "Публичная версия",
-        "When a newer current build is released, the previous eligible version may later be published freely on Modrinth, CurseForge, or another official platform.":
-            "После выхода новой актуальной сборки предыдущая подходящая версия может быть опубликована бесплатно на Modrinth, CurseForge или другой официальной платформе.",
+        "Release Model": "Модель публикации",
+        "Access and distribution": "Доступ и распространение",
+        "Current builds first, public releases afterward":
+            "Сначала актуальные сборки, затем публичные версии",
+        "Some Atmos Studio products use a rolling release model. Subscribers receive access to the newest available builds, while previous eligible versions later become publicly available.":
+            "Для некоторых продуктов Atmos Studio используется последовательная модель публикации. Подписчики получают доступ к новейшим сборкам, а предыдущие подходящие версии позднее становятся общедоступными.",
+        "Current Builds": "Актуальные сборки",
+        "The newest active builds may be published through Boosty. Users with an active eligible subscription can access the updates published during their subscription period.":
+            "Новейшие активные сборки могут публиковаться через Boosty. Пользователи с подходящей активной подпиской получают доступ к обновлениям, опубликованным в период её действия.",
+        "Current versions": "Актуальные версии",
+        "Subscriber access": "Доступ подписчиков",
+        "Public Builds": "Публичные сборки",
+        "When a newer current build is released, the previous eligible version may be prepared for free publication through public distribution platforms.":
+            "После выпуска новой актуальной сборки предыдущая подходящая версия может быть подготовлена для бесплатной публикации на общедоступных платформах.",
+        "Public access": "Бесплатный доступ",
         "Community": "Сообщество",
         "News and support": "Новости и поддержка",
         "Follow Atmos Studio development": "Следите за разработкой Atmos Studio",
-        "Join the official Discord and Telegram communities for project announcements, development news, support, release information, and important updates.":
+        "Follow Atmos Studio on Boosty and join the official Discord and Telegram communities for project announcements, development news, support, release information, and important updates.":
             "Подписывайтесь на Boosty и присоединяйтесь к официальным сообществам Discord и Telegram, чтобы получать новости разработки, поддержку, сведения о выпусках и важные обновления.",
-        "Join Discord": "Открыть Discord",
-        "Open Telegram": "Открыть Telegram",
         "© 2026 Atmos Studio. All rights reserved.":
             "© 2026 Atmos Studio. Все права защищены.",
         "Download Atmos Studio products only from official distribution pages.":
@@ -329,6 +348,10 @@
 
     const ensureOfficialCommunityLinks = () => {
         document
+            .querySelectorAll("a.social-button.boosty")
+            .forEach((link) => link.setAttribute("href", boostyUrl));
+
+        document
             .querySelectorAll("a.social-button.discord")
             .forEach((link) => link.setAttribute("href", discordUrl));
 
@@ -348,11 +371,21 @@
                 boostyLink.href = boostyUrl;
                 boostyLink.target = "_blank";
                 boostyLink.rel = "noopener noreferrer";
-                boostyLink.textContent = "Boosty";
+                boostyLink.innerHTML = `${socialIcons.boosty}Boosty`;
 
                 const firstSocialLink = container.querySelector("a.social-button");
                 container.insertBefore(boostyLink, firstSocialLink);
             });
+
+        Object.entries(socialIcons).forEach(([platform, icon]) => {
+            document
+                .querySelectorAll(`a.social-button.${platform}`)
+                .forEach((link) => {
+                    if (!link.querySelector("svg")) {
+                        link.insertAdjacentHTML("afterbegin", icon);
+                    }
+                });
+        });
     };
 
     const syncSwitcher = (language) => {
