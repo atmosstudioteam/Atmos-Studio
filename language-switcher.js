@@ -280,8 +280,12 @@
         }
 
         metadata?.forEach((badge, index) => {
-            if (localizedPage.metadata[index]) {
-                badge.textContent = localizedPage.metadata[index];
+            const localizedMetadata = localizedPage.metadata[index];
+
+            if (localizedMetadata) {
+                badge.textContent = localizedMetadata;
+            } else {
+                badge.remove();
             }
         });
 
@@ -383,8 +387,11 @@
                     container.insertBefore(boostyLink, firstSocialLink);
                 }
 
-                if (!container.querySelector(".social-button.youtube")) {
-                    const youtubeLink = document.createElement("a");
+                let youtubeLink =
+                    container.querySelector(".social-button.youtube");
+
+                if (!youtubeLink) {
+                    youtubeLink = document.createElement("a");
                     youtubeLink.className = "social-button youtube";
                     youtubeLink.href = youtubeUrl;
                     youtubeLink.target = "_blank";
@@ -393,6 +400,14 @@
                     youtubeLink.title = "YouTube";
                     youtubeLink.innerHTML =
                         `${socialIcons.youtube}<span class="social-label">YouTube</span>`;
+                }
+
+                const discordLink =
+                    container.querySelector(".social-button.discord");
+
+                if (discordLink) {
+                    container.insertBefore(youtubeLink, discordLink);
+                } else {
                     container.append(youtubeLink);
                 }
             });
