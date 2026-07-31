@@ -111,7 +111,7 @@
                 description:
                     "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
                 metadata: [
-                    "Действует с: 30 июля 2026 г.",
+                    "Действуют с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г."
                 ],
                 notice:
@@ -156,9 +156,9 @@
         "Browse Atmos Studio projects, current subscription releases, public builds, supported platforms, and official download locations.":
             "Здесь собраны проекты Atmos Studio, актуальные версии по подписке, публичные сборки, поддерживаемые платформы и официальные ссылки для загрузки.",
         "Projects in development": "Проекты в разработке",
-        "Boosty current builds": "Актуальные сборки на Boosty",
+        "Boosty current builds": "Актуальные версии сборок на Boosty",
         "Public releases on Modrinth and CurseForge":
-            "Публичные версии на Modrinth и CurseForge",
+            "Предыдущие версии сборок на Modrinth и CurseForge",
         "Featured Project": "Главный проект",
         "Minecraft modpack": "Minecraft-сборка",
         "Current Atmos Studio project": "Текущий проект Atmos Studio",
