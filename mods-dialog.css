@@ -9,8 +9,7 @@
 
 .mods-button:focus-visible,
 .mods-dialog-close:focus-visible,
-.mods-dialog-confirm:focus-visible,
-.mods-dialog-secondary:focus-visible {
+.mods-dialog-confirm:focus-visible {
     outline: 2px solid var(--accent-secondary, #a78bfa);
     outline-offset: 3px;
 }
@@ -221,11 +220,10 @@
 
 .mods-dialog-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
 }
 
-.mods-dialog-secondary,
 .mods-dialog-confirm {
     display: inline-flex;
     align-items: center;
@@ -257,19 +255,6 @@
         background 160ms ease,
         color 160ms ease,
         transform 160ms ease;
-}
-
-.mods-dialog-secondary {
-    border-color: var(--border, #30363d);
-    background: rgba(13, 17, 23, 0.62);
-    color: var(--muted, #9da7b4);
-}
-
-.mods-dialog-secondary:hover {
-    border-color: rgba(167, 139, 250, 0.52);
-    background: rgba(139, 92, 246, 0.1);
-    color: var(--text, #e6edf3);
-    transform: translateY(-1px);
 }
 
 .mods-dialog-confirm:hover {
@@ -308,8 +293,7 @@
     .mods-dialog,
     .mods-dialog-card,
     .mods-dialog-close,
-    .mods-dialog-confirm,
-    .mods-dialog-secondary {
+    .mods-dialog-confirm {
         transition: none;
     }
 }
