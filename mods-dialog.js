@@ -34,6 +34,8 @@
                     items: ["Malum", "Spectrum"]
                 }
             ],
+            note:
+                "This is only part of the mod list—the full modpack also includes additional mods.",
             confirm: "Got it",
             close: "Close mod list"
         },
@@ -71,6 +73,8 @@
                     items: ["Malum", "Spectrum"]
                 }
             ],
+            note:
+                "Это только часть списка — в полный состав сборки входят и другие моды.",
             confirm: "Понятно",
             close: "Закрыть список модов"
         }
@@ -125,6 +129,11 @@
                     data-mods-categories
                 ></div>
 
+                <p
+                    class="mods-dialog-note"
+                    data-mods-copy="note"
+                ></p>
+
                 <div class="mods-dialog-actions">
                     <button
                         class="mods-dialog-confirm"
@@ -156,19 +165,11 @@
                     const heading = document.createElement("h3");
                     heading.textContent = category.title;
 
-                    const list = document.createElement("ul");
-                    list.className = "mods-dialog-list";
+                    const summary = document.createElement("p");
+                    summary.className = "mods-dialog-category-text";
+                    summary.textContent = `${category.items.join(", ")}.`;
 
-                    list.replaceChildren(
-                        ...category.items.map((item) => {
-                            const listItem = document.createElement("li");
-                            listItem.className = "mods-dialog-item";
-                            listItem.textContent = item;
-                            return listItem;
-                        })
-                    );
-
-                    card.append(heading, list);
+                    card.append(heading, summary);
                     return card;
                 })
             );
@@ -247,3 +248,4 @@
         initialize();
     }
 })();
+
