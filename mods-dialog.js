@@ -35,7 +35,7 @@
                 }
             ],
             note:
-                "This is only part of the mod list—the full modpack also includes additional mods.",
+                "This is only part of the mod list — the full modpack also includes additional mods.",
             confirm: "Got it",
             close: "Close mod list"
         },
