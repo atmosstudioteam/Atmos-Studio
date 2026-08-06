@@ -21,7 +21,7 @@
 
     const initialize = () => {
         const triggers = document.querySelectorAll(
-            "a.download-button[data-release-notice]"
+            ".download-button[data-release-notice]"
         );
 
         if (!triggers.length || document.querySelector("#release-notice")) {
@@ -109,8 +109,7 @@
         };
 
         triggers.forEach((trigger) => {
-            trigger.addEventListener("click", (event) => {
-                event.preventDefault();
+            trigger.addEventListener("click", () => {
                 open(trigger);
             });
         });
@@ -164,3 +163,4 @@
         initialize();
     }
 })();
+
