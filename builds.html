@@ -874,7 +874,10 @@
             background: rgba(139, 92, 246, 0.15);
             color: var(--accent-bright);
 
+            appearance: none;
+            font: inherit;
             font-weight: 760;
+            cursor: pointer;
 
             transition:
                 transform 160ms ease,
@@ -1560,7 +1563,6 @@
                         rel="noopener noreferrer"
                     >
                         Open Boosty
-                        <span aria-hidden="true">→</span>
                     </a>
                 </article>
 
@@ -1583,17 +1585,14 @@
                         </p>
                     </div>
 
-                    <a
+                    <button
                         class="download-button"
-                        href="https://modrinth.com/modpack/YOUR_PROJECT"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        type="button"
                         data-release-notice
                         data-release-platform="Modrinth"
                     >
                         Open Modrinth
-                        <span aria-hidden="true">→</span>
-                    </a>
+                    </button>
                 </article>
 
                 <article class="download-card">
@@ -1615,17 +1614,14 @@
                         </p>
                     </div>
 
-                    <a
+                    <button
                         class="download-button"
-                        href="https://www.curseforge.com/minecraft/modpacks/YOUR_PROJECT"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        type="button"
                         data-release-notice
                         data-release-platform="CurseForge"
                     >
                         Open CurseForge
-                        <span aria-hidden="true">→</span>
-                    </a>
+                    </button>
                 </article>
             </div>
 
