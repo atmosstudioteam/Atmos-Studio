@@ -893,6 +893,125 @@
         }
 
         /* ========================================================= */
+        /* OTHER AND PAST PROJECTS                                  */
+        /* ========================================================= */
+
+        .other-project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .other-project-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 26px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--surface-secondary);
+        }
+
+        .other-project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+
+            margin-bottom: 20px;
+        }
+
+        .other-project-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+
+            width: 47px;
+            height: 47px;
+
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            border-radius: 13px;
+
+            background: rgba(139, 92, 246, 0.13);
+            color: var(--accent-secondary);
+
+            font-size: 1.05rem;
+            font-weight: 850;
+        }
+
+        .other-project-meta {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            padding: 5px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(13, 17, 23, 0.5);
+            color: var(--muted);
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .other-project-card > p {
+            margin: 0;
+
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .other-project-kind {
+            display: inline-flex;
+            width: fit-content;
+            margin: 0 0 10px;
+
+            color: var(--accent-secondary);
+
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .other-project-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+
+            margin-top: auto;
+            padding-top: 24px;
+        }
+
+        .archive-placeholder {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 26px;
+
+            border: 1px dashed rgba(139, 92, 246, 0.42);
+            border-radius: 17px;
+
+            background: rgba(31, 38, 49, 0.7);
+        }
+
+        .archive-placeholder h3,
+        .archive-placeholder p {
+            margin: 0;
+        }
+
+        .archive-placeholder p {
+            margin-top: 6px;
+            color: var(--muted);
+        }
+
+        /* ========================================================= */
         /* RELEASE MODEL                                             */
         /* ========================================================= */
 
@@ -1205,7 +1324,8 @@
             }
 
             .download-grid,
-            .release-grid {
+            .release-grid,
+            .other-project-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1285,6 +1405,19 @@
 
             .badge {
                 justify-content: center;
+            }
+
+            .other-project-header,
+            .archive-placeholder {
+                grid-template-columns: 1fr;
+            }
+
+            .other-project-header {
+                flex-direction: column;
+            }
+
+            .other-project-links {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1631,6 +1764,153 @@
                 unrelated websites, unofficial mirrors, reupload services,
                 or other users may be outdated, modified, incomplete,
                 or unsafe.
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <span>Other Projects</span>
+        </div>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="section-kicker">
+                    Free Minecraft mods
+                </p>
+
+                <h2>Tools for modpack creators</h2>
+
+                <p class="section-description">
+                    Standalone Atmos Studio mods available free on Modrinth
+                    and CurseForge.
+                </p>
+            </div>
+
+            <div class="other-project-grid">
+                <article class="other-project-card">
+                    <div class="other-project-header">
+                        <div class="other-project-mark" aria-hidden="true">
+                            O
+                        </div>
+
+                        <span class="other-project-meta">
+                            NeoForge · Minecraft 1.21.1
+                        </span>
+                    </div>
+
+                    <span class="other-project-kind">
+                        World generation control
+                    </span>
+
+                    <h3>Ore Generation Disabler</h3>
+
+                    <p>
+                        A lightweight tool that prevents selected Overworld
+                        ore features from generating in new chunks. Disabled
+                        ores are configured through a block tag, including
+                        with datapacks or KubeJS.
+                    </p>
+
+                    <div class="other-project-links">
+                        <a
+                            class="download-button"
+                            href="https://modrinth.com/mod/ore-generation-disabler"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Modrinth
+                        </a>
+
+                        <a
+                            class="download-button"
+                            href="https://www.curseforge.com/minecraft/mc-mods/ore-generation-disabler"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            CurseForge
+                        </a>
+                    </div>
+                </article>
+
+                <article class="other-project-card">
+                    <div class="other-project-header">
+                        <div class="other-project-mark" aria-hidden="true">
+                            MI
+                        </div>
+
+                        <span class="other-project-meta">
+                            NeoForge · Minecraft 1.21.1
+                        </span>
+                    </div>
+
+                    <span class="other-project-kind">
+                        Multiblock customization
+                    </span>
+
+                    <h3>Modern Industrialization Multiblock Editor</h3>
+
+                    <p>
+                        A KubeJS-powered tool for replacing and customizing
+                        existing Modern Industrialization multiblock
+                        structures without creating a separate addon. It
+                        supports blocks, tags, exact states, hatch positions,
+                        and structure variants.
+                    </p>
+
+                    <div class="other-project-links">
+                        <a
+                            class="download-button"
+                            href="https://modrinth.com/mod/modern-industrialization-multiblock-editor"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Modrinth
+                        </a>
+
+                        <a
+                            class="download-button"
+                            href="https://www.curseforge.com/minecraft/mc-mods/modern-industrialization-multiblock-editor"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            CurseForge
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <span>Past Projects</span>
+        </div>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <p class="section-kicker">
+                    Project archive
+                </p>
+
+                <h2>Previous Atmos Studio releases</h2>
+
+                <p class="section-description">
+                    Older modpacks and completed projects will be collected
+                    here as the studio archive is prepared.
+                </p>
+            </div>
+
+            <div class="archive-placeholder">
+                <div class="other-project-mark" aria-hidden="true">
+                    A
+                </div>
+
+                <div>
+                    <h3>Archive in preparation</h3>
+
+                    <p>
+                        No archived builds have been published here yet.
+                        Names and details will be added as the project history
+                        is restored.
+                    </p>
+                </div>
             </div>
         </section>
 
