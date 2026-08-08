@@ -1,18 +1,20 @@
 (() => {
     const storageKey = "atmos-language";
     const supportedLanguages = new Set(["en", "ru"]);
-    const boostyUrl = "https://boosty.to/atmos.studio";
+    const kofiUrl = "https://ko-fi.com/atmos_studio";
     const discordUrl = "https://discord.gg/g9G3uHPzWQ";
     const telegramUrl = "https://t.me/atmos_studio";
     const youtubeUrl = "https://www.youtube.com/@AtmosStudioTeam";
     const socialIcons = {
-        boosty: `
-            <svg class="boosty-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path>
-                <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path>
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path>
-            </svg>
+        kofi: `
+            <img
+                class="kofi-icon"
+                src="https://storage.ko-fi.com/cdn/cup-border.png"
+                alt=""
+                width="20"
+                height="16"
+                aria-hidden="true"
+            >
         `,
         discord: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -96,7 +98,7 @@
             en: {
                 title: "Privacy Policy",
                 description:
-                    "This Policy explains how Atmos Studio processes information across its Minecraft products, support services, websites, community channels, and publications distributed through Boosty, Modrinth, CurseForge, and other platforms.",
+                    "This Policy explains how Atmos Studio processes information across its Minecraft products, support services, websites, community channels, and publications distributed through Ko-fi, Modrinth, CurseForge, and other platforms.",
                 metadata: [
                     "Effective: July 30, 2026",
                     "Last updated: July 31, 2026"
@@ -109,7 +111,7 @@
             ru: {
                 title: "Политика конфиденциальности",
                 description:
-                    "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Boosty, Modrinth, CurseForge и другие платформы.",
+                    "Эта Политика объясняет, как Atmos Studio обрабатывает информацию в продуктах Minecraft, службах поддержки, на сайтах, в каналах сообщества и публикациях, распространяемых через Ko-fi, Modrinth, CurseForge и другие платформы.",
                 metadata: [
                     "Действует с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г."
@@ -124,7 +126,7 @@
             en: {
                 title: "Terms of Use",
                 description:
-                    "These Terms govern access to and use of Atmos Studio Products, including Minecraft modpacks, Boosty subscription releases, public Builds, websites, community channels, downloads, and technical support services.",
+                    "These Terms govern access to and use of Atmos Studio Products, including Minecraft modpacks, Ko-fi subscription releases, public Builds, websites, community channels, downloads, and technical support services.",
                 metadata: [
                     "Effective: July 30, 2026",
                     "Last updated: July 31, 2026"
@@ -137,7 +139,7 @@
             ru: {
                 title: "Условия использования",
                 description:
-                    "Настоящие Условия регулируют доступ к продуктам Atmos Studio и их использование, включая сборки Minecraft, выпуски по подписке Boosty, публичные сборки, сайты, каналы сообщества, загрузки и техническую поддержку.",
+                    "Настоящие Условия регулируют доступ к продуктам Atmos Studio и их использование, включая сборки Minecraft, выпуски по подписке Ko-fi, публичные сборки, сайты, каналы сообщества, загрузки и техническую поддержку.",
                 metadata: [
                     "Действуют с: 30 июля 2026 г.",
                     "Последнее обновление: 31 июля 2026 г."
@@ -156,7 +158,7 @@
         "Browse Atmos Studio projects, current subscription releases, public builds, supported platforms, and official download locations.":
             "Здесь собраны проекты Atmos Studio, актуальные версии по подписке, публичные сборки, поддерживаемые платформы и официальные ссылки для загрузки.",
         "Projects in development": "Проекты в разработке",
-        "Boosty current builds": "Актуальные сборки на Boosty",
+        "Ko-fi current builds": "Актуальные сборки на Ko-fi",
         "Public releases on Modrinth and CurseForge":
             "Публичные версии на Modrinth и CurseForge",
         "Featured Project": "Главный проект",
@@ -176,6 +178,7 @@
         "Previous Atmos Studio releases": "Прошлые релизы Atmos Studio",
         "Earlier Atmos Studio modpacks preserved as part of the studio's project history.":
             "Предыдущие сборки Atmos Studio, сохранённые как часть истории проектов студии.",
+        "Abandoned": "Заброшено",
         "Archive in preparation": "Архив готовится",
         "No archived builds have been published here yet. Names and details will be added as the project history is restored.":
             "Архивные сборки пока не опубликованы. Названия и сведения будут добавлены по мере восстановления истории проектов.",
@@ -186,15 +189,13 @@
         "In active development": "В активной разработке",
         "A large-scale techno-magical Minecraft modpack combining industrial systems, structured progression, exploration, rituals, quests, custom scripts, and original content.":
             "Масштабная техно-магическая Minecraft-сборка, объединяющая промышленные системы, продуманное развитие, исследование, ритуалы, квесты, собственные скрипты и оригинальное содержимое.",
-        "Conflux is designed as a cohesive experience rather than a simple collection of mods. Progression, resources, recipes, dimensions, quests, interfaces, visual identity, and technical systems are adjusted to support a unified long-term playthrough.":
-            "Conflux создаётся как цельное игровое приключение, а не простой набор модов. Развитие, ресурсы, рецепты, измерения, квесты, интерфейсы, визуальный стиль и игровые системы настроены для единого продолжительного прохождения.",
         "Version": "Версия",
         "Mod loader": "Загрузчик",
         "Status": "Статус",
         "In development": "В разработке",
         "Distribution": "Распространение",
-        "Boosty, Modrinth and CurseForge":
-            "Boosty, Modrinth и CurseForge",
+        "Ko-fi, Modrinth and CurseForge":
+            "Ko-fi, Modrinth и CurseForge",
         "Technologies": "Технологии",
         "Large production systems, complex processing, machinery, resources, automation, and technological progression.":
             "Крупные производственные системы, сложная переработка, механизмы, ресурсы, автоматизация и технологическое развитие.",
@@ -211,7 +212,7 @@
         "Current restricted build": "Текущая закрытая сборка",
         "Access the newest eligible Conflux builds and updates available to the relevant active subscription tier.":
             "Доступ к новейшим сборкам и обновлениям Conflux для соответствующего активного уровня подписки.",
-        "Open Boosty": "Открыть Boosty",
+        "Open Ko-fi": "Открыть Ko-fi",
         "Public release page": "Страница публичных версий",
         "Previous eligible versions may be published publicly after the release of a newer current build.":
             "Предыдущие подходящие версии могут публиковаться бесплатно после выхода новой актуальной сборки.",
@@ -227,8 +228,8 @@
         "Some Atmos Studio products use a rolling release model. Subscribers receive access to the newest available builds, while previous eligible versions later become publicly available.":
             "Для некоторых продуктов Atmos Studio используется последовательная модель публикации. Подписчики получают доступ к новейшим сборкам, а предыдущие подходящие версии позднее становятся общедоступными.",
         "Current Builds": "Актуальные сборки",
-        "The newest active builds may be published through Boosty. Users with an active eligible subscription can access the updates published during their subscription period.":
-            "Новейшие активные сборки могут публиковаться через Boosty. Пользователи с подходящей активной подпиской получают доступ к обновлениям, опубликованным в период её действия.",
+        "The newest active builds may be published through Ko-fi. Users with an active eligible subscription can access the updates published during their subscription period.":
+            "Новейшие активные сборки могут публиковаться через Ko-fi. Пользователи с подходящей активной подпиской получают доступ к обновлениям, опубликованным в период её действия.",
         "Current versions": "Актуальные версии",
         "Subscriber access": "Доступ подписчиков",
         "Public Builds": "Публичные сборки",
@@ -238,8 +239,8 @@
         "Community": "Сообщество",
         "News and support": "Новости и поддержка",
         "Follow Atmos Studio development": "Следите за разработкой Atmos Studio",
-        "Follow Atmos Studio on Boosty and join the official Discord and Telegram communities for project announcements, development news, support, release information, and important updates.":
-            "Подписывайтесь на Boosty и присоединяйтесь к официальным сообществам Discord и Telegram, чтобы получать новости разработки, поддержку, сведения о выпусках и важные обновления.",
+        "Follow Atmos Studio on Ko-fi and join the official Discord and Telegram communities for project announcements, development news, support, release information, and important updates.":
+            "Подписывайтесь на Ko-fi и присоединяйтесь к официальным сообществам Discord и Telegram, чтобы получать новости разработки, поддержку, сведения о выпусках и важные обновления.",
         "© 2026 Atmos Studio. All rights reserved.":
             "© 2026 Atmos Studio. Все права защищены.",
         "Download Atmos Studio products only from official distribution pages.":
@@ -431,8 +432,8 @@
 
     const ensureOfficialCommunityLinks = () => {
         document
-            .querySelectorAll("a.social-button.boosty")
-            .forEach((link) => link.setAttribute("href", boostyUrl));
+            .querySelectorAll("a.social-button.kofi")
+            .forEach((link) => link.setAttribute("href", kofiUrl));
 
         document
             .querySelectorAll("a.social-button.discord")
@@ -456,7 +457,7 @@
                         ".social-navigation, .footer-socials",
                     ) ||
                     container.querySelector(
-                        ".social-button.boosty, " +
+                        ".social-button.kofi, " +
                             ".social-button.discord, " +
                             ".social-button.telegram",
                     );
@@ -465,17 +466,17 @@
                     return;
                 }
 
-                if (!container.querySelector(".social-button.boosty")) {
-                    const boostyLink = document.createElement("a");
-                    boostyLink.className = "social-button boosty";
-                    boostyLink.href = boostyUrl;
-                    boostyLink.target = "_blank";
-                    boostyLink.rel = "noopener noreferrer";
-                    boostyLink.innerHTML = `${socialIcons.boosty}Boosty`;
+                if (!container.querySelector(".social-button.kofi")) {
+                    const kofiLink = document.createElement("a");
+                    kofiLink.className = "social-button kofi";
+                    kofiLink.href = kofiUrl;
+                    kofiLink.target = "_blank";
+                    kofiLink.rel = "noopener noreferrer";
+                    kofiLink.innerHTML = `${socialIcons.kofi}Ko-fi`;
 
                     const firstSocialLink =
                         container.querySelector("a.social-button");
-                    container.insertBefore(boostyLink, firstSocialLink);
+                    container.insertBefore(kofiLink, firstSocialLink);
                 }
 
                 let youtubeLink =
@@ -507,7 +508,7 @@
             document
                 .querySelectorAll(`a.social-button.${platform}`)
                 .forEach((link) => {
-                    if (!link.querySelector("svg")) {
+                    if (!link.querySelector("svg, img")) {
                         link.insertAdjacentHTML("afterbegin", icon);
                     }
                 });
