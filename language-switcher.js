@@ -160,6 +160,25 @@
         "Public releases on Modrinth and CurseForge":
             "Публичные версии на Modrinth и CurseForge",
         "Featured Project": "Главный проект",
+        "Other Projects": "Другие проекты",
+        "Free Minecraft mods": "Бесплатные моды Minecraft",
+        "Tools for modpack creators": "Инструменты для создателей сборок",
+        "Standalone Atmos Studio mods available free on Modrinth and CurseForge.":
+            "Самостоятельные моды Atmos Studio, доступные бесплатно на Modrinth и CurseForge.",
+        "World generation control": "Управление генерацией мира",
+        "A lightweight tool that prevents selected Overworld ore features from generating in new chunks. Disabled ores are configured through a block tag, including with datapacks or KubeJS.":
+            "Лёгкий инструмент, который предотвращает генерацию выбранных руд Верхнего мира в новых чанках. Отключаемые руды настраиваются через тег блоков, в том числе с помощью датапаков или KubeJS.",
+        "Multiblock customization": "Настройка мультиблоков",
+        "A KubeJS-powered tool for replacing and customizing existing Modern Industrialization multiblock structures without creating a separate addon. It supports blocks, tags, exact states, hatch positions, and structure variants.":
+            "Инструмент на базе KubeJS для замены и настройки существующих структур мультиблоков Modern Industrialization без создания отдельного аддона. Поддерживает блоки, теги, точные состояния блоков, позиции люков и варианты структур.",
+        "Past Projects": "Прошлые проекты",
+        "Project archive": "Архив проектов",
+        "Previous Atmos Studio releases": "Прошлые релизы Atmos Studio",
+        "Older modpacks and completed projects will be collected here as the studio archive is prepared.":
+            "Здесь будут собраны старые сборки и завершённые проекты по мере подготовки архива студии.",
+        "Archive in preparation": "Архив готовится",
+        "No archived builds have been published here yet. Names and details will be added as the project history is restored.":
+            "Архивные сборки пока не опубликованы. Названия и сведения будут добавлены по мере восстановления истории проектов.",
         "Minecraft modpack": "Minecraft-сборка",
         "Current Atmos Studio project": "Текущий проект Atmos Studio",
         "The information below describes the current development and distribution structure. Exact versions and download availability may change as development progresses.":
@@ -591,3 +610,4 @@
         initialize();
     }
 })();
+
