@@ -174,8 +174,8 @@
         "Past Projects": "Прошлые проекты",
         "Project archive": "Архив проектов",
         "Previous Atmos Studio releases": "Прошлые релизы Atmos Studio",
-        "Older modpacks and completed projects will be collected here as the studio archive is prepared.":
-            "Здесь будут собраны старые сборки и завершённые проекты по мере подготовки архива студии.",
+        "Earlier Atmos Studio modpacks preserved as part of the studio's project history.":
+            "Предыдущие сборки Atmos Studio, сохранённые как часть истории проектов студии.",
         "Archive in preparation": "Архив готовится",
         "No archived builds have been published here yet. Names and details will be added as the project history is restored.":
             "Архивные сборки пока не опубликованы. Названия и сведения будут добавлены по мере восстановления истории проектов.",
@@ -610,4 +610,3 @@
         initialize();
     }
 })();
-
