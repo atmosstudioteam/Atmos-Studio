@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Browse Atmos Studio Minecraft modpacks, current Boosty builds, public Modrinth and CurseForge releases, and project information."
+        content="Browse Atmos Studio Minecraft modpacks, current Ko-fi builds, public Modrinth and CurseForge releases, and project information."
     >
 
     <meta name="theme-color" content="#0d1117">
@@ -722,13 +722,6 @@
             padding: 34px;
         }
 
-        .build-description {
-            max-width: 850px;
-
-            color: var(--muted);
-            font-size: 1rem;
-        }
-
         .build-meta-grid {
             display: grid;
             grid-template-columns:
@@ -1089,6 +1082,44 @@
 
         .archive-project-list strong {
             line-height: 1.3;
+        }
+
+        .archive-project-details {
+            display: grid;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .archive-project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+            padding: 4px 8px;
+
+            border: 1px solid rgba(210, 153, 34, 0.42);
+            border-radius: 999px;
+
+            background: rgba(210, 153, 34, 0.1);
+            color: #e3b341;
+
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.045em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .archive-project-status::before {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--warning);
+            box-shadow: 0 0 8px rgba(210, 153, 34, 0.5);
+
+            content: "";
         }
 
         /* ========================================================= */
@@ -1628,7 +1659,7 @@
                     </span>
 
                     <span class="badge">
-                        Boosty current builds
+                        Ko-fi current builds
                     </span>
 
                     <span class="badge">
@@ -1690,14 +1721,6 @@
                 </div>
 
                 <div class="build-content">
-                    <p class="build-description">
-                        Conflux is designed as a cohesive experience rather
-                        than a simple collection of mods. Progression,
-                        resources, recipes, dimensions, quests, interfaces,
-                        visual identity, and technical systems are adjusted
-                        to support a unified long-term playthrough.
-                    </p>
-
                     <div class="build-meta-grid">
                         <div class="build-meta">
                             <span>Version</span>
@@ -1716,7 +1739,7 @@
 
                         <div class="build-meta">
                             <span>Distribution</span>
-                            <strong>Boosty, Modrinth and CurseForge</strong>
+                            <strong>Ko-fi, Modrinth and CurseForge</strong>
                         </div>
 
                     </div>
@@ -1780,7 +1803,7 @@
                             B
                         </div>
 
-                        <h3>Boosty</h3>
+                        <h3>Ko-fi</h3>
 
                         <div class="download-status current">
                             Current restricted build
@@ -1795,11 +1818,11 @@
 
                     <a
                         class="download-button"
-                        href="https://boosty.to/atmos.studio"
+                        href="https://ko-fi.com/atmos_studio"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Open Boosty
+                        Open Ko-fi
                     </a>
                 </article>
 
@@ -2024,27 +2047,42 @@
             <ul class="archive-project-list">
                 <li>
                     <span class="archive-project-index">01</span>
-                    <strong>Atmos Classic</strong>
+                    <div class="archive-project-details">
+                        <strong>Atmos Classic</strong>
+                        <span class="archive-project-status">Abandoned</span>
+                    </div>
                 </li>
 
                 <li>
                     <span class="archive-project-index">02</span>
-                    <strong>Atmos Classic Fantasy</strong>
+                    <div class="archive-project-details">
+                        <strong>Atmos Classic Fantasy</strong>
+                        <span class="archive-project-status">Abandoned</span>
+                    </div>
                 </li>
 
                 <li>
                     <span class="archive-project-index">03</span>
-                    <strong>NeoAge</strong>
+                    <div class="archive-project-details">
+                        <strong>NeoAge</strong>
+                        <span class="archive-project-status">Abandoned</span>
+                    </div>
                 </li>
 
                 <li>
                     <span class="archive-project-index">04</span>
-                    <strong>Terra Genesis</strong>
+                    <div class="archive-project-details">
+                        <strong>Terra Genesis</strong>
+                        <span class="archive-project-status">Abandoned</span>
+                    </div>
                 </li>
 
                 <li>
                     <span class="archive-project-index">05</span>
-                    <strong>Terra Prototype</strong>
+                    <div class="archive-project-details">
+                        <strong>Terra Prototype</strong>
+                        <span class="archive-project-status">Abandoned</span>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -2081,14 +2119,14 @@
 
                     <p>
                         The newest active builds may be published through
-                        Boosty. Users with an active eligible subscription
+                        Ko-fi. Users with an active eligible subscription
                         can access the updates published during their
                         subscription period.
                     </p>
 
                     <div class="platform-list">
                         <span class="platform-label">
-                            Boosty
+                            Ko-fi
                         </span>
 
                         <span class="platform-label">
@@ -2147,7 +2185,7 @@
                 </h2>
 
                 <p class="section-description">
-                    Follow Atmos Studio on Boosty and join the official
+                    Follow Atmos Studio on Ko-fi and join the official
                     Discord and Telegram communities for project
                     announcements, development news, support, release
                     information, and important updates.
@@ -2155,12 +2193,12 @@
 
                 <div class="cta-actions">
                     <a
-                        class="social-button boosty"
-                        href="https://boosty.to/atmos.studio"
+                        class="social-button kofi"
+                        href="https://ko-fi.com/atmos_studio"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Boosty
+                        Ko-fi
                     </a>
 
                     <a
