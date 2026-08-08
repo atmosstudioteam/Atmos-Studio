@@ -85,22 +85,22 @@
     text-align: center;
 }
 
-.social-button.boosty {
-    color: #ff9a72;
+.social-button.kofi {
+    color: #72d0f4;
 }
 
-.social-button .boosty-icon {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.social-button .kofi-icon {
+    display: block;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 16px;
+    object-fit: contain;
 }
 
-.social-button.boosty:hover {
-    border-color: rgba(255, 95, 46, 0.72);
-    background: rgba(255, 95, 46, 0.13);
-    box-shadow: 0 8px 22px rgba(255, 95, 46, 0.14);
+.social-button.kofi:hover {
+    border-color: rgba(41, 171, 224, 0.72);
+    background: rgba(41, 171, 224, 0.13);
+    box-shadow: 0 8px 22px rgba(41, 171, 224, 0.14);
 }
 
 .social-button.youtube {
@@ -149,6 +149,7 @@ html[data-language="ru"] #english {
     .page-navigation {
         width: 100%;
     }
+
 }
 
 @media (max-width: 520px) {

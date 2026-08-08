@@ -19,6 +19,7 @@
     let trackedSections = [];
     let scheduledFrame = 0;
     let scrollFrame = 0;
+    let activeSectionId = "";
 
     const getLanguage = () =>
         document.documentElement.dataset.language === "ru" ||
@@ -131,6 +132,37 @@
         setExpanded(false);
     };
 
+    const syncListScroll = (activeLink) => {
+        if (!list || !activeLink || list.clientHeight === 0) {
+            return;
+        }
+
+        const listRect = list.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        const edgePadding = 16;
+        const isVisibleInList =
+            linkRect.top >= listRect.top + edgePadding &&
+            linkRect.bottom <= listRect.bottom - edgePadding;
+
+        if (isVisibleInList) {
+            return;
+        }
+
+        const targetTop =
+            list.scrollTop +
+            linkRect.top -
+            listRect.top -
+            (list.clientHeight - linkRect.height) / 2;
+
+        list.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                .matches
+                ? "auto"
+                : "smooth"
+        });
+    };
+
     const updateActiveLink = () => {
         scrollFrame = 0;
 
@@ -140,6 +172,7 @@
 
         const marker = Math.min(240, window.innerHeight * 0.32);
         let activeSection = trackedSections[0];
+        let activeLink = null;
 
         trackedSections.forEach((section) => {
             if (section.getBoundingClientRect().top <= marker) {
@@ -152,11 +185,17 @@
             link.classList.toggle("is-active", isActive);
 
             if (isActive) {
+                activeLink = link;
                 link.setAttribute("aria-current", "location");
             } else {
                 link.removeAttribute("aria-current");
             }
         });
+
+        if (activeSection.id !== activeSectionId) {
+            activeSectionId = activeSection.id;
+            syncListScroll(activeLink);
+        }
     };
 
     const scheduleActiveLinkUpdate = () => {
@@ -183,6 +222,7 @@
             list = null;
             toggle = null;
             trackedSections = [];
+            activeSectionId = "";
             return;
         }
 
@@ -194,6 +234,7 @@
             localizedCopy.title;
 
         list.replaceChildren();
+        activeSectionId = "";
         trackedSections = sections.map(({ element, label }, index) => {
             const id = `page-section-${index + 1}`;
             element.id = id;
