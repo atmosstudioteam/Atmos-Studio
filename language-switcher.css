@@ -95,11 +95,7 @@
     width: 18px;
     height: 18px;
 
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.8;
+    fill: currentColor;
 }
 
 .social-button.kofi:hover {
