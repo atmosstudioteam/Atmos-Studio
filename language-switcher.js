@@ -7,14 +7,11 @@
     const youtubeUrl = "https://www.youtube.com/@AtmosStudioTeam";
     const socialIcons = {
         kofi: `
-            <img
-                class="kofi-icon"
-                src="https://storage.ko-fi.com/cdn/cup-border.png"
-                alt=""
-                width="20"
-                height="16"
-                aria-hidden="true"
-            >
+            <svg class="kofi-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 8h13v6a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6V8Z"></path>
+                <path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"></path>
+                <path d="M7 4v1.5M11 3v2.5M15 4v1.5"></path>
+            </svg>
         `,
         discord: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -168,11 +165,12 @@
         "Standalone Atmos Studio mods available free on Modrinth and CurseForge.":
             "Самостоятельные моды Atmos Studio, доступные бесплатно на Modrinth и CurseForge.",
         "World generation control": "Управление генерацией мира",
-        "A lightweight tool that prevents selected Overworld ore features from generating in new chunks. Disabled ores are configured through a block tag, including with datapacks or KubeJS.":
-            "Лёгкий инструмент, который предотвращает генерацию выбранных руд Верхнего мира в новых чанках. Отключаемые руды настраиваются через тег блоков, в том числе с помощью датапаков или KubeJS.",
+        "Disables Overworld ore generation using a configurable block tag":
+            "Отключает генерацию руд в Верхнем мире с помощью настраиваемого тега блоков",
         "Multiblock customization": "Настройка мультиблоков",
-        "A KubeJS-powered tool for replacing and customizing existing Modern Industrialization multiblock structures without creating a separate addon. It supports blocks, tags, exact states, hatch positions, and structure variants.":
-            "Инструмент на базе KubeJS для замены и настройки существующих структур мультиблоков Modern Industrialization без создания отдельного аддона. Поддерживает блоки, теги, точные состояния блоков, позиции люков и варианты структур.",
+        "Customize Modern Industrialization multiblocks with KubeJS":
+            "Настраивайте мультиблоки Modern Industrialization с помощью KubeJS",
+        "Published": "Опубликован",
         "Past Projects": "Прошлые проекты",
         "Project archive": "Архив проектов",
         "Previous Atmos Studio releases": "Прошлые релизы Atmos Studio",
