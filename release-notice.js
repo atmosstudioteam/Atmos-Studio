@@ -19,6 +19,24 @@
     const getLanguage = () =>
         document.documentElement.dataset.language === "ru" ? "ru" : "en";
 
+    const getDownloadUrl = (trigger) => {
+        const value = trigger.dataset.downloadUrl?.trim();
+
+        if (!value || value.startsWith("PASTE_")) {
+            return null;
+        }
+
+        try {
+            const url = new URL(value, window.location.href);
+
+            return ["https:", "http:"].includes(url.protocol)
+                ? url.href
+                : null;
+        } catch {
+            return null;
+        }
+    };
+
     const initialize = () => {
         const triggers = document.querySelectorAll(
             ".download-button[data-release-notice]"
@@ -110,6 +128,17 @@
 
         triggers.forEach((trigger) => {
             trigger.addEventListener("click", () => {
+                const downloadUrl = getDownloadUrl(trigger);
+
+                if (downloadUrl) {
+                    window.open(
+                        downloadUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+                    return;
+                }
+
                 open(trigger);
             });
         });
@@ -163,4 +192,3 @@
         initialize();
     }
 })();
-
