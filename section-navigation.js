@@ -180,6 +180,13 @@
             }
         });
 
+        const pageBottom = window.scrollY + window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        if (pageBottom >= documentHeight - 4) {
+            activeSection = trackedSections[trackedSections.length - 1];
+        }
+
         root.querySelectorAll(".section-navigator-link").forEach((link) => {
             const isActive = link.hash === `#${activeSection.id}`;
             link.classList.toggle("is-active", isActive);

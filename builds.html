@@ -589,7 +589,7 @@
             padding: 34px;
 
             display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-columns: auto minmax(0, 1fr);
             align-items: center;
             gap: 34px;
 
@@ -612,14 +612,16 @@
             content: "CONFLUX";
 
             position: absolute;
-            right: 22px;
-            top: 12px;
+            right: 30px;
+            top: 50%;
 
             color: rgba(255, 255, 255, 0.035);
 
-            font-size: clamp(4rem, 13vw, 9rem);
+            font-size: clamp(3.8rem, 10vw, 7rem);
             font-weight: 900;
-            letter-spacing: -0.07em;
+            letter-spacing: -0.055em;
+
+            transform: translateY(-50%);
 
             pointer-events: none;
         }
@@ -639,7 +641,7 @@
             place-items: center;
             flex: 0 0 auto;
 
-            width: clamp(128px, 15vw, 174px);
+            width: clamp(120px, 13vw, 154px);
             aspect-ratio: 1;
             padding: 16px;
 
@@ -719,7 +721,7 @@
         }
 
         .build-content {
-            padding: 34px;
+            padding: 26px 34px 34px;
         }
 
         .build-meta-grid {
@@ -728,7 +730,7 @@
                 repeat(4, minmax(0, 1fr));
             gap: 12px;
 
-            margin: 28px 0;
+            margin: 0 0 28px;
         }
 
         .build-meta {
@@ -955,6 +957,13 @@
             margin-bottom: 20px;
         }
 
+        .other-project-header-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
         .other-project-mark {
             display: inline-flex;
             align-items: center;
@@ -1007,6 +1016,13 @@
             text-align: center;
         }
 
+        .project-status {
+            margin: 0;
+            padding: 5px 9px;
+
+            font-size: 0.78rem;
+        }
+
         .other-project-card > p {
             margin: 0;
 
@@ -1038,7 +1054,7 @@
 
         .archive-project-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 12px;
 
             margin: 0;
@@ -1049,11 +1065,11 @@
 
         .archive-project-list li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
 
-            min-height: 72px;
-            padding: 15px 17px;
+            min-height: 150px;
+            padding: 17px;
 
             border: 1px solid var(--border);
             border-radius: 14px;
@@ -1086,40 +1102,35 @@
 
         .archive-project-details {
             display: grid;
-            gap: 6px;
+            gap: 10px;
             min-width: 0;
         }
 
         .archive-project-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            width: fit-content;
-            padding: 4px 8px;
+            margin: 0;
+            padding: 5px 9px;
 
-            border: 1px solid rgba(210, 153, 34, 0.42);
-            border-radius: 999px;
+            border-color: rgba(248, 81, 73, 0.42);
 
-            background: rgba(210, 153, 34, 0.1);
-            color: #e3b341;
+            background: rgba(248, 81, 73, 0.1);
+            color: #ffa198;
 
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.045em;
-            line-height: 1;
-            text-transform: uppercase;
+            font-size: 0.72rem;
         }
 
         .archive-project-status::before {
-            width: 7px;
-            height: 7px;
+            background: #f85149;
+            box-shadow: 0 0 10px rgba(248, 81, 73, 0.48);
+        }
 
-            border-radius: 50%;
+        .archive-project-description {
+            margin: 0;
 
-            background: var(--warning);
-            box-shadow: 0 0 8px rgba(210, 153, 34, 0.5);
+            color: var(--muted);
 
-            content: "";
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            line-height: 1.5;
         }
 
         /* ========================================================= */
@@ -1474,6 +1485,15 @@
                 gap: 22px;
             }
 
+            .build-banner::after {
+                right: 24px;
+                top: 36px;
+
+                font-size: 2.8rem;
+
+                transform: none;
+            }
+
             .build-banner-content {
                 grid-row: 2;
             }
@@ -1537,6 +1557,10 @@
 
             .other-project-header {
                 flex-direction: column;
+            }
+
+            .other-project-header-info {
+                justify-content: flex-start;
             }
 
             .other-project-links {
@@ -1692,6 +1716,16 @@
 
             <article class="build-card">
                 <div class="build-banner">
+                    <div class="build-icon-frame">
+                        <img
+                            class="build-icon"
+                            src="./assets/conflux-icon.png"
+                            alt="Conflux"
+                            width="237"
+                            height="282"
+                        >
+                    </div>
+
                     <div class="build-banner-content">
                         <div class="status-badge">
                             In active development
@@ -1707,16 +1741,6 @@
                             progression, exploration, rituals, quests,
                             custom scripts, and original content.
                         </p>
-                    </div>
-
-                    <div class="build-icon-frame">
-                        <img
-                            class="build-icon"
-                            src="./assets/conflux-icon.png"
-                            alt="Conflux"
-                            width="237"
-                            height="282"
-                        >
                     </div>
                 </div>
 
@@ -1931,9 +1955,15 @@
                             >
                         </div>
 
-                        <span class="other-project-meta">
-                            NeoForge · Minecraft 1.21.1
-                        </span>
+                        <div class="other-project-header-info">
+                            <span class="other-project-meta">
+                                NeoForge · Minecraft 1.21.1
+                            </span>
+
+                            <span class="status-badge project-status">
+                                Published
+                            </span>
+                        </div>
                     </div>
 
                     <span class="other-project-kind">
@@ -1943,10 +1973,8 @@
                     <h3>Ore Generation Disabler</h3>
 
                     <p>
-                        A lightweight tool that prevents selected Overworld
-                        ore features from generating in new chunks. Disabled
-                        ores are configured through a block tag, including
-                        with datapacks or KubeJS.
+                        Disables Overworld ore generation using a
+                        configurable block tag
                     </p>
 
                     <div class="other-project-links">
@@ -1984,9 +2012,15 @@
                             >
                         </div>
 
-                        <span class="other-project-meta">
-                            NeoForge · Minecraft 1.21.1
-                        </span>
+                        <div class="other-project-header-info">
+                            <span class="other-project-meta">
+                                NeoForge · Minecraft 1.21.1
+                            </span>
+
+                            <span class="status-badge project-status">
+                                Published
+                            </span>
+                        </div>
                     </div>
 
                     <span class="other-project-kind">
@@ -1996,11 +2030,8 @@
                     <h3>Modern Industrialization Multiblock Editor</h3>
 
                     <p>
-                        A KubeJS-powered tool for replacing and customizing
-                        existing Modern Industrialization multiblock
-                        structures without creating a separate addon. It
-                        supports blocks, tags, exact states, hatch positions,
-                        and structure variants.
+                        Customize Modern Industrialization multiblocks with
+                        KubeJS
                     </p>
 
                     <div class="other-project-links">
@@ -2049,7 +2080,8 @@
                     <span class="archive-project-index">01</span>
                     <div class="archive-project-details">
                         <strong>Atmos Classic</strong>
-                        <span class="archive-project-status">Abandoned</span>
+                        <span class="status-badge archive-project-status">Abandoned</span>
+                        <p class="archive-project-description">••• ◦•••• ••••••</p>
                     </div>
                 </li>
 
@@ -2057,7 +2089,8 @@
                     <span class="archive-project-index">02</span>
                     <div class="archive-project-details">
                         <strong>Atmos Classic Fantasy</strong>
-                        <span class="archive-project-status">Abandoned</span>
+                        <span class="status-badge archive-project-status">Abandoned</span>
+                        <p class="archive-project-description">••••• ◦•• •••••</p>
                     </div>
                 </li>
 
@@ -2065,7 +2098,8 @@
                     <span class="archive-project-index">03</span>
                     <div class="archive-project-details">
                         <strong>NeoAge</strong>
-                        <span class="archive-project-status">Abandoned</span>
+                        <span class="status-badge archive-project-status">Abandoned</span>
+                        <p class="archive-project-description">•• ◦•••••• ••••</p>
                     </div>
                 </li>
 
@@ -2073,7 +2107,8 @@
                     <span class="archive-project-index">04</span>
                     <div class="archive-project-details">
                         <strong>Terra Genesis</strong>
-                        <span class="archive-project-status">Abandoned</span>
+                        <span class="status-badge archive-project-status">Abandoned</span>
+                        <p class="archive-project-description">•••• ◦••• ••••••</p>
                     </div>
                 </li>
 
@@ -2081,7 +2116,8 @@
                     <span class="archive-project-index">05</span>
                     <div class="archive-project-details">
                         <strong>Terra Prototype</strong>
-                        <span class="archive-project-status">Abandoned</span>
+                        <span class="status-badge archive-project-status">Abandoned</span>
+                        <p class="archive-project-description">•••••• ◦•• ••••</p>
                     </div>
                 </li>
             </ul>
