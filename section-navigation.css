@@ -1,12 +1,12 @@
 .section-navigator {
     position: fixed;
     top: 50%;
-    left: 14px;
+    left: 12px;
     z-index: 90;
 
     box-sizing: border-box;
-    width: 184px;
-    max-height: min(68vh, 620px);
+    width: 204px;
+    max-height: min(72vh, 660px);
     overflow: hidden;
 
     border: 0;
@@ -30,7 +30,7 @@
     color: var(--muted, #9da7b4);
 
     font: inherit;
-    font-size: 0.78rem;
+    font-size: 0.83rem;
     font-weight: 800;
     letter-spacing: 0.055em;
     text-align: left;
@@ -95,7 +95,7 @@
     grid-auto-rows: max-content;
     gap: 4px;
 
-    max-height: calc(min(68vh, 620px) - 30px);
+    max-height: calc(min(72vh, 660px) - 32px);
     margin: 0;
     padding: 4px 0 4px 11px;
     overflow-y: auto;
@@ -111,15 +111,15 @@
     position: relative;
     display: block;
 
-    padding: 7px 9px;
+    padding: 9px 10px;
 
     border: 0;
     border-radius: 0 8px 8px 0;
 
     color: var(--muted, #9da7b4);
 
-    font-size: 0.77rem;
-    font-weight: 620;
+    font-size: 0.86rem;
+    font-weight: 650;
     line-height: 1.35;
     overflow-wrap: anywhere;
 
@@ -201,7 +201,7 @@
     }
 
     .section-navigator.is-open {
-        width: min(250px, calc(100vw - 24px));
+        width: min(270px, calc(100vw - 24px));
         padding: 12px 12px 12px 0;
 
         background: linear-gradient(
