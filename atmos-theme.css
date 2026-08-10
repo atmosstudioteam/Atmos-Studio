@@ -47,7 +47,7 @@ body::after {
 .site-header {
     top: 14px;
     box-sizing: border-box;
-    grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+    grid-template-columns: minmax(220px, 0.8fr) auto minmax(360px, 1.2fr);
     justify-content: stretch;
     column-gap: 0;
     row-gap: 8px;
@@ -102,11 +102,22 @@ body::after {
 .header-actions {
     grid-column: 3;
     grid-row: 1;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-evenly;
     justify-self: stretch;
+    width: 100%;
     min-width: 0;
+}
+
+.header-actions .language-switcher {
+    grid-column: 1;
+    justify-self: center;
+}
+
+.header-actions .social-navigation {
+    grid-column: 2;
+    justify-self: end;
 }
 
 .navigation-tab {
@@ -1370,6 +1381,8 @@ footer p:last-of-type {
     .header-actions {
         grid-column: 2;
         grid-row: 1;
+        display: flex;
+        width: auto;
         justify-self: end;
         gap: 12px;
     }
@@ -1434,6 +1447,8 @@ footer p:last-of-type {
     .header-actions {
         grid-column: 1 / -1;
         grid-row: 2;
+        display: flex;
+        width: auto;
         justify-self: center;
         gap: 10px;
     }
