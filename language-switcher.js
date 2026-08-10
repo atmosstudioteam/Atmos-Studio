@@ -211,10 +211,10 @@
             "используйте только официальные ссылки Atmos Studio. Файлы со сторонних сайтов, неофициальных зеркал, сервисов повторной загрузки или от других пользователей могут быть устаревшими, изменёнными, неполными или небезопасными.",
         "Release Model": "Модель публикации",
         "Access and distribution": "Доступ и распространение",
-        "Current builds first, public releases afterward":
-            "Сначала актуальные сборки, затем публичные версии",
-        "Some Atmos Studio products use a rolling release model. Subscribers receive access to the newest available builds, while previous eligible versions later become publicly available.":
-            "Для некоторых продуктов Atmos Studio используется последовательная модель публикации. Подписчики получают доступ к новейшим сборкам, а предыдущие подходящие версии позднее становятся общедоступными.",
+        "Current builds, then public releases":
+            "Актуальные сборки, затем публичные версии",
+        "Subscribers get the newest builds; earlier eligible versions are later released publicly.":
+            "Подписчики получают новые сборки, а предыдущие подходящие версии позже публикуются бесплатно.",
         "Current Builds": "Актуальные сборки",
         "The newest active builds may be published through Ko-fi. Users with an active eligible subscription can access the updates published during their subscription period.":
             "Новейшие активные сборки могут публиковаться через Ko-fi. Пользователи с подходящей активной подпиской получают доступ к обновлениям, опубликованным в период её действия.",
