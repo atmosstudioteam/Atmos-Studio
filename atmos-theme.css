@@ -82,10 +82,15 @@ body::after {
 }
 
 .page-navigation {
-    justify-self: end;
-    justify-content: space-between;
-    width: min(100%, 620px);
-    gap: 12px;
+    display: grid;
+    grid-template-columns:
+        minmax(82px, 0.9fr)
+        minmax(82px, 0.9fr)
+        minmax(160px, 1.45fr)
+        minmax(92px, 1fr);
+    justify-self: stretch;
+    width: 100%;
+    gap: 0;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -108,12 +113,20 @@ body::after {
     white-space: nowrap;
 }
 
+.site-header .page-navigation .navigation-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
 .navigation-tab::after {
     content: "";
     position: absolute;
-    right: 0;
+    right: 10px;
     bottom: 6px;
-    left: 0;
+    left: 10px;
     height: 1px;
     background: var(--preview-purple);
     transform: scaleX(0);
