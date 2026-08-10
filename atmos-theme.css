@@ -35,12 +35,8 @@ body::before {
 }
 
 body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(90deg, transparent 49.95%, rgba(255,255,255,.025) 50%, transparent 50.05%);
+    content: none;
+    display: none;
 }
 
 .page {
@@ -86,8 +82,9 @@ body::after {
 }
 
 .page-navigation {
-    justify-self: center;
-    width: min(100%, 560px);
+    justify-self: end;
+    justify-content: space-between;
+    width: min(100%, 620px);
     gap: 12px;
     padding: 0;
     border: 0;
@@ -97,10 +94,10 @@ body::after {
 
 .navigation-tab {
     position: relative;
-    flex: 1 1 0;
+    flex: 0 0 auto;
     min-width: 0;
     min-height: 46px;
-    padding: 0;
+    padding: 0 10px;
     border: 0;
     border-radius: 0;
     color: #858e9d;
@@ -1114,23 +1111,31 @@ body::after {
     color: var(--preview-text);
 }
 
+.home-page .hero,
+.builds-page .hero,
+.legal-page .hero {
+    border: 1px solid var(--preview-line);
+    border-radius: 10px;
+    background:
+        linear-gradient(112deg, rgba(154, 120, 255, 0.13), transparent 52%),
+        linear-gradient(180deg, rgba(17, 20, 29, 0.98), rgba(8, 10, 15, 0.98));
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.36);
+}
+
 footer {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.75fr) minmax(520px, 1.4fr);
-    grid-template-areas:
-        "brand navigation"
-        "copyright socials"
-        "note socials";
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px 48px;
-    margin-top: 110px;
-    padding: 42px 4px 18px;
-    border: 0;
-    border-top: 1px solid var(--preview-line);
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    text-align: left;
+    gap: 16px;
+    margin-top: 96px;
+    padding: 34px;
+    border: 1px solid var(--preview-line);
+    border-radius: 8px;
+    background:
+        linear-gradient(105deg, rgba(64, 43, 112, 0.28), transparent 28%),
+        rgba(10, 11, 18, 0.94);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .footer-brand {
@@ -1150,9 +1155,11 @@ footer {
 
 .footer-navigation,
 .footer-socials {
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: min(100%, 760px);
     margin: 0;
-    gap: 6px;
+    gap: 8px;
 }
 
 footer p {
@@ -1173,9 +1180,9 @@ footer p:last-of-type {
 .footer-socials .social-button {
     height: 42px;
     min-height: 42px;
-    border-color: transparent;
+    border: 1px solid var(--preview-line);
     border-radius: 4px;
-    background: transparent;
+    background: rgba(154, 120, 255, 0.045);
     font-size: 0.76rem;
     letter-spacing: 0.03em;
 }
@@ -1349,6 +1356,7 @@ footer p:last-of-type {
         grid-row: 2;
         justify-self: stretch;
         justify-content: center;
+        width: 100%;
         border-top: 1px solid var(--preview-line);
     }
 
