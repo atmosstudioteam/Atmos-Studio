@@ -29,6 +29,12 @@
 
     const isVisible = (element) => element.getClientRects().length > 0;
 
+    const normalizeSectionLabel = (value) =>
+        value
+            .replace(/^\s*\d+\.\s*/, "")
+            .replace(/\s+/g, " ")
+            .trim();
+
     const getSections = () => {
         const dividers = Array.from(
             document.querySelectorAll(".section-divider")
@@ -37,9 +43,10 @@
         if (dividers.length) {
             return dividers.map((element) => ({
                 element,
-                label:
+                label: normalizeSectionLabel(
                     element.querySelector("span")?.textContent.trim() ||
                     element.textContent.trim()
+                )
             }));
         }
 
@@ -57,7 +64,7 @@
             .filter(isVisible)
             .map((element) => ({
                 element,
-                label: element.textContent.trim()
+                label: normalizeSectionLabel(element.textContent)
             }));
     };
 
@@ -180,13 +187,6 @@
             }
         });
 
-        const pageBottom = window.scrollY + window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-
-        if (pageBottom >= documentHeight - 4) {
-            activeSection = trackedSections[trackedSections.length - 1];
-        }
-
         root.querySelectorAll(".section-navigator-link").forEach((link) => {
             const isActive = link.hash === `#${activeSection.id}`;
             link.classList.toggle("is-active", isActive);
@@ -249,9 +249,12 @@
 
             const item = document.createElement("li");
             const link = document.createElement("a");
+            const linkText = document.createElement("span");
             link.className = "section-navigator-link";
             link.href = `#${id}`;
-            link.textContent = label;
+            linkText.className = "section-navigator-link-text";
+            linkText.textContent = label;
+            link.append(linkText);
             item.append(link);
             list.append(item);
 
