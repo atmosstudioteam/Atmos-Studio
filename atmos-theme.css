@@ -50,10 +50,15 @@ body::after {
 
 .site-header {
     top: 14px;
-    grid-template-columns: auto minmax(360px, 1fr) auto auto;
-    gap: 24px;
+    box-sizing: border-box;
+    grid-template-columns: minmax(180px, 1fr) minmax(440px, 560px) 92px auto;
+    justify-content: stretch;
+    column-gap: 16px;
+    row-gap: 8px;
+    width: 100%;
+    min-height: 66px;
     margin-bottom: 28px;
-    padding: 9px 12px 9px 18px;
+    padding: 9px 14px 9px 18px;
     border: 1px solid var(--preview-line);
     border-radius: 8px;
     background: rgba(8, 10, 15, 0.86);
@@ -81,8 +86,8 @@ body::after {
 .page-navigation {
     justify-self: center;
     width: min(100%, 560px);
-    gap: 26px;
-    padding: 0 18px;
+    gap: 12px;
+    padding: 0;
     border: 0;
     border-radius: 0;
     background: transparent;
@@ -90,6 +95,8 @@ body::after {
 
 .navigation-tab {
     position: relative;
+    flex: 1 1 0;
+    min-width: 0;
     min-height: 46px;
     padding: 0;
     border: 0;
@@ -99,6 +106,7 @@ body::after {
     font-weight: 760;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .navigation-tab::after {
@@ -129,22 +137,33 @@ body::after {
 }
 
 .site-header .social-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
 }
 
 .site-header .social-button {
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
     width: 38px;
+    height: 38px;
     min-height: 38px;
-    padding: 7px;
+    padding: 0;
     border-color: transparent;
     border-radius: 6px;
     background: transparent;
     font-size: 0;
+    line-height: 0;
 }
 
-.site-header .social-button svg {
+.site-header .social-button svg,
+.site-header .social-button .kofi-icon {
+    display: block;
     width: 18px;
     height: 18px;
+    margin: auto;
 }
 
 .site-header .social-button:hover {
@@ -154,24 +173,28 @@ body::after {
 }
 
 .language-switcher {
+    width: 92px;
+    flex: 0 0 92px;
+    justify-self: center;
     min-height: 38px;
-    margin-inline: 4px;
+    margin: 0;
     padding: 3px;
     border-color: var(--preview-line);
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.025);
 }
 
-.language-button {
-    min-height: 30px;
-    padding: 4px 9px;
+.site-header .language-switcher .language-button {
+    min-height: 36px;
+    padding: 0;
     border-radius: 4px;
     font-size: 0.72rem;
 }
 
-.language-button.active {
+.site-header .language-switcher .language-button.active {
     border-color: rgba(154, 120, 255, 0.45);
     background: rgba(154, 120, 255, 0.16);
+    color: var(--preview-text);
 }
 
 .language-panel,
@@ -201,19 +224,8 @@ body::after {
 }
 
 .hero::before {
-    content: "ATMOS";
-    position: absolute;
-    right: -0.04em;
-    bottom: -0.24em;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.018);
-    font-size: clamp(9rem, 20vw, 19rem);
-    font-weight: 950;
-    letter-spacing: -0.1em;
-    line-height: 1;
+    content: none;
+    display: none;
 }
 
 .hero::after {
@@ -253,9 +265,9 @@ body::after {
 
 .hero-title-accent {
     display: block;
-    margin-left: 0.36em;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(198, 182, 255, 0.78);
+    margin-left: 0.08em;
+    color: var(--preview-purple-soft);
+    -webkit-text-stroke: 0;
     background: none;
 }
 
@@ -267,24 +279,22 @@ body::after {
 }
 
 .metadata {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    max-width: 640px;
-    margin-top: 34px;
-    border-top: 1px solid var(--preview-line);
-    border-left: 1px solid var(--preview-line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 720px;
+    margin-top: 30px;
+    border: 0;
 }
 
 .badge {
     justify-content: flex-start;
-    min-height: 44px;
-    padding: 9px 13px;
-    border: 0;
-    border-right: 1px solid var(--preview-line);
-    border-bottom: 1px solid var(--preview-line);
-    border-radius: 0;
-    background: rgba(255, 255, 255, 0.012);
+    width: auto;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid var(--preview-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
     color: #9099a8;
     font-size: 0.74rem;
     letter-spacing: 0.025em;
@@ -659,15 +669,8 @@ body::after {
 }
 
 .cta-section::after {
-    content: "COMMUNITY";
-    position: absolute;
-    right: -0.04em;
-    bottom: -0.24em;
-    color: rgba(255, 255, 255, 0.025);
-    font-size: clamp(5rem, 12vw, 11rem);
-    font-weight: 950;
-    letter-spacing: -0.08em;
-    line-height: 1;
+    content: none;
+    display: none;
 }
 
 .cta-content {
@@ -693,9 +696,10 @@ body::after {
 
 .builds-page .hero,
 .legal-page .hero {
-    display: block;
-    min-height: 0;
-    padding: clamp(64px, 8vw, 112px);
+    display: flex;
+    align-items: center;
+    min-height: 540px;
+    padding: clamp(58px, 7vw, 92px);
     border-radius: 10px;
 }
 
@@ -706,11 +710,8 @@ body::after {
 }
 
 .builds-page .hero::before {
-    content: "PROJECTS";
-    right: -0.03em;
-    bottom: -0.2em;
-    color: rgba(255, 255, 255, 0.022);
-    font-size: clamp(7rem, 18vw, 17rem);
+    content: none;
+    display: none;
 }
 
 .builds-page .hero::after,
@@ -725,7 +726,7 @@ body::after {
 .builds-page .hero h1,
 .legal-page .hero h1 {
     margin: 0 0 24px;
-    font-size: clamp(4.8rem, 10vw, 9rem);
+    font-size: clamp(4.4rem, 8vw, 7.5rem);
     letter-spacing: -0.075em;
     line-height: 0.88;
 }
@@ -776,9 +777,8 @@ body::after {
 }
 
 .build-banner::after {
-    right: 18px;
-    color: rgba(255, 255, 255, 0.025);
-    font-size: clamp(4rem, 8vw, 7rem);
+    content: none;
+    display: none;
 }
 
 .build-icon-frame {
@@ -945,7 +945,7 @@ body::after {
 /* Legal pages */
 
 .legal-page .page {
-    width: min(1220px, calc(100% - 48px));
+    width: min(1380px, calc(100% - 48px));
 }
 
 .legal-page .hero {
@@ -955,18 +955,16 @@ body::after {
 }
 
 .legal-page .hero::before {
-    right: -0.03em;
-    bottom: -0.2em;
-    color: rgba(255, 255, 255, 0.022);
-    font-size: clamp(7rem, 16vw, 14rem);
+    content: none;
+    display: none;
 }
 
 .privacy-page .hero::before {
-    content: "PRIVACY";
+    content: none;
 }
 
 .terms-page .hero::before {
-    content: "TERMS";
+    content: none;
 }
 
 .legal-page .hero-brand {
@@ -1090,8 +1088,28 @@ body::after {
     background: rgba(154, 120, 255, 0.055);
 }
 
-.legal-page a {
+.legal-page .policy-section a,
+.legal-page .notice a,
+.legal-page .contact-box a,
+.legal-page .minecraft-disclaimer a {
     color: var(--preview-purple-soft);
+}
+
+.legal-page .site-header,
+.legal-page .site-header a {
+    color: var(--preview-text);
+}
+
+.legal-page .site-header .navigation-tab,
+.legal-page .section-navigator-link {
+    color: var(--preview-muted);
+}
+
+.legal-page .site-header .navigation-tab:hover,
+.legal-page .site-header .navigation-tab.active,
+.legal-page .section-navigator-link:hover,
+.legal-page .section-navigator-link.is-active {
+    color: var(--preview-text);
 }
 
 footer {
@@ -1179,6 +1197,13 @@ footer p:last-of-type {
 .section-navigator-link:hover,
 .section-navigator-link.is-active {
     background: linear-gradient(90deg, rgba(154, 120, 255, 0.1), transparent);
+}
+
+@media (min-width: 821px) {
+    html[data-language="ru"] .site-header .navigation-tab {
+        font-size: 0.7rem;
+        letter-spacing: 0.015em;
+    }
 }
 
 /* Shared interactive elements */
@@ -1424,6 +1449,11 @@ footer p:last-of-type {
     .hero {
         min-height: 0;
         padding: 42px 24px 24px;
+    }
+
+    .builds-page .hero,
+    .legal-page .hero {
+        min-height: 0;
     }
 
     .hero h1 {
