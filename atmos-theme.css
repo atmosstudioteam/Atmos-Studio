@@ -82,15 +82,12 @@ body::after {
 }
 
 .page-navigation {
-    display: grid;
-    grid-template-columns:
-        minmax(82px, 0.9fr)
-        minmax(82px, 0.9fr)
-        minmax(160px, 1.45fr)
-        minmax(92px, 1fr);
-    justify-self: stretch;
-    width: 100%;
-    gap: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-self: end;
+    width: auto;
+    gap: 24px;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -102,7 +99,7 @@ body::after {
     flex: 0 0 auto;
     min-width: 0;
     min-height: 46px;
-    padding: 0 10px;
+    padding: 0 6px;
     border: 0;
     border-radius: 0;
     color: #858e9d;
@@ -117,16 +114,16 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
     text-align: center;
 }
 
 .navigation-tab::after {
     content: "";
     position: absolute;
-    right: 10px;
+    right: 6px;
     bottom: 6px;
-    left: 10px;
+    left: 6px;
     height: 1px;
     background: var(--preview-purple);
     transform: scaleX(0);
