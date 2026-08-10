@@ -126,22 +126,28 @@
             closeButton.focus();
         };
 
-        triggers.forEach((trigger) => {
-            trigger.addEventListener("click", () => {
-                const downloadUrl = getDownloadUrl(trigger);
+        document.addEventListener("click", (event) => {
+            const trigger = event.target.closest(
+                ".download-button[data-release-notice]"
+            );
 
-                if (downloadUrl) {
-                    window.open(
-                        downloadUrl,
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
-                    return;
-                }
+            if (!trigger) {
+                return;
+            }
 
-                open(trigger);
-            });
-        });
+            const downloadUrl = getDownloadUrl(trigger);
+
+            if (downloadUrl) {
+                window.open(
+                    downloadUrl,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+                return;
+            }
+
+            open(trigger);
+        }, true);
 
         closeButton.addEventListener("click", () => close());
         confirmButton.addEventListener("click", () => close());
@@ -192,3 +198,4 @@
         initialize();
     }
 })();
+
