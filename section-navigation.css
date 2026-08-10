@@ -109,9 +109,11 @@
 
 .section-navigator-link {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
 
-    padding: 9px 10px;
+    min-height: 44px;
+    padding: 8px 11px;
 
     border: 0;
     border-radius: 0 8px 8px 0;
@@ -127,6 +129,11 @@
         border-color 160ms ease,
         background 160ms ease,
         color 160ms ease;
+}
+
+.section-navigator-link-text {
+    min-width: 0;
+    line-height: 1.35;
 }
 
 .section-navigator-link::before {

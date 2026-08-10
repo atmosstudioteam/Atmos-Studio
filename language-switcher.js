@@ -170,17 +170,6 @@
         "Customize Modern Industrialization multiblocks with KubeJS":
             "Настраивайте мультиблоки Modern Industrialization с помощью KubeJS",
         "Published": "Опубликован",
-        "Past Projects": "Прошлые проекты",
-        "Project archive": "Архив проектов",
-        "Previous Atmos Studio releases": "Прошлые релизы Atmos Studio",
-        "Earlier Atmos Studio modpacks preserved as part of the studio's project history.":
-            "Предыдущие сборки Atmos Studio, сохранённые как часть истории проектов студии.",
-        "The modpack is no longer supported for a variety of reasons.":
-            "Сборка перестала поддерживаться по многим причинам.",
-        "Abandoned": "Заброшено",
-        "Archive in preparation": "Архив готовится",
-        "No archived builds have been published here yet. Names and details will be added as the project history is restored.":
-            "Архивные сборки пока не опубликованы. Названия и сведения будут добавлены по мере восстановления истории проектов.",
         "Minecraft modpack": "Minecraft-сборка",
         "Current Atmos Studio project": "Текущий проект Atmos Studio",
         "The information below describes the current development and distribution structure. Exact versions and download availability may change as development progresses.":
