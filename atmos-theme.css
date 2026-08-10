@@ -51,9 +51,9 @@ body::after {
 .site-header {
     top: 14px;
     box-sizing: border-box;
-    grid-template-columns: minmax(180px, 1fr) minmax(440px, 560px) 92px auto;
+    grid-template-columns: auto minmax(360px, 1fr) 92px auto;
     justify-content: stretch;
-    column-gap: 16px;
+    column-gap: 18px;
     row-gap: 8px;
     width: 100%;
     min-height: 66px;
@@ -61,7 +61,9 @@ body::after {
     padding: 9px 14px 9px 18px;
     border: 1px solid var(--preview-line);
     border-radius: 8px;
-    background: rgba(8, 10, 15, 0.86);
+    background:
+        linear-gradient(105deg, rgba(64, 43, 112, 0.4), transparent 24%),
+        rgba(10, 11, 18, 0.96);
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
@@ -144,16 +146,16 @@ body::after {
 }
 
 .site-header .social-button {
-    display: grid;
-    place-items: center;
+    position: relative;
+    display: block;
     flex: 0 0 38px;
     width: 38px;
     height: 38px;
     min-height: 38px;
     padding: 0;
-    border-color: transparent;
+    border: 1px solid var(--preview-line);
     border-radius: 6px;
-    background: transparent;
+    background: rgba(154, 120, 255, 0.055);
     font-size: 0;
     line-height: 0;
 }
@@ -161,9 +163,13 @@ body::after {
 .site-header .social-button svg,
 .site-header .social-button .kofi-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 18px;
     height: 18px;
-    margin: auto;
+    margin: 0;
+    transform: translate(-50%, -50%);
 }
 
 .site-header .social-button:hover {
@@ -181,7 +187,7 @@ body::after {
     padding: 3px;
     border-color: var(--preview-line);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(154, 120, 255, 0.055);
 }
 
 .site-header .language-switcher .language-button {
@@ -696,10 +702,9 @@ body::after {
 
 .builds-page .hero,
 .legal-page .hero {
-    display: flex;
-    align-items: center;
-    min-height: 540px;
-    padding: clamp(58px, 7vw, 92px);
+    display: block;
+    min-height: 0;
+    padding: clamp(64px, 8vw, 112px);
     border-radius: 10px;
 }
 
@@ -726,7 +731,7 @@ body::after {
 .builds-page .hero h1,
 .legal-page .hero h1 {
     margin: 0 0 24px;
-    font-size: clamp(4.4rem, 8vw, 7.5rem);
+    font-size: clamp(4.8rem, 10vw, 9rem);
     letter-spacing: -0.075em;
     line-height: 0.88;
 }
@@ -1100,15 +1105,12 @@ body::after {
     color: var(--preview-text);
 }
 
-.legal-page .site-header .navigation-tab,
-.legal-page .section-navigator-link {
+.legal-page .site-header .navigation-tab {
     color: var(--preview-muted);
 }
 
 .legal-page .site-header .navigation-tab:hover,
-.legal-page .site-header .navigation-tab.active,
-.legal-page .section-navigator-link:hover,
-.legal-page .section-navigator-link.is-active {
+.legal-page .site-header .navigation-tab.active {
     color: var(--preview-text);
 }
 
@@ -1182,21 +1184,6 @@ footer p:last-of-type {
 .footer-socials .social-button:hover {
     border-color: var(--preview-line);
     background: rgba(255, 255, 255, 0.025);
-}
-
-.section-navigator {
-    left: 18px;
-    width: 190px;
-}
-
-.section-navigator-link {
-    border-radius: 0;
-    font-size: 0.76rem;
-}
-
-.section-navigator-link:hover,
-.section-navigator-link.is-active {
-    background: linear-gradient(90deg, rgba(154, 120, 255, 0.1), transparent);
 }
 
 @media (min-width: 821px) {
