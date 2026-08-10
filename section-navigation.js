@@ -64,7 +64,7 @@
             .filter(isVisible)
             .map((element) => ({
                 element,
-                label: normalizeSectionLabel(element.textContent)
+                label: element.textContent.trim()
             }));
     };
 
