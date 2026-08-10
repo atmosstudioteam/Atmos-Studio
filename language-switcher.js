@@ -547,13 +547,23 @@
 
     const createSwitcher = () => {
         const socialNavigation = document.querySelector(".social-navigation");
+        const siteHeader = socialNavigation?.closest(".site-header");
 
         const supportsLanguageSwitching =
             document.querySelector("#english, #russian") ||
             getPageName() === "builds.html";
 
-        if (!socialNavigation || !supportsLanguageSwitching) {
+        if (!socialNavigation || !siteHeader || !supportsLanguageSwitching) {
             return;
+        }
+
+        let headerActions = siteHeader.querySelector(".header-actions");
+
+        if (!headerActions) {
+            headerActions = document.createElement("div");
+            headerActions.className = "header-actions";
+            socialNavigation.before(headerActions);
+            headerActions.append(socialNavigation);
         }
 
         const switcher = document.createElement("div");
@@ -584,7 +594,7 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
-        socialNavigation.before(switcher);
+        headerActions.prepend(switcher);
     };
 
     const initialize = () => {
@@ -599,3 +609,4 @@
         initialize();
     }
 })();
+
