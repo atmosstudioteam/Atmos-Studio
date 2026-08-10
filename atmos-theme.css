@@ -1101,7 +1101,7 @@ body::after {
 }
 
 .legal-page .site-header,
-.legal-page .site-header a {
+.legal-page .site-header .studio-brand {
     color: var(--preview-text);
 }
 
