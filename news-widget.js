@@ -7,7 +7,6 @@
             en: {
                 toastKicker: "New teaser",
                 toastTitle: "Conflux: the teaser is out",
-                toastHint: "Open the news",
                 openLabel: "Open news about the Conflux teaser",
                 panelLabel: "Atmos Studio News",
                 panelTitle: "The Conflux teaser is out",
@@ -20,7 +19,6 @@
             ru: {
                 toastKicker: "Новый тизер",
                 toastTitle: "Conflux: тизер уже вышел",
-                toastHint: "Открыть новость",
                 openLabel: "Открыть новость о тизере Conflux",
                 panelLabel: "Новости Atmos Studio",
                 panelTitle: "Вышел тизер сборки Conflux",
@@ -138,7 +136,6 @@
             </section>
         `;
 
-        const toast = root.querySelector(".news-toast");
         const openButton = root.querySelector(".news-toast-open");
         const dismissButton = root.querySelector(".news-dismiss");
         const panel = root.querySelector(".news-panel");
