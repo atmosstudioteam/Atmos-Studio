@@ -72,6 +72,7 @@
 .news-toast-open:focus-visible,
 .news-dismiss:focus-visible,
 .news-close:focus-visible,
+.news-restore:focus-visible,
 .news-action:focus-visible {
     outline: 2px solid var(--accent-secondary, #a78bfa);
     outline-offset: 3px;
@@ -211,6 +212,42 @@
     background: rgba(255, 255, 255, 0.04);
     color: var(--text, #e6edf3);
     transform: rotate(5deg);
+}
+
+footer .news-restore {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    margin: -2px 0 0;
+    padding: 5px 9px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--muted, #9da7b4);
+    font: inherit;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition:
+        border-color 160ms ease,
+        background 160ms ease,
+        color 160ms ease;
+}
+
+footer .news-restore::before {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-secondary, #a78bfa);
+    content: "";
+}
+
+footer .news-restore:hover {
+    border-color: var(--border, #30363d);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text, #e6edf3);
 }
 
 .news-panel {
@@ -451,6 +488,7 @@
     .news-toast-chevron,
     .news-dismiss,
     .news-close,
+    .news-restore,
     .news-action {
         transition: none;
     }
