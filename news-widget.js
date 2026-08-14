@@ -14,7 +14,9 @@
                     "The first official teaser for the Conflux modpack is now available. Watch “WE WENT TOO DEEP” on the Atmos Studio YouTube channel.",
                 action: "Watch the teaser",
                 close: "Close news",
-                dismiss: "Hide this notification"
+                dismiss: "Hide this notification",
+                restore: "News",
+                restoreLabel: "Show the news notification"
             },
             ru: {
                 toastKicker: "Новый тизер",
@@ -26,7 +28,9 @@
                     "Первый официальный тизер сборки Conflux уже опубликован. Смотрите «WE WENT TOO DEEP» на YouTube-канале Atmos Studio.",
                 action: "Смотреть тизер",
                 close: "Закрыть новости",
-                dismiss: "Скрыть уведомление"
+                dismiss: "Скрыть уведомление",
+                restore: "Новости",
+                restoreLabel: "Показать уведомление о новости"
             }
         }
     };
@@ -50,9 +54,76 @@
         }
     };
 
+    const forgetDismissal = () => {
+        try {
+            window.localStorage.removeItem(news.storageKey);
+        } catch {
+            // The widget can still be restored for the current page.
+        }
+    };
+
+    const ensureRestoreButton = () => {
+        const footer = document.querySelector("footer");
+
+        if (!footer) {
+            return null;
+        }
+
+        let button = footer.querySelector(".news-restore");
+
+        if (!button) {
+            button = document.createElement("button");
+            button.className = "news-restore";
+            button.type = "button";
+
+            const firstFooterText = footer.querySelector("p");
+            footer.insertBefore(button, firstFooterText);
+        }
+
+        const localizeButton = () => {
+            const localizedCopy = news.copy[getLanguage()];
+            button.textContent = localizedCopy.restore;
+            button.setAttribute("aria-label", localizedCopy.restoreLabel);
+        };
+
+        localizeButton();
+
+        if (!button.dataset.newsLanguageObserver) {
+            const observer = new MutationObserver(localizeButton);
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ["data-language", "lang"]
+            });
+            button.dataset.newsLanguageObserver = "true";
+        }
+
+        button.onclick = () => {
+            forgetDismissal();
+
+            const existingWidget = document.querySelector("#atmos-news-widget");
+
+            if (existingWidget) {
+                existingWidget.classList.remove("is-dismissed");
+                existingWidget.classList.add("is-ready");
+                existingWidget.querySelector(".news-toast-open")?.focus();
+                return;
+            }
+
+            initialize();
+            document.querySelector(".news-toast-open")?.focus();
+        };
+
+        return button;
+    };
+
     const initialize = () => {
+        if (!news.enabled) {
+            return;
+        }
+
+        ensureRestoreButton();
+
         if (
-            !news.enabled ||
             isDismissed() ||
             document.querySelector("#atmos-news-widget")
         ) {
@@ -173,7 +244,6 @@
         dismissButton.addEventListener("click", () => {
             rememberDismissal();
             root.classList.add("is-dismissed");
-            window.setTimeout(() => root.remove(), 220);
         });
         closeButton.addEventListener("click", () => setOpen(false, true));
 
