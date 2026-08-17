@@ -269,7 +269,13 @@
         });
 
         localize();
-        document.body.append(root);
+        const siteHeader = document.querySelector(".site-header");
+
+        if (siteHeader) {
+            siteHeader.insertAdjacentElement("afterend", root);
+        } else {
+            document.body.append(root);
+        }
 
         window.requestAnimationFrame(() => {
             window.requestAnimationFrame(() => {
