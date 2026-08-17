@@ -103,6 +103,7 @@
             const existingWidget = document.querySelector("#atmos-news-widget");
 
             if (existingWidget) {
+                document.body.classList.add("has-news-widget");
                 existingWidget.classList.remove("is-dismissed");
                 existingWidget.classList.add("is-ready");
                 existingWidget.querySelector(".news-toast-open")?.focus();
@@ -243,6 +244,7 @@
         openButton.addEventListener("click", () => setOpen(true));
         dismissButton.addEventListener("click", () => {
             rememberDismissal();
+            document.body.classList.remove("has-news-widget");
             root.classList.add("is-dismissed");
         });
         closeButton.addEventListener("click", () => setOpen(false, true));
@@ -269,13 +271,8 @@
         });
 
         localize();
-        const siteHeader = document.querySelector(".site-header");
-
-        if (siteHeader) {
-            siteHeader.insertAdjacentElement("afterend", root);
-        } else {
-            document.body.append(root);
-        }
+        document.body.classList.add("has-news-widget");
+        document.body.append(root);
 
         window.requestAnimationFrame(() => {
             window.requestAnimationFrame(() => {
@@ -292,3 +289,4 @@
         initialize();
     }
 })();
+
