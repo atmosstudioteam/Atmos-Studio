@@ -14,6 +14,7 @@
 
         let isPlaying = true;
         let isMuted = true;
+        let revealTimer;
 
         const copy = {
             en: {
@@ -48,6 +49,13 @@
                 }),
                 "https://www.youtube-nocookie.com"
             );
+        };
+
+        const revealVideo = () => {
+            window.clearTimeout(revealTimer);
+            revealTimer = window.setTimeout(() => {
+                player.classList.add("is-video-visible");
+            }, 3400);
         };
 
         const localize = () => {
@@ -96,7 +104,12 @@
         iframe.addEventListener("load", () => {
             command("mute");
             command("playVideo");
+            revealVideo();
         });
+
+        revealTimer = window.setTimeout(() => {
+            player.classList.add("is-video-visible");
+        }, 4600);
 
         const languageObserver = new MutationObserver(localize);
         languageObserver.observe(document.documentElement, {

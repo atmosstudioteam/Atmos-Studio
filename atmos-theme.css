@@ -876,6 +876,33 @@ body::after {
     border-radius: 0;
 }
 
+.build-trailer-start-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 48%, rgba(213, 183, 109, 0.16), transparent 34%),
+        linear-gradient(135deg, rgba(24, 19, 37, 0.98), rgba(5, 6, 9, 0.99));
+    opacity: 1;
+    pointer-events: none;
+    visibility: visible;
+    transition: opacity 480ms ease, visibility 480ms ease;
+}
+
+.build-trailer-start-cover img {
+    width: clamp(54px, 9vw, 82px);
+    height: auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.58));
+}
+
+.build-trailer.is-video-visible .build-trailer-start-cover {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .build-trailer-controls {
     position: absolute;
     right: 12px;
