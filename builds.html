@@ -1492,7 +1492,8 @@
     <link rel="stylesheet" href="./mods-dialog.css">
     <script src="./mods-dialog.js"></script>
     <link rel="stylesheet" href="./shared-ui.css">
-    <link rel="stylesheet" href="./atmos-theme.css?v=20260824-2">
+    <link rel="stylesheet" href="./atmos-theme.css?v=20260824-3">
+    <script src="./trailer-controls.js?v=20260824-1"></script>
 </head>
 
 <body class="atmos-redesign builds-page">
@@ -1651,14 +1652,41 @@
                         </p>
                     </div>
 
-                    <div class="build-trailer">
+                    <div class="build-trailer" data-trailer-player>
                         <iframe
-                            src="https://www.youtube-nocookie.com/embed/n9GIwWhQDW4?autoplay=1&amp;mute=1&amp;playsinline=1&amp;controls=1&amp;rel=0&amp;modestbranding=1"
+                            src="https://www.youtube-nocookie.com/embed/n9GIwWhQDW4?autoplay=1&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1"
                             title="Conflux trailer"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin"
+                            tabindex="-1"
                             allowfullscreen
                         ></iframe>
+
+                        <div class="build-trailer-controls">
+                            <button
+                                class="trailer-control"
+                                type="button"
+                                data-trailer-play
+                            >
+                                <span class="trailer-play-symbol" aria-hidden="true"></span>
+                            </button>
+
+                            <button
+                                class="trailer-control trailer-sound-control"
+                                type="button"
+                                data-trailer-sound
+                            >
+                                <span data-trailer-sound-label></span>
+                            </button>
+
+                            <button
+                                class="trailer-control"
+                                type="button"
+                                data-trailer-fullscreen
+                            >
+                                <span class="trailer-fullscreen-symbol" aria-hidden="true"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
