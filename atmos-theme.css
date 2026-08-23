@@ -815,6 +815,7 @@ body::after {
 }
 
 .build-banner {
+    grid-template-columns: auto minmax(0, 1fr) minmax(320px, 0.78fr);
     min-height: 300px;
     padding: clamp(30px, 4vw, 52px);
     gap: clamp(26px, 4vw, 52px);
@@ -828,6 +829,27 @@ body::after {
 .build-banner::after {
     content: none;
     display: none;
+}
+
+.build-trailer {
+    position: relative;
+    z-index: 2;
+    justify-self: end;
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(213, 183, 109, 0.34);
+    border-radius: 6px;
+    background: #050608;
+    box-shadow: 0 22px 58px rgba(0, 0, 0, 0.4);
+}
+
+.build-trailer iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .build-icon-frame {
@@ -1269,46 +1291,12 @@ footer p:last-of-type {
 
 /* Shared interactive elements */
 
-.news-toast,
-.news-panel {
-    border-color: var(--preview-line-strong);
-    border-radius: 6px;
-    background:
-        linear-gradient(145deg, rgba(154, 120, 255, 0.08), transparent 48%),
-        rgba(13, 16, 23, 0.97);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.46);
-}
-
-.news-toast:hover,
-.news-toast:focus-visible {
-    border-color: rgba(154, 120, 255, 0.46);
-    background:
-        linear-gradient(145deg, rgba(154, 120, 255, 0.13), transparent 52%),
-        rgba(13, 16, 23, 0.98);
-}
-
-.news-toast-icon,
-.news-panel-visual {
-    border-radius: 4px;
-    background:
-        radial-gradient(circle at 50% 45%, rgba(154, 120, 255, 0.23), transparent 64%),
-        #0a0c12;
-}
-
-.news-panel-label,
-.news-toast-copy .news-panel-label {
-    color: var(--preview-gold);
-    letter-spacing: 0.12em;
-}
-
-.news-close,
 .release-notice-close,
 .mods-dialog-close {
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.025);
 }
 
-.news-action,
 .release-notice-confirm,
 .mods-dialog-confirm {
     min-height: 46px;
@@ -1321,7 +1309,6 @@ footer p:last-of-type {
     text-transform: uppercase;
 }
 
-.news-action:hover,
 .release-notice-confirm:hover,
 .mods-dialog-confirm:hover {
     border-color: rgba(154, 120, 255, 0.72);
@@ -1358,15 +1345,13 @@ footer p:last-of-type {
 }
 
 .release-notice-title,
-.mods-dialog-title,
-.news-panel-title {
+.mods-dialog-title {
     color: var(--preview-text);
     letter-spacing: -0.035em;
 }
 
 .release-notice-description,
-.mods-dialog-description,
-.news-panel-description {
+.mods-dialog-description {
     color: var(--preview-muted);
 }
 
@@ -1428,6 +1413,17 @@ footer p:last-of-type {
 
     .hero {
         grid-template-columns: 1fr;
+    }
+
+    .build-banner {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .build-trailer {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+        max-width: 760px;
+        margin-top: 8px;
     }
 
     .hero::after {
@@ -1656,3 +1652,4 @@ footer p:last-of-type {
         transition: none;
     }
 }
+
