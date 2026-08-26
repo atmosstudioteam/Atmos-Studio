@@ -1631,6 +1631,67 @@ footer p:last-of-type {
 }
 
 @media (max-width: 520px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+        padding: 10px;
+    }
+
+    .site-header .studio-brand {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        min-height: 40px;
+    }
+
+    .site-header .header-actions {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: stretch;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .site-header .header-actions .language-switcher {
+        width: 84px;
+        height: 40px;
+        min-height: 40px;
+        flex: 0 0 84px;
+    }
+
+    .site-header .language-switcher .language-button {
+        min-height: 32px;
+    }
+
+    .site-header .social-navigation {
+        width: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .site-header .social-button {
+        width: 40px;
+        height: 40px;
+        min-height: 40px;
+        flex: 0 0 40px;
+    }
+
+    .site-header .page-navigation {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 0;
+        padding-top: 7px;
+    }
+
+    .site-header .page-navigation .navigation-tab {
+        min-height: 42px;
+        padding: 8px 4px;
+    }
+
     .build-meta-grid,
     .feature-grid,
     .footer-navigation,
